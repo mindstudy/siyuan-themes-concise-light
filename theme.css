@@ -287,7 +287,7 @@ li[class~="item--focus"] {
 }
 
 /*大纲下级标题计数*/
-.b3-list-item .counter {
+.sy__outline .b3-list-item .counter {
     display: none;
 }
 
@@ -355,10 +355,6 @@ span[data-type="file-annotation-ref"] {
 
 /*自动探察已有块名/跨笔记本虚拟引用*/
 span[data-type="virtual-block-ref"]{
-    border-bottom: 0 !important;
-}
-
-span[data-type="virtual-block-ref"]:hover{
     border-bottom: 1px dashed #666 !important;
 }
 
@@ -456,7 +452,7 @@ div[data-type="NodeParagraph"] span[data-type="a"]:before{
     color: #eee !important;
 }
 
-
+/*
 .block__popover .block__icons::after {
     content: "目标链接：";
     margin: 0 0 0 15px;
@@ -469,7 +465,7 @@ div[data-type="NodeParagraph"] span[data-type="a"]:before{
 .block__popover[style*="left: 21"] .block__icons::after  {
     content: "反向链接：";
 }
-
+*/
 
 /*
 .block__popover span[data-type="block-ref"]::after {
