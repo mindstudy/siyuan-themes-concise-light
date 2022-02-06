@@ -10,7 +10,7 @@
 
 
 
-可参考![思源笔记小白入坑指南](https://github.com/mindstudy/siyuan-intro)，查看更多图片效果：
+可参考[《思源笔记小白入坑指南》](https://github.com/mindstudy/siyuan-intro)
 
 
 
