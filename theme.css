@@ -434,7 +434,7 @@ div[data-type="NodeParagraph"] span[data-type="a"]:before{
 .block__popover .protyle-wysiwyg .h6 {
     font-size: 15px !important;   
     margin: 0 !important;
-    color: #ddd;
+    color: #555;
 }
 
 .block__popover .protyle-wysiwyg [data-node-id] {
@@ -452,7 +452,7 @@ div[data-type="NodeParagraph"] span[data-type="a"]:before{
     color: #eee !important;
 }
 
-/*
+
 .block__popover .block__icons::after {
     content: "目标链接：";
     margin: 0 0 0 15px;
@@ -461,11 +461,11 @@ div[data-type="NodeParagraph"] span[data-type="a"]:before{
     float: left;
 }
 
-.block__popover[style*="left: 51"] .block__icons::after,
+.block__popover[style*="left: 40"] .block__icons::after,
 .block__popover[style*="left: 21"] .block__icons::after  {
     content: "反向链接：";
 }
-*/
+
 
 /*
 .block__popover span[data-type="block-ref"]::after {
