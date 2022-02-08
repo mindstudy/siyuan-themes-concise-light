@@ -305,13 +305,13 @@ li[data-type="toggle"] .b3-list-item__text {
 /* 文档标题 */
 .protyle-title__input {
     font-size: 28px;
-    font-family: "Charis SIL", FZYouSongS, serif !important;
+    font-family: "Charis SIL", FZYouSongS, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif !important;
 }
 
 /* 文档正文 */
 .protyle-wysiwyg{
     font-size: 15px !important;
-    font-family: "Charis SIL", FZYouSongS, serif !important;
+    font-family: "Charis SIL", FZYouSongS, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif !important;
     font-weight: 500 !important;
     cursor: default;
 }
@@ -388,6 +388,17 @@ div[data-node-index="0"].h2 {
     color: #b88;
 }
 
+
+/* 文档内命名、别名数字位置 */
+.protyle-wysiwyg .protyle-attr {
+    padding-top: 17px;
+}
+
+/* 反向链接数字颜色 */
+.protyle-wysiwyg .protyle-attr--refcount {
+    color: #a87a09;
+    top: 17px;
+}
 
 /* 上级 div[data-type="NodeParagraph"] */
 /* 正向链接/引用块 */
@@ -466,43 +477,48 @@ div[data-type="NodeParagraph"] span[data-type="a"]:before{
 }
 
 /* 双链建议弹出菜单 */
-.b3-menu {
-    border: 1px solid #eee;
-    background-color: #ddd;
+button.b3-list-item--focus{
+    background-color: #fff !important;
 }
 
-button.b3-list-item {
-    line-height: 23px;
+button.b3-list-item--focus:hover{
+    background-color: #eee !important;
 }
 
-button.b3-list-item .fn__flex {
-    display: inline;
-    float: right;
-    line-height: normal;
-    margin-left: 3px;
+button.b3-list-item{
+    border-bottom: 1px dashed #ccc;
 }
 
+button.b3-list-item,
+button.b3-list-item .fn__flex,
 button .b3-list-item__first {
-    display: inline !important;
-    font-size: 13px;
+    line-height: 20px;
 }
 
-button .b3-list-item__meta,
+button .b3-list-item__first,
 button .b3-list-item__text {
-    display: inline !important;
+    font-size: 13px;
 }
 
 button .b3-list-item__meta {
-    float: left;
-    margin-right: 5px;
     font-size: 13px;
-    color: #999;
+    color: #aaa;
+}
+
+button .b3-list-item__text mark {
+    background-color: #eee !important;
+}
+
+button .b3-list-item__meta mark {
+    background-color: transparent !important;
+    color: #aaa;
 }
 
 /* 目标链接、反向链接弹出菜单 */
+.block__popover .protyle-breadcrumb,
 .block__popover .protyle-wysiwyg,
 .block__popover .protyle-wysiwyg--attr {
-    font-size: 15px !important;
+    font-size: 13px !important;
     padding: 0 16px !important;
 }
 
@@ -512,13 +528,13 @@ button .b3-list-item__meta {
 .block__popover .protyle-wysiwyg .h4,
 .block__popover .protyle-wysiwyg .h5,
 .block__popover .protyle-wysiwyg .h6 {
-    font-size: 15px !important;   
+    font-size: 13px !important;   
     margin: 0 !important;
     color: #555;
 }
 
 .block__popover .protyle-wysiwyg [data-node-id] {
-    line-height: 165% !important;
+    line-height: 125% !important;
     padding: 0;
     margin: 0;
 }
@@ -528,13 +544,14 @@ button .b3-list-item__meta {
 }
 
 .block__popover span[data-type="tag"]{
-    font-size: 15px !important;
+    font-size: 13px !important;
     color: #eee !important;
 }
 
 
+/*
 .block__popover .block__icons::after {
-    content: "目标链接：";
+    content: "引用块：";
     margin: 0 0 0 15px;
     padding: 0 0 6px 0;
     display: inline-block;
@@ -545,7 +562,7 @@ button .b3-list-item__meta {
 .block__popover[style*="left: 21"] .block__icons::after  {
     content: "反向链接：";
 }
-
+*/
 
 /*
 .block__popover span[data-type="block-ref"]::after {
@@ -558,7 +575,7 @@ button .b3-list-item__meta {
 }
 
 .block__popover .protyle-attr--refcount::after {
-    content: "目标链接：";
+    content: "引用块：";
     color: #999;
     margin: 0 0 0 15px;
     padding: 0 0 6px 0;
@@ -567,10 +584,12 @@ button .b3-list-item__meta {
 }
 */
 
-
+.block__popover .protyle-content {
+    margin-bottom: 6px !important;
+}
 
 .block__popover[style*=""] .protyle-content {
-    margin: 0 !important;
+    margin-bottom: 0 !important;
 }
 
 .block__popover .block__icons,
@@ -591,6 +610,7 @@ button .b3-list-item__meta {
 
 .block__popover .protyle-wysiwyg [data-node-id] [spellcheck="false"]{
     min-height: 0;
+    padding-bottom: 5px;
 }
 
 .block__popover .b3-tooltips__sw::before, 
@@ -607,15 +627,6 @@ button .b3-list-item__meta {
     padding-top: 0;
 }
 
-/* 文档内命名、别名数字位置 */
-.protyle-attr {
-    padding-top: 25px;
-}
-/* 反向链接数字颜色 */
-.protyle-attr--refcount {
-    color: #a87a09;
-    top: 25px;
-}
 
 .block__popover .protyle-attr--refcount {
     top:  0;
