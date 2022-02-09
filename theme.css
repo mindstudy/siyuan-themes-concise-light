@@ -286,9 +286,11 @@ li[class~="item--focus"] {
     opacity: 60% !important;
 }
 
-/*大纲块标记*/
+/*大纲块标记、面包屑块图标*/
 .b3-list-item__graphic {
-    display: none;
+    opacity: 0.5;
+    height: 10px;
+    margin-right: 0 ;
 }
 
 /*大纲下级标题计数*/
@@ -310,7 +312,7 @@ li[data-type="toggle"] .b3-list-item__text {
 
 /* 文档正文 */
 .protyle-wysiwyg{
-    font-size: 15px !important;
+    font-size: 18px !important;
     font-family: "Charis SIL", FZYouSongS, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif !important;
     font-weight: 500 !important;
     cursor: default;
@@ -549,10 +551,11 @@ button .b3-list-item__meta mark {
 }
 
 
-/*
+
 .block__popover .block__icons::after {
     content: "引用块：";
-    margin: 0 0 0 15px;
+    font-size: 13px;
+    margin: 3px 0 0 15px;
     padding: 0 0 6px 0;
     display: inline-block;
     float: left;
@@ -562,7 +565,7 @@ button .b3-list-item__meta mark {
 .block__popover[style*="left: 21"] .block__icons::after  {
     content: "反向链接：";
 }
-*/
+
 
 /*
 .block__popover span[data-type="block-ref"]::after {
@@ -598,8 +601,9 @@ button .b3-list-item__meta mark {
     display: inline;
 }
 
+
 .block__popover .block__icon svg{
-    margin-top: 5px;
+    margin-top: 2px;
     height: 10px;
     width: 10px;
 }
