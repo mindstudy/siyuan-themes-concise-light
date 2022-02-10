@@ -393,13 +393,16 @@ div[data-node-index="0"].h2 {
 
 /* 文档内命名、别名数字位置 */
 .protyle-wysiwyg .protyle-attr {
-    padding-top: 17px;
+    padding-top: 20px;
 }
 
 /* 反向链接数字颜色 */
+.protyle-attr .protyle-attr--refcount,
 .protyle-wysiwyg .protyle-attr--refcount {
-    color: #a87a09;
-    top: 17px;
+    color: #a87a09 !important;
+    font-family: "Charis SIL", FZYouSongS, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif !important;
+    font-weight: 600 !important;
+    top: 20px;
 }
 
 /* 上级 div[data-type="NodeParagraph"] */
@@ -551,9 +554,11 @@ button .b3-list-item__meta mark {
 }
 
 
-
+/*鼠标浮窗增加提示*/
+/*
 .block__popover .block__icons::after {
     content: "引用块：";
+    color: #999;
     font-size: 13px;
     margin: 3px 0 0 15px;
     padding: 0 0 6px 0;
@@ -561,12 +566,13 @@ button .b3-list-item__meta mark {
     float: left;
 }
 
-.block__popover[style*="left: 40"] .block__icons::after,
+.block__popover[style*="left: 51"] .block__icons::after,
 .block__popover[style*="left: 21"] .block__icons::after  {
     content: "反向链接：";
 }
+*/
 
-
+/*鼠标浮窗子元素特征属性*/
 /*
 .block__popover span[data-type="block-ref"]::after {
     content: "反向链接：";
@@ -603,7 +609,8 @@ button .b3-list-item__meta mark {
 
 
 .block__popover .block__icon svg{
-    margin-top: 2px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     height: 10px;
     width: 10px;
 }
