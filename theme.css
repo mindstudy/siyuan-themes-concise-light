@@ -130,7 +130,7 @@
     --b3-protyle-inline-em-color: #202124;
     --b3-protyle-inline-s-color: #202124;
     --b3-protyle-inline-link-color: #4285f4;
-    --b3-protyle-inline-mark-background: #ffe955;
+    --b3-protyle-inline-mark-background: #f8e8cb;
     --b3-protyle-inline-mark-color: #202124;
     --b3-protyle-inline-tag-color: #5f6368;
     --b3-protyle-inline-blockref-color: #660e7a;
@@ -318,6 +318,16 @@ li[data-type="toggle"] .b3-list-item__text {
     cursor: default;
 }
 
+.protyle-wysiwyg [data-node-id] {
+    padding: 3px 0;
+    margin: 9px 0;
+}
+
+/* 被引用的块 */
+.protyle-wysiwyg [refcount] {
+
+}
+
 .protyle-wysiwyg [data-node-id] span[data-type="block-ref"],
 .protyle-wysiwyg [data-node-id] span[data-type="file-annotation-ref"] {
     opacity: 1;
@@ -333,18 +343,54 @@ div[data-type="NodeHeading"]:first-of-type {
     margin-top: 0 !important;
 }
 
-kbd {
-    font: 93%  Consolas, "Liberation Mono", Menlo, Courier, monospace !important;
-    padding: 5px 3px 1px 3px !important;
-}
-
-mark {
-    background-color: #cee1fa !important;
-    padding: 0 !important;
+.protyle-wysiwyg s{
+    color: #aaa;
 }
 
 div[data-node-index="0"].h2 {
     font-size: 1.55em !important;
+}
+
+.protyle-task--done {
+    color: #aaa;
+}
+
+
+strong[style*="color1"],
+strong[style*="color2"],
+strong[style*="color3"],
+strong[style*="color4"],
+strong[style*="color5"] {
+    font-weight: normal;
+    display: inline-block; 
+    height: 1.15em;
+    line-height: 1.15;
+}
+
+mark {
+    background-color: #cee1fa;
+    padding: 0px;
+    display: inline-block; 
+    height: 18px;
+    line-height: 18px;
+}
+
+/* ----------如果希望取消挖空效果，请删除这段代码 Start---------------- */
+/* 修改高亮为挖空效果 */
+.protyle-wysiwyg mark{
+    color: transparent;
+    transition: color 0.5s ease-in-out;
+}
+.protyle-wysiwyg [data-node-id] [spellcheck="false"] mark:hover{
+    color: var(--b3-protyle-inline-mark-color);
+    background-color: transparent;
+    transition: color 0.2s ease-in-out;
+}
+/* -------------如果希望取消挖空效果，请删除这段代码 END----------------------------------- */
+
+.protyle-wysiwyg kbd {
+    font: 93%  Consolas, "Liberation Mono", Menlo, Courier, monospace !important;
+    padding: 5px 3px 2px 3px !important;
 }
 
 /* 层级标题折叠 */
@@ -390,18 +436,29 @@ div[data-node-index="0"].h2 {
     color: #b88;
 }
 
+/* 文档标题命名、别名计数位置 */
+.protyle-title .protyle-attr {
+    padding-top: 16px;
+    top: 0;
+}
 
-/* 文档内命名、别名数字位置 */
+/* 文档内命名、别名计数位置 */
 .protyle-wysiwyg .protyle-attr {
     padding-top: 20px;
 }
 
-/* 反向链接数字颜色 */
+/* 反向链接计数颜色 */
 .protyle-attr .protyle-attr--refcount,
 .protyle-wysiwyg .protyle-attr--refcount {
     color: #a87a09 !important;
     font-family: "Charis SIL", FZYouSongS, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif !important;
     font-weight: 600 !important;
+    top: 16px;
+}
+
+/* 反向链接计数位置调整 */
+.protyle-attr--name+.protyle-attr--refcount,
+.protyle-attr--alias+.protyle-attr--refcount {
     top: 20px;
 }
 
@@ -411,8 +468,6 @@ span[data-type="block-ref"],
 span[data-type="file-annotation-ref"] {
     border-bottom: 1px dotted #666 !important;
 }
-
-
 
 /*自动探察已有块名/跨笔记本虚拟引用*/
 span[data-type="virtual-block-ref"]{
@@ -437,13 +492,11 @@ div[data-type="NodeParagraph"] span[data-type="a"]:before{
 /*标签*/
 .protyle-wysiwyg [data-node-id] span[data-type="tag"]{
     font-size: 15px;
-    padding: 0 4px;
+    padding: 0 3px 1px 3px;
     border-radius: 5px;
     border: 0 !important;
-    background: #725757;
-    color: #eee;
-    width: auto;
-    height: auto;
+    background: #6b9ac9;
+    color: #fff;
     transition: none;
 }
 
@@ -453,10 +506,26 @@ div[data-type="NodeParagraph"] span[data-type="a"]:before{
     transition: none;
 }
 
-/*嵌入块边框*/
+/*嵌入块*/
 .protyle-wysiwyg [data-node-id].render-node[data-type="NodeBlockQueryEmbed"]{
     background-color: #dbe4f2;
     border-left: 0;
+    box-shadow: 0px 0px 3px 2px #dbdbdb;
+    background-color: transparent;
+    padding: 5px 10px;
+}
+
+/*超级块*/
+.protyle-wysiwyg [data-node-id].sb [data-type="NodeParagraph"]{
+    padding: 0 0 0 15px;
+}
+
+.protyle-wysiwyg table thead tr {
+    background-color: #ddd !important;
+}
+
+.protyle-wysiwyg table tbody tr {
+
 }
 
 /*浮动窗口文档路径, 以下均与鼠标浮窗相关*/
@@ -478,7 +547,8 @@ div[data-type="NodeParagraph"] span[data-type="a"]:before{
 }
 
 .ft__primary {
-    color: #3083ac ;
+    color: #3083ac;
+    opacity: 0.6;
 }
 
 /* 双链建议弹出菜单 */
@@ -519,11 +589,13 @@ button .b3-list-item__meta mark {
     color: #aaa;
 }
 
-/* 目标链接、反向链接弹出菜单 */
+/* 引用块、反向链接弹出菜单 */
 .block__popover .protyle-breadcrumb,
 .block__popover .protyle-wysiwyg,
 .block__popover .protyle-wysiwyg--attr {
+    font-family: "Charis SIL", "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif !important;
     font-size: 13px !important;
+    font-weight: normal !important;
     padding: 0 16px !important;
 }
 
@@ -539,9 +611,10 @@ button .b3-list-item__meta mark {
 }
 
 .block__popover .protyle-wysiwyg [data-node-id] {
-    line-height: 125% !important;
+    line-height: 165% !important;
     padding: 0;
     margin: 0;
+    color: #555;
 }
 
 .block__popover  .fn__flex-1{
@@ -575,7 +648,7 @@ button .b3-list-item__meta mark {
 /*鼠标浮窗子元素特征属性*/
 /*
 .block__popover span[data-type="block-ref"]::after {
-    content: "反向链接：";
+    content: "引用块：";
     color: #999;
     margin: 0 0 0 15px;
     padding: 0 0 6px 0;
@@ -584,12 +657,7 @@ button .b3-list-item__meta mark {
 }
 
 .block__popover .protyle-attr--refcount::after {
-    content: "引用块：";
-    color: #999;
-    margin: 0 0 0 15px;
-    padding: 0 0 6px 0;
-    display: inline-block;
-    float: left;
+    content: "反向链接：";
 }
 */
 
@@ -601,10 +669,20 @@ button .b3-list-item__meta mark {
     margin-bottom: 0 !important;
 }
 
-.block__popover .block__icons,
+
+.block__popover .protyle-breadcrumb__item{
+    padding-left: 0;
+}
+
 .block__popover .block__icon,
 .block__popover svg{
     display: inline;
+}
+
+
+.block__popover .block__icons {
+    float: left;
+    padding-left: 15px;
 }
 
 
@@ -632,7 +710,7 @@ button .b3-list-item__meta mark {
     padding: 0;
 }
 
-/* 弹窗命名、别名、反链数字位置 */
+/* 弹窗命名、别名、反链计数位置 */
 .block__popover .protyle-attr {
     top: 8px;
     padding-top: 0;
