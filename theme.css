@@ -156,7 +156,6 @@
 
 
 
-
 /* 日记、同步、主题、多页面前后切换图标 */
 #barDailyNote,
 #barSync,
@@ -174,8 +173,6 @@
 .layout__center>.fn__flex-1{
     background-color: #EFF0F1;
 }
-
-
 
 /* 文档树图标 */
 .block__logo svg {
@@ -203,13 +200,10 @@
     width: 12px;
 }
 
-
 /* 文档树当前文档标题背景 */
 .b3-list--background .b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) {
     background-color: #ddd;
 }
-
-
 
 /* 文档树左上角图标 */
 span[data-type="pin"] svg {
@@ -235,7 +229,6 @@ span[aria-label*="最小化"] {
     display: none !important;
 }
 
-
 /* 已关闭笔记 */
 ul.fn__flex-1 li[data-type="toggle"] {
     background-color: #dce4f3;
@@ -246,16 +239,10 @@ ul.fn__flex-1 li[data-type="toggle"] {
     color:transparent !important;
 }
 
-
 /*非当前文档标题*/
 .item--unupdate, .item {
     font-style: normal !important;
     color: #888 !important;
-}
-
-/*当前文档标题背景*/
-.protyle-title__input {
-    background-color: #fcf6f6;
 }
 
 /*当前文档标题*/
@@ -264,6 +251,10 @@ li[class~="item--focus"] {
     color: #000 !important;
 }
 
+/*当前文档标题背景*/
+.protyle-title__input {
+    background-color: #fcf6f6;
+}
 
 /*文档标题右边关闭按钮*/
 .item__close {
@@ -312,23 +303,16 @@ li[data-type="toggle"] .b3-list-item__text {
 
 /* 文档标题 */
 .protyle-content .protyle-title__input {
-    font-family: "Charis SIL", "FZYouSongS";
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif !important;
     font-size: 35px;
-    font-weight: 800;
+    font-weight: 600;
     margin: 0 0 0 -4px;
 }
 
 /* 文档正文 */
 .protyle-content .protyle-wysiwyg {
-    font-family: "Charis SIL", "FZYouSongS";
-    font-size: 18px !important;
-    font-weight: 500 !important;
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif !important;
     cursor: default;
-}
-
-.protyle-wysiwyg [data-node-id] {
-    padding: 3px 0;
-    margin: 9px 0;
 }
 
 /* 超级块警告色 */
@@ -360,15 +344,10 @@ div[data-type="NodeHeading"]:first-of-type {
     color: #aaa;
 }
 
-div[data-node-index="0"].h2 {
-    font-size: 1.55em !important;
-}
-
 /* 已完成任务列表 */
 .protyle-task--done {
     color: #aaa;
 }
-
 
 /* 文字颜色 */
 strong[style*="color1"],
@@ -403,34 +382,63 @@ mark {
 .protyle-wysiwyg [data-node-id] [spellcheck="false"] mark:hover{
     color: var(--b3-protyle-inline-mark-color);
     background-color: transparent;
-}
-/* 如不需要挖空效果，请删除 END*/
+} /* 如不需要挖空效果，请删除 END*/
 
 .protyle-wysiwyg kbd {
-    font: 93%  Consolas, "Liberation Mono", Menlo, Courier, monospace !important;
-    padding: 5px 3px 2px 3px !important;
+    font-size: 96%;
+    padding: 6px 3px 3px 3px !important;
+    color: #666;
 }
+
+sup, sub, kbd{
+    font-family: var(--b3-font-family);
+    font-weight: 400 !important;
+}
+
+code {
+    font-family: var(--b3-font-family-code);
+    font-weight: 400 !important;
+}
+
+/* 层级标题折叠字号保持一致 */
+.protyle-content .protyle-wysiwyg .h1[fold="1"] {
+    font-size: 1.75em !important;
+}
+
+.protyle-content .protyle-wysiwyg .h2[fold="1"] {
+    font-size: 1.55em !important;
+}
+
+.protyle-content .protyle-wysiwyg .h3[fold="1"] {
+    font-size: 1.38em !important;
+}
+
+.protyle-content .protyle-wysiwyg .h4[fold="1"] {
+    font-size: 1.25em !important;
+}
+
+.protyle-content .protyle-wysiwyg .h5[fold="1"] {
+    font-size: 1.13em !important;
+}
+
+.protyle-content .protyle-wysiwyg .h6[fold="1"] {
+    font-size: 1em !important;
+}
+
 
 /* 层级标题折叠 */
 .protyle-wysiwyg [data-node-id][fold="1"]:not(.li) {
-    font-size: 1.75em;
     color: #202124;
     opacity: 1;
-    display: inline;
-    padding: 0;
-    margin: 0;
 }
-
 
 .protyle-wysiwyg [data-node-id][fold="1"]:not(.li)::before {
     content: "";
     display: block;
-    margin-top: 30px;
 }
 
 [data-type="NodeParagraph"]+[data-node-id][fold="1"]:not(.li)::before,
-[data-type="NodeList"]+[data-node-id][fold="1"]:not(.li)::before
- {
+[data-type="NodeList"]+[data-node-id][fold="1"]:not(.li)::before {
     content: "";
     display: block;
     margin-top: 0;
@@ -443,13 +451,8 @@ mark {
     color: #b88;
 }
 
-.protyle-wysiwyg [data-node-id][fold="1"]:not(.li) div {
-    display: inline;
-}
-
 .protyle-wysiwyg [data-node-id].li[fold="1"]>div:nth-child(2)::after {
     content: " ...";
-    display: inline;
     color: #b88;
 }
 
@@ -475,16 +478,18 @@ mark {
     transition: none;
 }
 
-
-
 /* 文档标题命名、别名计数位置 */
 .protyle-title .protyle-attr {
+    font-family: var(--b3-font-family-code);
+    font-weight: 400;
     padding-top: 16px;
     top: 0;
 }
 
 /* 文档内命名、别名计数位置 */
 .protyle-wysiwyg .protyle-attr {
+    font-family: var(--b3-font-family-code);
+    font-weight: 400;
     padding-top: 20px;
 }
 
@@ -492,7 +497,7 @@ mark {
 .protyle-attr .protyle-attr--refcount,
 .protyle-wysiwyg .protyle-attr--refcount {
     color: #a87a09 !important;
-    font-family: var(--b3-font-family-code)
+    font-family: var(--b3-font-family-code);
     font-weight: 600 !important;
     top: 16px;
 }
@@ -504,7 +509,7 @@ mark {
 }
 
 /* 上级 div[data-type="NodeParagraph"] */
-/* 正向链接/引用块 */
+/* 正向链接/目标链接/引用块 */
 span[data-type="block-ref"],
 span[data-type="file-annotation-ref"] {
     border-bottom: 1px dotted #666 !important;
@@ -520,26 +525,27 @@ span[data-type="virtual-block-ref"]{
 .protyle-wysiwyg [data-node-id] span[data-type="a"],
 span[data-type="a"]{
     border-bottom: 0 !important;
+    font-family: var(--b3-font-family);
+    font-weight: 400 !important;
 }
 
 div[data-type="NodeParagraph"] span[data-type="a"]:before{
    content: "";
    display: inline-block;
    background-image: url(link.png);
-   width:30px;
-   height: 30px;
+   background-repeat: no-repeat;
+   width: 26px;
+   height: 20px;
    background-size: contain;
-   vertical-align: top;
-}
-
-.block__popover span[data-type="a"]:before{
-   vertical-align: middle !important;
+   vertical-align:baseline;
 }
 
 /*标签*/
 .protyle-wysiwyg [data-node-id] span[data-type="tag"]{
-    font-size: 15px;
-    padding: 0 3px 1px 3px;
+    font-size: 96%;
+    font-family: var(--b3-font-family);
+    font-weight: 400 !important;
+    padding: 2px 3px 1px 3px;
     border-radius: 5px;
     border: 0 !important;
     background: #6b9ac9;
@@ -548,7 +554,7 @@ div[data-type="NodeParagraph"] span[data-type="a"]:before{
 }
 
 .protyle-wysiwyg [data-node-id] span[data-type="tag"]:hover{
-    background: #725757;
+    background: #53779b;
     color: #fff !important;
     transition: none;
 }
@@ -559,7 +565,7 @@ div[data-type="NodeParagraph"] span[data-type="a"]:before{
 }
 
 .protyle-linenumber__rows {
-   font-family: var(--b3-font-family-code)
+   font-family: var(--b3-font-family-code);
    color: #aaa !important;
    font-weight: 400;
 }
@@ -613,7 +619,6 @@ div[data-type="NodeParagraph"] span[data-type="a"]:before{
     height: auto !important;
 }
 
-
 /* 双链建议弹出菜单当前块 */
 .ft__primary {
     color: #3083ac;
@@ -665,7 +670,7 @@ button .b3-list-item__meta mark {
     font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif !important;
     font-size: 13px !important;
     font-weight: normal !important;
-    padding: 0 16px !important;
+    padding: 0 25px 0 25px !important;
 }
 
 .block__popover .protyle-wysiwyg .h1,
@@ -675,15 +680,20 @@ button .b3-list-item__meta mark {
 .block__popover .protyle-wysiwyg .h5,
 .block__popover .protyle-wysiwyg .h6 {
     font-size: 13px !important;   
-    margin: 0 !important;
+    margin: 6px 0 0 0 !important;
     color: #555;
 }
 
 .block__popover .protyle-wysiwyg [data-node-id] {
-    line-height: 165% !important;
     padding: 0;
     margin: 0;
     color: #555;
+}
+
+.block__popover .protyle-wysiwyg [data-node-id].li>.protyle-action svg {
+    width: 10px;
+    margin-top: -10px;
+    padding: 0;
 }
 
 .block__popover  .fn__flex-1{
@@ -717,18 +727,16 @@ button .b3-list-item__meta mark {
 /*鼠标浮窗子元素特征属性*/
 /*
 .block__popover span[data-type="block-ref"]::after {
-    content: "引用块：";
-    color: #999;
-    margin: 0 0 0 15px;
-    padding: 0 0 6px 0;
-    display: inline-block;
-    float: left;
 }
 
 .block__popover .protyle-attr--refcount::after {
-    content: "反向链接：";
 }
 */
+
+/*浮窗超链接/网址*/
+.block__popover span[data-type="a"]:before{
+   vertical-align: middle !important;
+}
 
 .block__popover .protyle-content {
     margin-bottom: 6px !important;
@@ -788,6 +796,28 @@ button .b3-list-item__meta mark {
 
 .block__popover .protyle-attr--refcount {
     top:  0;
+}
+
+
+/* 弹出锚文字下划线不遮挡 */
+.block__popover div[contenteditable="true"]{
+    padding-bottom: 8px;
+}
+
+/* 块图标弹出菜单 */
+.tooltip {
+    color: #eee;
+    font-weight: 400;
+}
+
+/* 块图标右键菜单 */
+.b3-menu__item--readonly {
+    color: #888 !important;
+    font-size: 12px;
+}
+
+.b3-menu__item--readonly>span>div {
+    margin-left: 0 !important;
 }
 
 /* 修正设置面板部分字体被编辑器字体影响 */
