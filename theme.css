@@ -43,13 +43,13 @@
     --b3-tooltips-color: rgba(0, 0, 0, 0.54);
 
     /* 卡片背景 */
-    --b3-card-error-color: #202124;
+    --b3-card-error-color: rgb(97, 26, 21);
     --b3-card-error-background: rgb(253, 236, 234);
-    --b3-card-warning-color: #202124;
+    --b3-card-warning-color: rgb(102, 60, 0);
     --b3-card-warning-background: rgb(255, 244, 229);
-    --b3-card-info-color: #202124;
+    --b3-card-info-color: rgb(13, 60, 97);
     --b3-card-info-background: rgb(232, 244, 253);
-    --b3-card-success-color: #202124;
+    --b3-card-success-color: rgb(30, 70, 32);
     --b3-card-success-background: rgb(237, 247, 237);
 
     /* 自定义文字 */
@@ -315,11 +315,6 @@ li[data-type="toggle"] .b3-list-item__text {
     cursor: default;
 }
 
-/* 超级块警告色 */
-strong[parent-style*="warning-color"] {
-    color: #202124 !important;
-}
-
 /* 被引用的块 */
 .protyle-wysiwyg [refcount] {
 
@@ -347,23 +342,6 @@ div[data-type="NodeHeading"]:first-of-type {
 /* 已完成任务列表 */
 .protyle-task--done {
     color: #aaa;
-}
-
-/* 文字颜色 */
-strong[style*="color1"],
-strong[style*="color2"],
-strong[style*="color3"],
-strong[style*="color4"],
-strong[style*="color5"],
-strong[style*="color6"],
-strong[style*="color7"],
-strong[style*="color8"],
-strong[style*="color9"] {
-    background-color: transparent !important;
-    font-weight: normal;
-    display: inline-block; 
-    height: 1.15em;
-    line-height: 1.15;
 }
 
 mark {
@@ -448,12 +426,12 @@ code {
     content: " ...";
     font-weight: 100;
     font-size: 60%;
-    color: #b88;
+    color: #d62525;
 }
 
 .protyle-wysiwyg [data-node-id].li[fold="1"]>div:nth-child(2)::after {
     content: " ...";
-    color: #b88;
+    color: #d62525;
 }
 
 /* 有序列表数字背景 */
@@ -508,7 +486,6 @@ code {
     top: 20px;
 }
 
-/* 上级 div[data-type="NodeParagraph"] */
 /* 正向链接/目标链接/引用块 */
 span[data-type="block-ref"],
 span[data-type="file-annotation-ref"] {
