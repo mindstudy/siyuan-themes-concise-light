@@ -303,7 +303,6 @@ li[data-type="toggle"] .b3-list-item__text {
 
 /* 文档标题 */
 .protyle-content .protyle-title__input {
-    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif !important;
     font-size: 35px;
     font-weight: 600;
     margin: 0 0 0 -4px;
@@ -311,7 +310,6 @@ li[data-type="toggle"] .b3-list-item__text {
 
 /* 文档正文 */
 .protyle-content .protyle-wysiwyg {
-    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif !important;
     cursor: default;
 }
 
