@@ -420,9 +420,8 @@ code {
     margin-top: 0;
 }
 
-.protyle-wysiwyg [data-node-id][fold="1"]:not(.li)::after {
+.protyle-wysiwyg [data-node-id][fold="1"]:not(.li) div[contenteditable="true"]:after {
     content: " ...";
-    font-weight: 100;
     font-size: 60%;
     color: #d62525;
 }
