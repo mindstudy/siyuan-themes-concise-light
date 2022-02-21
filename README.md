@@ -2,37 +2,58 @@
 
 ## 介绍
 
-隐藏一些不必要的界面元素。如果有需要显示的图标可以自己搜索编辑一下 theme.css 相关内容，去掉 `display: none` 所在行即可。
+[**《思源笔记基本功能详解》**](https://www.yuque.com/u25584857/ryp75p/cd49lz)
 
-## 更新记录：
+[**《思源笔记外观修改详解》**](https://www.yuque.com/u25584857/ryp75p/sgf58w)
 
-1.5 超级块背景色调整，一些细节优化
 
-1.4 字体显示改进，一些细节优化
 
-1.3 改进 Ctrl+Shift+F 全局搜索窗口高度，大纲面板标题前的图标不可见，但鼠标放在图标位置仍可浮窗
+## 特点
 
-1.2 嵌入块优化，列表图标显示优化
+* 隐藏一些界面元素，并优化细节
 
-1.1 界面细节优化。另外应爱学习的老铁的要求，参考 Tsundoku 主题增加了高亮时挖空功能，在此表示感谢。如果不用，可在 theme.css 搜索“挖空”删除。
+* 配合快捷键使用，缓解鼠标手
 
-1.0 极简主题发布
-
-## 特点：
-
-* 隐藏一些不太用的图标、顶部标题、上方面包屑导航、侧边栏（可用快捷键开启）
-* 鼠标浮窗紧凑设计
-* 层级标题折叠字体不缩小
-* 一些背景色做了适当调整
-* 界面简明，适于专注
+  界面简明，适于沉浸专注
 
 明色主题配套代码块主题，推荐在设置>代码块主题选择 atom-one-light。
 
 暗色主题配套代码块主题，推荐在设置>代码块主题选择 atom-one-dark。
 
-如果你熟悉 css，可根据需要自行更改 concise-light/theme.css 或者 concise-dark/theme.css。
+
 
 ![preview](preview.png)
+
+
+
+新版主题将删除线设置为挖空复习效果，如不需要，请用 EmEditor/Vscode 等文本编辑器打开
+
+Siyuan/conf/appearance/themes/Concise Lght/theme.css，搜索“挖空”，删除下面的语句：
+
+```css
+/* 修改高亮为挖空效果*/
+.protyle-wysiwyg mark{
+    color: transparent;
+    transition: color 0.2s ease-in-out;
+}
+.protyle-wysiwyg [data-node-id] [spellcheck="false"] mark:hover{
+    color: var(--b3-protyle-inline-mark-color);
+    background-color: transparent;
+} /* 挖空效果*/
+```
+
+本主题隐藏了文档树emoji图标替换面板，如不需要，请用 EmEditor/Vscode 等文本编辑器打开
+
+Siyuan/conf/appearance/themes/Concise Lght/theme.css，搜索“emoji”，删除下面的语句：
+
+```css
+/* 隐藏文档树 emoji 图标修改面板 */
+#commonMenu .emojis{
+    display: none !important;
+}
+```
+
+
 
 ## 快捷键
 
@@ -72,13 +93,9 @@
 
 如果文档树和标签面板同时出现，左边栏关闭按 Alt+4 再按 Alt+，以此类推。
 
-其他快捷键请参考设置面板以及官方文档。
+其他快捷键请参考“设置面板>快捷键”以及官方文档。
 
 
-
-另外本主题的一些效果可参考：
-
-[**《思源笔记新手入门指南》**](https://www.yuque.com/u25584857/ryp75p/cd49lz)
 
 
 

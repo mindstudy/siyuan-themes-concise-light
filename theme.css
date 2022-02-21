@@ -53,32 +53,32 @@
     --b3-card-success-background: rgb(237, 247, 237);
 
     /* 自定义文字 */
-    --b3-font-color1: var(--b3-card-error-color);
-    --b3-font-color2: var(--b3-card-warning-color);
-    --b3-font-color3: var(--b3-card-info-color);
-    --b3-font-color4: var(--b3-card-success-color);
-    --b3-font-color5: var(--b3-theme-on-surface);
-    --b3-font-color6: var(--b3-theme-primary);
-    --b3-font-color7: var(--b3-theme-secondary);
-    --b3-font-color8: var(--b3-theme-error);
-    --b3-font-color9: #f5539e;
-    --b3-font-color10: #944194;
-    --b3-font-color11: #65b84d;
-    --b3-font-color12: #f5822e;
-    --b3-font-color13: var(--b3-theme-background);
+    --b3-font-color1: #d83931;
+    --b3-font-color2: #de7802;
+    --b3-font-color3: #be961e;
+    --b3-font-color4: #5ba121;
+    --b3-font-color5: #568fb6;
+    --b3-font-color6: #497bf0;
+    --b3-font-color7: #9043a0;
+    --b3-font-color8: #e4764a;
+    --b3-font-color9: #d89a3c;
+    --b3-font-color10: #eec84b;
+    --b3-font-color11: #87e49e;
+    --b3-font-color12: #71b5ee;
+    --b3-font-color13: #888;
     --b3-font-background1: var(--b3-card-error-background);
     --b3-font-background2: var(--b3-card-warning-background);
     --b3-font-background3: var(--b3-card-info-background);
     --b3-font-background4: var(--b3-card-success-background);
     --b3-font-background5: var(--b3-theme-surface);
-    --b3-font-background6: var(--b3-theme-primary-light);
+    --b3-font-background6: #e1e1f8;
     --b3-font-background7: rgba(217, 211, 215, 0.5);
     --b3-font-background8: rgba(255, 193, 153, 0.5);
     --b3-font-background9: rgba(189, 201, 255, 0.5);
     --b3-font-background10: rgba(239, 218, 251, 0.5);
     --b3-font-background11: rgba(234, 202, 220, 0.5);
     --b3-font-background12: rgba(253, 198, 200, 0.5);
-    --b3-font-background13: var(--b3-theme-on-background);
+    --b3-font-background13: #ddd;
 
     /* 动画效果 */
     --b3-transition: all .15s cubic-bezier(0, 0, .2, 1) 0ms;
@@ -126,12 +126,12 @@
     --b3-protyle-code-background: rgba(27, 31, 35, .05);
 
     /* 所见即所得行内元素颜色 */
-    --b3-protyle-inline-strong-color: #202124;
+    --b3-protyle-inline-strong-color: #947e7e;
     --b3-protyle-inline-em-color: #202124;
     --b3-protyle-inline-s-color: #202124;
     --b3-protyle-inline-link-color: #4285f4;
-    --b3-protyle-inline-mark-background: #f8e8cb;
-    --b3-protyle-inline-mark-color: #202124;
+    --b3-protyle-inline-mark-background: #f1e2c6;
+    --b3-protyle-inline-mark-color: #a85c1d;
     --b3-protyle-inline-tag-color: #5f6368;
     --b3-protyle-inline-blockref-color: #660e7a;
 
@@ -156,7 +156,7 @@
 
 
 
-/* 日记、同步、主题、多页面前后切换图标 */
+/* 日记、同步、主题、多页面前后切换图标隐藏 */
 #barDailyNote,
 #barSync,
 #barBack,
@@ -318,6 +318,10 @@ li[data-type="toggle"] .b3-list-item__text {
 
 }
 
+.protyle-wysiwyg [data-node-id]:not(.list):hover {
+    background-color: #dce4f3;
+}
+
 .protyle-wysiwyg [data-node-id] span[data-type="block-ref"],
 .protyle-wysiwyg [data-node-id] span[data-type="file-annotation-ref"] {
     opacity: 1;
@@ -350,15 +354,19 @@ mark {
     line-height: 18px;
 }
 
-/* 修改高亮为挖空效果，如不需要请删除 START */
-.protyle-wysiwyg mark{
+/* 修改高亮为挖空效果*/
+.protyle-wysiwyg s{
     color: transparent;
-    transition: color 0.2s ease-in-out;
+    background-color: #f5c7d1;
+    transition: color 0.2s ease-in-out !important;
+    text-decoration: none;
 }
-.protyle-wysiwyg [data-node-id] [spellcheck="false"] mark:hover{
+
+.protyle-wysiwyg [data-node-id] [spellcheck="false"] s:hover{
     color: var(--b3-protyle-inline-mark-color);
     background-color: transparent;
-} /* 如不需要挖空效果，请删除 END*/
+    text-decoration: none;
+} /* 挖空效果*/
 
 .protyle-wysiwyg kbd {
     font-size: 96%;
@@ -629,12 +637,54 @@ button .b3-list-item__meta {
 }
 
 button .b3-list-item__text mark {
-    background-color: #eee !important;
+    background-color: #ddd !important;
 }
 
 button .b3-list-item__meta mark {
     background-color: transparent !important;
     color: #aaa;
+}
+
+/* 字体设置 */
+.protyle-util {
+    background-color: #eee !important;
+}
+
+.b3-button--outline {
+    color: #333;
+    border: 1px solid #888;
+}
+
+.b3-color__square[data-type="color"] {
+    box-shadow: none;
+    border: 1px solid #fff;
+    transition: none;
+}
+
+.b3-color__square[data-type="color"]:hover {
+    border: 1px solid #fff;
+}
+
+.b3-color__square[data-type="backgroundColor"] {
+    box-shadow: none;
+    border: 1px solid #ccc;
+    transition: none;
+}
+
+.b3-color__square:hover[data-type="backgroundColor"]:hover {
+    border: 1px solid #888;
+}
+
+strong[style*="color1"],
+strong[style*="color2"],
+strong[style*="color3"],
+strong[style*="color4"],
+strong[style*="color5"],
+strong[style*="color6"],
+strong[style*="color7"],
+strong[style*="color8"],
+strong[style*="color9"] {
+    font-weight: 500 !important;
 }
 
 /* 引用块、反向链接弹出菜单 */
@@ -798,3 +848,9 @@ button .b3-list-item__meta mark {
 .b3-dialog .fn__flex-column .b3-label__text{
     font-family: var(--b3-font-family) !important;
 }
+
+/* 隐藏文档树 emoji 图标修改面板 */
+#commonMenu .emojis{
+    display: none !important;
+}
+
