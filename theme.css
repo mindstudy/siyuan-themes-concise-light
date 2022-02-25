@@ -53,31 +53,31 @@
     --b3-card-success-background: rgb(237, 247, 237);
 
     /* 自定义文字 */
-    --b3-font-color1: #d83931;
+    --b3-font-color1: #ca4f49;
     --b3-font-color2: #de7802;
     --b3-font-color3: #be961e;
     --b3-font-color4: #5ba121;
-    --b3-font-color5: #568fb6;
-    --b3-font-color6: #497bf0;
-    --b3-font-color7: #9043a0;
-    --b3-font-color8: #e4764a;
+    --b3-font-color5: #549ecf;
+    --b3-font-color6: #5588fd;
+    --b3-font-color7: #a36dad;
+    --b3-font-color8: #c27557;
     --b3-font-color9: #d89a3c;
-    --b3-font-color10: #eec84b;
-    --b3-font-color11: #87e49e;
-    --b3-font-color12: #71b5ee;
+    --b3-font-color10: #e0b00f;
+    --b3-font-color11: #7ea889;
+    --b3-font-color12: #789fbe;
     --b3-font-color13: #888;
     --b3-font-background1: var(--b3-card-error-background);
     --b3-font-background2: var(--b3-card-warning-background);
     --b3-font-background3: var(--b3-card-info-background);
     --b3-font-background4: var(--b3-card-success-background);
-    --b3-font-background5: var(--b3-theme-surface);
-    --b3-font-background6: #e1e1f8;
-    --b3-font-background7: rgba(217, 211, 215, 0.5);
+    --b3-font-background5: rgb(204, 237, 247);
+    --b3-font-background6: #d7e3ff;
+    --b3-font-background7: rgba(235, 182, 217, 0.5);
     --b3-font-background8: rgba(255, 193, 153, 0.5);
-    --b3-font-background9: rgba(189, 201, 255, 0.5);
-    --b3-font-background10: rgba(239, 218, 251, 0.5);
-    --b3-font-background11: rgba(234, 202, 220, 0.5);
-    --b3-font-background12: rgba(253, 198, 200, 0.5);
+    --b3-font-background9: rgba(175, 247, 207, 0.5);
+    --b3-font-background10: rgba(219, 196, 233, 0.5);
+    --b3-font-background11: rgba(255, 183, 243, 0.5);
+    --b3-font-background12: rgba(253, 145, 149, 0.5);
     --b3-font-background13: #ddd;
 
     /* 动画效果 */
@@ -126,7 +126,7 @@
     --b3-protyle-code-background: rgba(27, 31, 35, .05);
 
     /* 所见即所得行内元素颜色 */
-    --b3-protyle-inline-strong-color: #947e7e;
+    --b3-protyle-inline-strong-color: #867b7b;
     --b3-protyle-inline-em-color: #202124;
     --b3-protyle-inline-s-color: #202124;
     --b3-protyle-inline-link-color: #4285f4;
@@ -285,9 +285,7 @@ li[class~="item--focus"] {
 
 /*大纲块标记、面包屑块图标*/
 .b3-list-item__graphic {
-    opacity: 0;
-    height: 10px;
-    margin-right: 0 ;
+    display: none;
 }
 
 /*大纲下级标题计数*/
@@ -310,6 +308,8 @@ li[data-type="toggle"] .b3-list-item__text {
 
 /* 文档正文 */
 .protyle-content .protyle-wysiwyg {
+    font-family: "Charis SIL", FZYouSongS, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif !important;
+    font-size: 18px !important;
     cursor: default;
 }
 
@@ -409,6 +409,9 @@ code {
     font-size: 1em !important;
 }
 
+.protyle-content .protyle-wysiwyg .p[fold="1"] {
+    font-size: 18px !important;
+}
 
 /* 层级标题折叠 */
 .protyle-wysiwyg [data-node-id][fold="1"]:not(.li) {
@@ -501,7 +504,6 @@ span[data-type="file-annotation-ref"] {
 span[data-type="virtual-block-ref"]{
     border-bottom: 1px dashed #666 !important;
 }
-
 
 /*超链接/网址*/
 .protyle-wysiwyg [data-node-id] span[data-type="a"],
@@ -645,7 +647,7 @@ button .b3-list-item__meta mark {
     color: #aaa;
 }
 
-/* 字体设置 */
+/* 字体设置面板 */
 .protyle-util {
     background-color: #eee !important;
 }
@@ -729,7 +731,6 @@ strong[style*="color9"] {
     color: #eee !important;
 }
 
-
 /*鼠标浮窗增加提示*/
 /*
 .block__popover .block__icons::after {
@@ -770,7 +771,6 @@ strong[style*="color9"] {
     margin-bottom: 0 !important;
 }
 
-
 .block__popover .protyle-breadcrumb__item{
     padding-left: 0;
 }
@@ -780,12 +780,10 @@ strong[style*="color9"] {
     display: inline;
 }
 
-
 .block__popover .block__icons {
     float: left;
     padding-left: 15px;
 }
-
 
 .block__popover .block__icon svg{
     margin-top: 0px;
@@ -817,11 +815,9 @@ strong[style*="color9"] {
     padding-top: 0;
 }
 
-
 .block__popover .protyle-attr--refcount {
     top:  0;
 }
-
 
 /* 弹出锚文字下划线不遮挡 */
 .block__popover div[contenteditable="true"]{
@@ -830,6 +826,7 @@ strong[style*="color9"] {
 
 /* 块图标弹出菜单 */
 .tooltip {
+    display: none;
     color: #eee;
     font-weight: 400;
 }
