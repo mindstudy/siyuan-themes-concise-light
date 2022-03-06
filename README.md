@@ -2,6 +2,8 @@
 
 ## 介绍
 
+主题部分效果可参见：
+
 [**《思源笔记基本功能详解》**](https://www.yuque.com/u25584857/ryp75p/cd49lz)
 
 [**《思源笔记外观修改详解》**](https://www.yuque.com/u25584857/ryp75p/sgf58w)
@@ -11,36 +13,56 @@
 ## 特点
 
 * 隐藏一些界面元素，并优化细节
-
 * 配合快捷键使用，缓解鼠标手
+* 界面简明，适于沉浸专注
+* 
 
-  界面简明，适于沉浸专注
+## 字体
+
+正文英文衬线字体：Charis SIL，英文字符、音标显示较好
+
+正文中文衬线字体（除标记类文字）：方正悠宋GBK / FZYouSong GBK（多个字号建议全装）
+
+标题中文衬线字体：方正准雅宋GBK / FZYaSong-M-GBK
+
+未安装上述衬线字体是，界面显示为无衬线字体（黑体）
+
+正文标记类文字、其他界面：无衬线字体（黑体）顺序为苹方、雅黑等
+
+
 
 明色主题配套代码块主题，推荐在设置>代码块主题选择 atom-one-light。
 
 暗色主题配套代码块主题，推荐在设置>代码块主题选择 atom-one-dark。
 
-
-
-![preview](preview.png)
+字体网站：https://www.qiuziti.com
 
 
 
-新版主题将删除线设置为挖空复习效果，如不需要，请用 EmEditor/Vscode 等文本编辑器打开
+## 说明
+
+### 挖空
+
+本主题将删除线设置为挖空复习效果，如不需要，请用 EmEditor/Vscode 等文本编辑器打开
 
 Siyuan/conf/appearance/themes/Concise Lght/theme.css，搜索“挖空”，删除下面的语句：
 
 ```css
-/* 修改高亮为挖空效果*/
-.protyle-wysiwyg mark{
+.protyle-wysiwyg s{
     color: transparent;
-    transition: color 0.2s ease-in-out;
+    border-bottom: 1px solid #555;
+    transition: color 0.2s ease-in-out !important;
+    text-decoration: none;
 }
-.protyle-wysiwyg [data-node-id] [spellcheck="false"] mark:hover{
-    color: var(--b3-protyle-inline-mark-color);
+
+.protyle-wysiwyg [data-node-id] [spellcheck="false"] s:hover{
+    color: #333;
     background-color: transparent;
-} /* 挖空效果*/
+    text-decoration: none;
+    border-bottom:  none;
 ```
+
+### emoji
 
 本主题隐藏了文档树emoji图标替换面板，如不需要，请用 EmEditor/Vscode 等文本编辑器打开
 
@@ -55,9 +77,23 @@ Siyuan/conf/appearance/themes/Concise Lght/theme.css，搜索“emoji”，删�
 
 
 
+### 自定义属性
+
+| 属性名 | 属性值 | 作用                |
+| ------ | ------ | ------------------- |
+| f      | bg     | 列表块转换为表格    |
+| z      | kt     | 整块/整页转换为楷体 |
+| z      | fs     | 整块/整页转换为仿宋 |
+
+
+
 ## 快捷键
 
+本主题需配合快捷键使用，降低鼠标手疲劳。
+
 ### 页面切换
+
+关闭当前窗口： Ctrl+w / Cmd+w
 
 窗口页面内容跳转多次时：
 
@@ -94,6 +130,10 @@ Siyuan/conf/appearance/themes/Concise Lght/theme.css，搜索“emoji”，删�
 如果文档树和标签面板同时出现，左边栏关闭按 Alt+4 再按 Alt+，以此类推。
 
 其他快捷键请参考“设置面板>快捷键”以及官方文档。
+
+
+
+有任何问题，可去 Github Issue、语雀相关链接反馈。
 
 
 

@@ -43,13 +43,13 @@
     --b3-tooltips-color: rgba(0, 0, 0, 0.54);
 
     /* 卡片背景 */
-    --b3-card-error-color: rgb(97, 26, 21);
+    --b3-card-error-color: #a83d5d;
     --b3-card-error-background: rgb(253, 236, 234);
-    --b3-card-warning-color: rgb(102, 60, 0);
+    --b3-card-warning-color: #a3800b;
     --b3-card-warning-background: rgb(255, 244, 229);
-    --b3-card-info-color: rgb(13, 60, 97);
+    --b3-card-info-color: #4885b4;
     --b3-card-info-background: rgb(232, 244, 253);
-    --b3-card-success-color: rgb(30, 70, 32);
+    --b3-card-success-color: #3ea543;
     --b3-card-success-background: rgb(237, 247, 237);
 
     /* 自定义文字 */
@@ -126,7 +126,7 @@
     --b3-protyle-code-background: rgba(27, 31, 35, .05);
 
     /* 所见即所得行内元素颜色 */
-    --b3-protyle-inline-strong-color: #867b7b;
+    --b3-protyle-inline-strong-color: #444;
     --b3-protyle-inline-em-color: #202124;
     --b3-protyle-inline-s-color: #202124;
     --b3-protyle-inline-link-color: #4285f4;
@@ -253,7 +253,11 @@ li[class~="item--focus"] {
 
 /*当前文档标题背景*/
 .protyle-title__input {
-    background-color: #fcf6f6;
+    background-color: #f7f5f5;
+}
+
+.layout-tab-bar .item {
+    box-shadow: none;
 }
 
 /*文档标题右边关闭按钮*/
@@ -283,8 +287,8 @@ li[class~="item--focus"] {
     opacity: 60% !important;
 }
 
-/*大纲块标记、面包屑块图标*/
-.b3-list-item__graphic {
+/*大纲块标记*/
+.sy__outline .b3-list-item__graphic {
     display: none;
 }
 
@@ -301,14 +305,16 @@ li[data-type="toggle"] .b3-list-item__text {
 
 /* 文档标题 */
 .protyle-content .protyle-title__input {
-    font-size: 35px;
-    font-weight: 600;
+    font-family: "Charis SIL", FZYaSong-M-GBK, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif;
+    font-size: 30px;
+    font-weight: 500;
     margin: 0 0 0 -4px;
+    background-color: transparent; 
 }
 
 /* 文档正文 */
 .protyle-content .protyle-wysiwyg {
-    font-family: "Charis SIL", FZYouSongS, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif !important;
+    font-family: "Charis SIL", FZYouSong GBK, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif;
     font-size: 18px !important;
     cursor: default;
 }
@@ -347,31 +353,36 @@ div[data-type="NodeHeading"]:first-of-type {
 }
 
 mark {
-    background-color: #cee1fa;
-    padding: 0px;
+    background-color: #cee1fa; 
+    font-family: var(--b3-font-family);
+    font-size: 92%;
+    padding: 3px;
     display: inline-block; 
-    height: 18px;
+    font-weight: 400;
+    height: 16px;
     line-height: 18px;
 }
 
 /* 修改高亮为挖空效果*/
 .protyle-wysiwyg s{
     color: transparent;
-    background-color: #f5c7d1;
+    border-bottom: 1px solid #888;
     transition: color 0.2s ease-in-out !important;
     text-decoration: none;
 }
 
 .protyle-wysiwyg [data-node-id] [spellcheck="false"] s:hover{
-    color: var(--b3-protyle-inline-mark-color);
+    color: #333;
     background-color: transparent;
     text-decoration: none;
+    border-bottom:  none;
 } /* 挖空效果*/
 
 .protyle-wysiwyg kbd {
-    font-size: 96%;
+    font-size: 92%;
     padding: 6px 3px 3px 3px !important;
     color: #666;
+    box-shadow: none;
 }
 
 sup, sub, kbd{
@@ -379,42 +390,20 @@ sup, sub, kbd{
     font-weight: 400 !important;
 }
 
+u {
+    border-bottom: 1px solid #888 !important;
+}
+
 code {
     font-family: var(--b3-font-family-code);
     font-weight: 400 !important;
 }
 
-/* 层级标题折叠字号保持一致 */
-.protyle-content .protyle-wysiwyg .h1[fold="1"] {
-    font-size: 1.75em !important;
-}
-
-.protyle-content .protyle-wysiwyg .h2[fold="1"] {
-    font-size: 1.55em !important;
-}
-
-.protyle-content .protyle-wysiwyg .h3[fold="1"] {
-    font-size: 1.38em !important;
-}
-
-.protyle-content .protyle-wysiwyg .h4[fold="1"] {
-    font-size: 1.25em !important;
-}
-
-.protyle-content .protyle-wysiwyg .h5[fold="1"] {
-    font-size: 1.13em !important;
-}
-
-.protyle-content .protyle-wysiwyg .h6[fold="1"] {
-    font-size: 1em !important;
-}
-
-.protyle-content .protyle-wysiwyg .p[fold="1"] {
-    font-size: 18px !important;
-}
-
-/* 层级标题折叠 */
+/* 折叠字号统一 */
 .protyle-wysiwyg [data-node-id][fold="1"]:not(.li) {
+    font-size: 18px !important;
+    line-height: 1.625;
+    height: auto;
     color: #202124;
     opacity: 1;
 }
@@ -422,6 +411,61 @@ code {
 .protyle-wysiwyg [data-node-id][fold="1"]:not(.li)::before {
     content: "";
     display: block;
+}
+/* 层级标题折叠字号保持一致 */
+.protyle-content .protyle-wysiwyg .h1,
+.protyle-content .protyle-wysiwyg .h1[fold="1"] {
+    font-size: 1.5em !important;
+    font-weight: normal;
+    line-height: 1.25;
+    height: 32px;
+    font-family: "Charis SIL", FZYaSong-M-GBK, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif;
+}
+
+.protyle-content .protyle-wysiwyg .h2,
+.protyle-content .protyle-wysiwyg .h2[fold="1"] {
+    font-size: 1.4em !important;
+    font-weight: normal;
+    line-height: 1.25;
+    height: 32px;
+    font-family: "Charis SIL", FZYaSong-M-GBK, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif;
+}
+
+.protyle-content .protyle-wysiwyg .h3,
+.protyle-content .protyle-wysiwyg .h3[fold="1"] {
+    font-size: 1.3em !important;
+    font-weight: normal;
+    line-height: 1.25;
+    height: 32px;
+    font-family: "Charis SIL", FZYaSong-M-GBK, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif;
+}
+
+.protyle-content .protyle-wysiwyg .h4,
+.protyle-content .protyle-wysiwyg .h4[fold="1"] {
+    font-size: 1.2em !important;
+    font-weight: normal;
+    line-height: 1.25;
+    font-family: "Charis SIL", FZYaSong-M-GBK, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif;
+}
+
+.protyle-content .protyle-wysiwyg .h5,
+.protyle-content .protyle-wysiwyg .h5[fold="1"] {
+    font-size: 1.1em !important;
+    font-weight: normal;
+    line-height: 1.25;
+    font-family: "Charis SIL", FZYaSong-M-GBK, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif;
+}
+
+.protyle-content .protyle-wysiwyg .h6,
+.protyle-content .protyle-wysiwyg .h6[fold="1"] {
+    font-size: 1em !important;
+    font-weight: normal;
+    line-height: 1.25;
+    font-family: "Charis SIL", FZYaSong-M-GBK, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif;
+}
+
+.protyle-content .protyle-wysiwyg .p[fold="1"] {
+    font-size: 18px !important;
 }
 
 [data-type="NodeParagraph"]+[data-node-id][fold="1"]:not(.li)::before,
@@ -441,6 +485,240 @@ code {
     content: " ...";
     color: #d62525;
 }
+
+/* 其他折叠 */
+.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeIFrame"],
+.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeWidget"],
+.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeVideo"],
+.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeAudio"],
+.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="mindmap"],
+.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="mermaid"],
+.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="echarts"],
+.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="flowchart"],
+.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="plantuml"],
+.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="graphviz"],
+.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="abc"]{
+    text-align: left;
+}
+.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeBlockQueryEmbed"] div,
+.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeTable"] table tbody,
+.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeMathBlock"] div,
+.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeIFrame"] div,
+.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeWidget"] div,
+.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeVideo"] div,
+.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeAudio"] div,
+.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="mindmap"] div,
+.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="mermaid"] div,
+.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="echarts"] div,
+.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="flowchart"] div,
+.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="plantuml"] div,
+.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="graphviz"] div,
+.protyle-wysiwyg [data-node-id][fold="1"].p .img span,
+.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="abc"] div,
+.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="abc"] span {
+    display: none;
+}
+.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeMathBlock"]::before,
+.protyle-wysiwyg .li [data-node-id][fold="1"][data-type="NodeMathBlock"] div:first-child:before{
+    content: "Math ...";
+    color: #888;
+    font-style: italic;
+    padding: 2px 0 2px 8px;
+    border-radius: 4px;
+    background-color: #dbe4f2 !important;
+}
+.protyle-wysiwyg .li [data-node-id][fold="1"][data-type="NodeIFrame"] div:first-child:before,
+.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeIFrame"]::before{
+    content: "IFrame ...";
+    color: #888;
+    font-style: italic;    padding: 0 0 2px 8px;
+    border-radius: 4px;
+    background-color: #dbe4f2 !important;
+}
+.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeWidget"]::before,
+.protyle-wysiwyg .li [data-node-id][fold="1"][data-type="NodeWidget"] div:first-child:before{
+    content:"Widget ...";
+    color: #888;
+    font-style: italic;
+    padding: 2px 0 2px 8px;
+    border-radius: 4px;
+    background-color: #dbe4f2 !important;
+}
+.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeVideo"]::before,
+.protyle-wysiwyg .li [data-node-id][fold="1"][data-type="NodeVideo"] div:first-child:before{
+    content: "Video ...";
+    color: #888;
+    font-style: italic;
+    padding: 2px 0 2px 8px;
+    border-radius: 4px;
+    background-color: #dbe4f2 !important;
+}
+.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="plantuml"]::before,
+.protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="plantuml"] div:first-child:before{
+    content: "Plantuml ...";
+    color: #888;
+    font-style: italic;
+    padding: 2px 0 2px 8px;
+    border-radius: 4px;
+    background-color: #dbe4f2 !important;
+}
+.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="flowchart"]::before,
+.protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="flowchart"] div:first-child:before{
+    content: "Flowchart ...";
+    color: #888;
+    font-style: italic;
+    padding: 2px 0 2px 8px;
+    border-radius: 4px;
+    background-color: #dbe4f2 !important;
+}
+.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="echarts"]::before,
+.protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="echarts"] div:first-child:before{
+    content: "Echarts ...";
+    color: #888;
+    font-style: italic;
+    padding: 2px 0 2px 8px;
+    border-radius: 4px;
+    background-color: #dbe4f2 !important;
+}
+.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="graphviz"]::before,
+.protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="graphviz"] div:first-child:before{
+    content: "Graphviz ...";
+    color: #888;
+    font-style: italic;
+    padding: 2px 0 2px 8px;
+    border-radius: 4px;
+    background-color: #dbe4f2 !important;
+}
+.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="abc"]::before,
+.protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="abc"] div:first-child:before{
+    content: "Staff ";
+    color: #888;
+    font-style: italic;
+    padding: 2px 0 2px 8px;
+    border-radius: 4px;
+    background-color: #dbe4f2 !important;
+}
+.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeAudio"]::before,
+.protyle-wysiwyg .li [data-node-id][fold="1"][data-type="NodeAudio"] div:first-child:before{
+    content: "Audio ...";
+    color: #888;
+    font-style: italic;
+    padding: 0 0 2px 8px;
+    border-radius: 4px;
+    background-color: #dbe4f2 !important;
+}
+.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="mindmap"]::before,
+.protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="mindmap"] div:first-child:before{
+    content: "Mindmap ...";
+    color: #888;
+    font-style: italic;
+    padding: 2px 0 2px 8px;
+    border-radius: 4px;
+    background-color: #dbe4f2 !important;
+}
+.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="mermaid"]::before,
+.protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="mermaid"] div:first-child:before{
+    content: "Mermaid ...";
+    color: #888;
+    font-style: italic;
+    padding: 2px 0 2px 8px;
+    border-radius: 4px;
+    background-color: #dbe4f2 !important;
+}
+.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="mermaid"][data-content^="gantt"]::before,
+.protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="mermaid"][data-content^="gantt"] div:first-child:before {
+    content: "Gannt ...";
+    color: #888;
+    font-style: italic;
+    padding: 2px 0 2px 8px;
+    border-radius: 4px;
+    background-color: #dbe4f2 !important;
+}
+.protyle-wysiwyg [data-node-id][fold="1"].p .img::before{
+    content: "Image ...";
+    color: #888;
+    font-style: italic;
+    padding: 2px 0 2px 8px;
+    border-radius: 4px;
+    background-color: #dbe4f2 !important;
+}
+.protyle-wysiwyg [data-node-id][fold="1"].p::before {
+    content: "Paragraph ";
+    color: #888;
+    font-style: italic;
+    padding: 0 0 2px 8px;
+    border-radius: 4px;
+    background-color: #dbe4f2 !important;
+}
+.protyle-wysiwyg .li [data-node-id][fold="1"].p::before {
+    content: "";
+}
+/* 嵌入块折叠 */
+.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeBlockQueryEmbed"]::before {
+    content: "SQL Block ...";
+    color: #888;
+    font-style: italic;
+    padding: 0;
+}
+.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeBlockQueryEmbed"] {
+    height: 28px !important;
+}
+/* 引述块折叠 */
+.protyle-wysiwyg [data-node-id][fold="1"]:not(.li).bq {
+    height: 32px;
+    border-radius: 4px;
+    background-color: #dbe4f2 !important;
+    border-left: none;
+}
+.protyle-wysiwyg [data-node-id][fold="1"].bq:before {
+    content: "Quote ...";
+    color: #888;
+    font-style: italic;
+}
+
+/* 代码块折叠 */
+.protyle-wysiwyg [data-node-id][fold="1"]:not(.li).code-block {
+    border-radius: 4px;
+    padding-top: 32px !important;
+    line-height: 1.625;
+    height: 1px;
+    opacity: 1 !important;
+    font-size: inherit !important;
+    overflow: visible !important;
+    background-color: #dbe4f2 !important;
+}
+
+.protyle-wysiwyg [data-node-id][fold="1"]:not(.li).code-block .hljs,
+.protyle-wysiwyg [data-node-id][fold="1"]:not(.li).code-block .protyle-linenumber__rows{
+    overflow: hidden !important;
+    display: none;
+}
+
+.protyle-wysiwyg [data-node-id][fold="1"]:not(.li).code-block .protyle-icons{
+    opacity: 1;
+    background-color: #bbb;
+}
+
+.protyle-wysiwyg [data-node-id][fold="1"]:not(.li).code-block::before{
+    content: 'Code ...'; 
+    color: #888;
+    font-style: italic;
+    position: absolute;
+    top: 2px;
+    left: 10px;
+    z-index: 1;
+}
+
+/* 超级块折叠 */ /*
+.protyle-wysiwyg [data-node-id][fold="1"]:not(.li).sb {
+    opacity: 1;
+    background-color: #dbe4f2 !important;
+}
+.protyle-wysiwyg [data-node-id][fold="1"]:not(.li).sb::before {
+   content: 'Super Block';
+    color: #888;
+    padding: 0 0 0 8px;
+} */
 
 /* 有序列表数字背景 */
 .protyle-wysiwyg [data-node-id].li>.protyle-action:after {
@@ -509,7 +787,6 @@ span[data-type="virtual-block-ref"]{
 .protyle-wysiwyg [data-node-id] span[data-type="a"],
 span[data-type="a"]{
     border-bottom: 0 !important;
-    font-family: var(--b3-font-family);
     font-weight: 400 !important;
 }
 
@@ -526,10 +803,10 @@ div[data-type="NodeParagraph"] span[data-type="a"]:before{
 
 /*标签*/
 .protyle-wysiwyg [data-node-id] span[data-type="tag"]{
-    font-size: 96%;
+    font-size: 15px;
     font-family: var(--b3-font-family);
     font-weight: 400 !important;
-    padding: 2px 3px 1px 3px;
+    padding: 0 3px 0 3px;
     border-radius: 5px;
     border: 0 !important;
     background: #6b9ac9;
@@ -568,17 +845,241 @@ div[data-type="NodeParagraph"] span[data-type="a"]:before{
     color: #333;
 }
 
-/*超级块*/
-.protyle-wysiwyg [data-node-id].sb [data-type="NodeParagraph"]{
-    padding: 0 0 0 15px;
+/* 一级超级块 */
+.protyle-wysiwyg [data-node-id].sb[data-sb-layout="col"]{
+    display: flex;
+    flex-wrap: wrap;
+    font-family: var(--b3-font-family);
+    font-weight: 400;
+    font-size: 88%;
+    text-align: justify;
 }
 
+.protyle-wysiwyg [data-node-id].sb[data-sb-layout="row"]{
+    border: 0.1em dashed #fff !important;
+    border-radius: 6px !important;
+    margin-right: 5px !important;
+}
+
+.protyle-wysiwyg [data-node-id].sb[data-sb-layout="row"]:last-of-type{
+    margin-right: 0 !important;
+}
+
+/* 二级超级块 */
+.protyle-wysiwyg [data-node-id].sb[data-sb-layout="col"] .sb {
+    border: 0.1em dashed transparent;
+    border-radius: 0px;
+    box-sizing: border-box;
+    margin: 0.1em 0 0.1em 0.1em;
+}
+.protyle-wysiwyg [data-node-id].sb[data-sb-layout="col"] .sb:nth-last-child(2) {
+    margin-right: 0.1em;
+}
+/* 子超级块 */
+.protyle-wysiwyg [data-node-id].sb[data-sb-layout="col"]>div {
+    border: 0.1em dashed transparent;
+    border-radius: 0px;
+    box-sizing: border-box;
+    margin: 0.1em 0 0.1em 0.1em;
+    background-color: #fff;
+}
+.protyle-wysiwyg [data-node-id].sb[data-sb-layout="col"]>div:nth-last-child(2) {
+    margin-right: 0.1em;
+}
+
+/*四种卡片样式背景*/
+.protyle-wysiwyg [style*="-card-"] {
+    font-family: var(--b3-font-family);
+    font-size: 90%;
+}
+
+/*表格边线、背景*/
 .protyle-wysiwyg table thead tr {
-    background-color: #ddd !important;
+    background-color: #eee !important;
 }
 
-.protyle-wysiwyg table tbody tr {
+.protyle-wysiwyg table tbody {
+    border: 0.05em solid #888 !important;
+}
 
+.protyle-wysiwyg table {
+    border: 0.05em solid #888 !important;
+    display: table;
+}
+
+.protyle-wysiwyg table th,
+.protyle-wysiwyg table tr,
+.protyle-wysiwyg table thead tr,
+.protyle-wysiwyg table tbody tr,
+.protyle-wysiwyg table tbody td {
+    border: 0.05em solid #888 !important;
+}
+
+/* 块图标外观菜单 */
+.b3-menu__submenu{
+    column-count: 3;
+    column-gap: 5px;
+    max-height: 360px !important;
+    border: 0.05em solid #555;
+    padding: 2px 4px 0 4px;
+}
+
+/* 块图标外观菜单隐藏分割线 */
+.b3-menu__submenu .b3-menu__separator {
+    display: none;
+}
+
+/*块图标外观菜单镂空投影*/
+.b3-menu__submenu .b3-menu__item:nth-of-type(6),
+.b3-menu__submenu .b3-menu__item:nth-of-type(7) {
+    -webkit-text-fill-color: transparent !important;
+    -webkit-text-stroke: 0 !important;
+    text-shadow: none !important;
+}
+
+/*块图标外观菜单楷体*/
+.b3-menu__submenu .b3-menu__item:nth-of-type(6) .b3-menu__label:before {
+    content: "🄰 楷体";
+    font-family: "Charis SIL", FZKai-Z03, Kai, SimKai, STKaiti, serif;
+    -webkit-text-fill-color: #333 !important;
+    font-weight: normal;
+    font-size: 108%;
+    padding: 0;
+}
+
+/*块图标外观菜单仿宋*/
+.b3-menu__submenu .b3-menu__item:nth-of-type(7) .b3-menu__label:before {
+    content: "🄰 仿宋";
+    font-family: "Charis SIL", FZFangSong-Z02, Fangsong, serif;
+    -webkit-text-fill-color: #333 !important;
+    text-shadow: none !important;
+    font-size: 108%;
+    padding: 0;
+}
+
+.b3-menu__submenu .b3-menu__item:nth-of-type(6)  .fn__flex,
+.b3-menu__submenu .b3-menu__item:nth-of-type(7)  .fn__flex,
+.b3-menu__submenu .b3-menu__item:nth-of-type(6)  .b3-menu__icon,
+.b3-menu__submenu .b3-menu__item:nth-of-type(7)  .b3-menu__icon {
+    display: none;
+}
+
+/*外观菜单设置内容块楷体*/
+.protyle-wysiwyg [data-node-id][style$="transparent;"] {
+    font-family: "Charis SIL", FZKai-Z03, Kai, SimKai, STKaiti, serif !important;
+    font-size: 108%;
+    -webkit-text-stroke: 0 !important;
+    -webkit-text-fill-color: inherit !important;
+    text-shadow: none !important;
+}
+
+.protyle-wysiwyg [data-node-id][style$="var(--b3-border-color);"] {
+    font-family: "Charis SIL", FZFangSong-Z02, Fangsong, serif !important;
+    font-size: 108%;
+    -webkit-text-stroke: 0 !important;
+    -webkit-text-fill-color: inherit !important;
+    text-shadow: none !important;
+}
+
+.protyle-wysiwyg [data-node-id][style$=");"] {
+    font-family: "Charis SIL", FZFangSong-Z02, Fangsong, serif !important;
+    font-size: 108%;
+    -webkit-text-stroke: 0 !important;
+    -webkit-text-fill-color: inherit !important;
+    text-shadow: none !important;
+}
+
+/* 按/弹出菜单 */
+.b3-menu.b3-list.b3-list--background {
+    column-count: 4;
+    column-gap: 5px;
+    min-width: 50vw !important;
+    max-height: 280px !important;
+    border: 0.05em solid #fff;
+    padding: 2px 4px 0 4px;
+}
+
+.b3-list-item__first .b3-list-item__meta {
+    color: var(--b3-theme-on-surface);
+}
+
+/* 隐藏分割线及插入五线谱 */
+.b3-list-item--two+.b3-menu__separator,
+.b3-list-item--two[data-value="%60%60%60abc%0A%60%60%60"] {
+    display: none;
+}
+
+/* 隐藏最底一行下划虚线 */
+.b3-list-item.b3-list-item--two[data-value="italic"], 
+.b3-list-item.b3-list-item--two[data-value="style%E2%80%8B"], 
+.b3-list-item.b3-list-item--two[data-value="%23%23%23%23%23%23%20%E2%80%B8"], 
+.b3-list-item.b3-list-item--two[data-value="%3Cvideo%20controls%3D%22controls%22%20src%3D%22%22%3E%3C%2Fvideo%3E"] {
+    border-bottom: none !important;
+}
+
+/*浮动工具条镂空*/
+.protyle-wysiwyg strong[style*="text-fill-color"] {
+    font-family: "Charis SIL", FZKai-Z03, Kai, SimKai, STKaiti, serif;
+    -webkit-text-stroke: 0 !important;
+    -webkit-text-fill-color: inherit !important;
+    font-weight: normal;
+    font-size: 108%;
+}
+
+/*浮动工具条投影*/
+.protyle-wysiwyg strong[style*="text-shadow"]  {
+    font-family: "Charis SIL", FZFangSong-Z02, Fangsong, serif;
+    text-shadow: none !important;
+    font-weight: normal;
+    font-size: 102%;
+}
+
+/*楷体浮动工具条*/
+button[data-type="style2"]:before {
+    content: "楷体";
+    font-family: "Charis SIL", FZKai-Z03, Kai, SimKai, STKaiti, serif;
+    -webkit-text-fill-color: #000 !important;
+    font-weight: normal;
+    font-size: 108%;
+    margin: 0;
+    padding: 0;
+}
+
+/*仿宋浮动工具条*/
+button[data-type="style4"]:before {
+    content: "仿宋";
+    font-family: "Charis SIL", FZFangSong-Z02, Fangsong, serif;
+    text-shadow: none !important;
+    font-size: 108% !important;
+    margin: 0 0 0 -20px;
+    padding: 0;
+    -webkit-text-fill-color: #000 !important;
+}
+
+button[data-type="style2"], 
+button[data-type="style4"]{
+    -webkit-text-fill-color: transparent !important;
+    -webkit-text-stroke: 0 !important;
+    text-shadow: none !important;
+}
+
+/*  去除字体效果边框 */
+.protyle-font__style {
+    border: none !important;
+}
+
+/*内容块、页面块自定义楷体*/
+.protyle-wysiwyg[custom-zt="kt"],
+.protyle-wysiwyg [custom-zt="kt"] {
+    font-family: "Charis SIL", FZKai-Z03, Kai, SimKai, STKaiti, serif;
+    font-size: 108%;
+}
+
+/*内容块、页面块自定义仿宋*/
+.protyle-wysiwyg[custom-zt="fs"],
+.protyle-wysiwyg [custom-zt="fs"] {
+    font-family: "Charis SIL", FZFangSong-Z02, Fangsong, serif;
+    font-size: 108%;
 }
 
 /*浮动窗口文档路径, 以下均与鼠标浮窗相关*/
@@ -693,7 +1194,7 @@ strong[style*="color9"] {
 .block__popover .protyle-breadcrumb,
 .block__popover .protyle-wysiwyg,
 .block__popover .protyle-wysiwyg--attr {
-    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif !important;
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif;
     font-size: 13px !important;
     font-weight: normal !important;
     padding: 0 25px 0 25px !important;
@@ -851,3 +1352,43 @@ strong[style*="color9"] {
     display: none !important;
 }
 
+
+/* 自定义属性，列表转化为表格 */
+/* 对所有子列表项设置格式*/
+.protyle-wysiwyg [custom-f="bg"] .li{
+   display: flex;
+   outline: thin solid #888;
+}
+.protyle-wysiwyg [custom-f="bg"] .li .list{
+   padding: 0;
+   margin: 0;
+   width: 100%;
+   outline: thin solid #888;
+}
+.protyle-wysiwyg [custom-f="bg"] [data-node-id].li>[data-node-id] {
+    margin-left: 0 !important;
+}
+/* 对符号后文字设置格式 */
+.protyle-wysiwyg [custom-f="bg"] .p {
+   text-align: left;
+   align-items: center;
+   display: flex;
+   min-width: 100px;
+   margin: 0;
+}
+.protyle-wysiwyg [custom-f="bg"] .li>.list>.li {
+   outline: none !important;
+   border-top: thin solid #888;
+}
+.protyle-wysiwyg [custom-f="bg"] .li>.list>.li:first-of-type {
+   border-top: none !important;
+}
+/* 去除小竖线 */
+.list[data-node-id][data-type="NodeList"][custom-f="bg"] .li>:before{
+   display: none ;
+}
+/* 设置前面的符号居中对齐 */
+.list[data-node-id][data-type="NodeList"][custom-f="bg"] .protyle-action {
+   display: none;
+}
+/* 自定义属性，列表转化为表格 END */
