@@ -20,7 +20,7 @@
 
 正文英文衬线字体：Charis SIL，英文字符、音标显示较好
 
-正文中文衬线字体（除标记类文字）：方正悠宋GBK / FZYouSong GBK（多个字号建议全装）
+正文中文衬线字体（除标记类文字）：方正悠宋GBK / FZYouSong GBK 505L（多个字号建议全装）
 
 标题中文衬线字体：方正准雅宋GBK / FZYaSong-M-GBK
 

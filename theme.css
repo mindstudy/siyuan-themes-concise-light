@@ -314,7 +314,7 @@ li[data-type="toggle"] .b3-list-item__text {
 
 /* 文档正文 */
 .protyle-content .protyle-wysiwyg {
-    font-family: "Charis SIL", FZYouSong GBK, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif;
+    font-family: "Charis SIL", "FZYouSong GBK 505L", "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif;
     font-size: 18px !important;
     cursor: default;
 }
