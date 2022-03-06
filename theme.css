@@ -2,7 +2,7 @@
 
 :root {
     /* 主色 */
-    --b3-theme-primary: #4285f4;
+    --b3-theme-primary: #aaa;
     --b3-theme-primary-light: rgba(66, 133, 244, 0.54);
     --b3-theme-primary-lighter: rgba(66, 133, 244, 0.38);
     --b3-theme-primary-lightest: rgba(66, 133, 244, 0.12);
@@ -314,7 +314,7 @@ li[data-type="toggle"] .b3-list-item__text {
 
 /* 文档正文 */
 .protyle-content .protyle-wysiwyg {
-    font-family: "Charis SIL", "FZYouSong GBK 505L", "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif;
+    font-family: "Charis SIL", "FZYouSong GBK 506L", "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif;
     font-size: 18px !important;
     cursor: default;
 }
@@ -923,7 +923,7 @@ div[data-type="NodeParagraph"] span[data-type="a"]:before{
 }
 
 /* 块图标外观菜单 */
-.b3-menu__submenu{
+#commonMenu .b3-menu__item:nth-of-type(13) .b3-menu__submenu{
     column-count: 3;
     column-gap: 5px;
     max-height: 360px !important;
@@ -932,20 +932,20 @@ div[data-type="NodeParagraph"] span[data-type="a"]:before{
 }
 
 /* 块图标外观菜单隐藏分割线 */
-.b3-menu__submenu .b3-menu__separator {
+#commonMenu .b3-menu__item:nth-of-type(13) .b3-menu__submenu .b3-menu__separator {
     display: none;
 }
 
 /*块图标外观菜单镂空投影*/
-.b3-menu__submenu .b3-menu__item:nth-of-type(6),
-.b3-menu__submenu .b3-menu__item:nth-of-type(7) {
+#commonMenu .b3-menu__item:nth-of-type(13) .b3-menu__submenu .b3-menu__item:nth-of-type(6),
+#commonMenu .b3-menu__item:nth-of-type(13) .b3-menu__submenu .b3-menu__item:nth-of-type(7) {
     -webkit-text-fill-color: transparent !important;
     -webkit-text-stroke: 0 !important;
     text-shadow: none !important;
 }
 
 /*块图标外观菜单楷体*/
-.b3-menu__submenu .b3-menu__item:nth-of-type(6) .b3-menu__label:before {
+#commonMenu .b3-menu__item:nth-of-type(13) .b3-menu__submenu .b3-menu__item:nth-of-type(6) .b3-menu__label:before {
     content: "🄰 楷体";
     font-family: "Charis SIL", FZKai-Z03, Kai, SimKai, STKaiti, serif;
     -webkit-text-fill-color: #333 !important;
@@ -955,7 +955,7 @@ div[data-type="NodeParagraph"] span[data-type="a"]:before{
 }
 
 /*块图标外观菜单仿宋*/
-.b3-menu__submenu .b3-menu__item:nth-of-type(7) .b3-menu__label:before {
+#commonMenu .b3-menu__item:nth-of-type(13) .b3-menu__submenu .b3-menu__item:nth-of-type(7) .b3-menu__label:before {
     content: "🄰 仿宋";
     font-family: "Charis SIL", FZFangSong-Z02, Fangsong, serif;
     -webkit-text-fill-color: #333 !important;
@@ -964,10 +964,10 @@ div[data-type="NodeParagraph"] span[data-type="a"]:before{
     padding: 0;
 }
 
-.b3-menu__submenu .b3-menu__item:nth-of-type(6)  .fn__flex,
-.b3-menu__submenu .b3-menu__item:nth-of-type(7)  .fn__flex,
-.b3-menu__submenu .b3-menu__item:nth-of-type(6)  .b3-menu__icon,
-.b3-menu__submenu .b3-menu__item:nth-of-type(7)  .b3-menu__icon {
+#commonMenu .b3-menu__item:nth-of-type(13) .b3-menu__submenu .b3-menu__item:nth-of-type(6)  .fn__flex,
+#commonMenu .b3-menu__item:nth-of-type(13) .b3-menu__submenu .b3-menu__item:nth-of-type(7)  .fn__flex,
+#commonMenu .b3-menu__item:nth-of-type(13) .b3-menu__submenu .b3-menu__item:nth-of-type(6)  .b3-menu__icon,
+#commonMenu .b3-menu__item:nth-of-type(13) .b3-menu__submenu .b3-menu__item:nth-of-type(7)  .b3-menu__icon {
     display: none;
 }
 
@@ -1357,6 +1357,11 @@ strong[style*="color9"] {
 /* 隐藏文档树 emoji 图标修改面板 */
 #commonMenu .emojis{
     display: none !important;
+}
+
+/* 面板拖动 */
+.layout__resize:hover:after {
+    background-color: #ccc;
 }
 
 
