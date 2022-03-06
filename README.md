@@ -15,7 +15,6 @@
 * 隐藏一些界面元素，并优化细节
 * 配合快捷键使用，缓解鼠标手
 * 界面简明，适于沉浸专注
-* 
 
 ## 字体
 
@@ -25,7 +24,7 @@
 
 标题中文衬线字体：方正准雅宋GBK / FZYaSong-M-GBK
 
-未安装上述衬线字体是，界面显示为无衬线字体（黑体）
+未安装上述衬线字体时，界面显示为无衬线字体（黑体）
 
 正文标记类文字、其他界面：无衬线字体（黑体）顺序为苹方、雅黑等
 
@@ -37,13 +36,11 @@
 
 字体网站：https://www.qiuziti.com
 
-
-
 ## 说明
 
 ### 挖空
 
-本主题将删除线设置为挖空复习效果，如不需要，请用 EmEditor/Vscode 等文本编辑器打开
+本主题将删除线设置为挖空复习效果，如不需要，请用 EmEditor/Vscode 等文本编辑器打开。
 
 Siyuan/conf/appearance/themes/Concise Lght/theme.css，搜索“挖空”，删除下面的语句：
 
@@ -75,7 +72,9 @@ Siyuan/conf/appearance/themes/Concise Lght/theme.css，搜索“emoji”，删�
 }
 ```
 
+### 镂空/投影
 
+本主题将镂空修改为楷体，投影修改为仿宋。
 
 ### 自定义属性
 
@@ -85,7 +84,7 @@ Siyuan/conf/appearance/themes/Concise Lght/theme.css，搜索“emoji”，删�
 | z      | kt     | 整块/整页转换为楷体 |
 | z      | fs     | 整块/整页转换为仿宋 |
 
-
+注意列表块转换为表格功能在左边表格内容较多时会有撑开现象，另外在不同的电脑上可以会出现边线变粗情况，请酌情使用。
 
 ## 快捷键
 

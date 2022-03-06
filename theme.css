@@ -665,15 +665,22 @@ code {
 }
 /* 引述块折叠 */
 .protyle-wysiwyg [data-node-id][fold="1"]:not(.li).bq {
-    height: 32px;
+    height: 26px;
     border-radius: 4px;
     background-color: #dbe4f2 !important;
     border-left: none;
+    color: transparent;
 }
 .protyle-wysiwyg [data-node-id][fold="1"].bq:before {
     content: "Quote ...";
     color: #888;
-    font-style: italic;
+   font-style: italic;
+    background-color: #dbe4f2 !important;
+    padding: 0 18px 0.06em 0;
+    position: absolute;
+    top: 2px;
+    left: 10px;
+    z-index: 1;
 }
 
 /* 代码块折叠 */
@@ -1069,15 +1076,15 @@ button[data-type="style4"]{
 }
 
 /*内容块、页面块自定义楷体*/
-.protyle-wysiwyg[custom-zt="kt"],
-.protyle-wysiwyg [custom-zt="kt"] {
+.protyle-wysiwyg[custom-z="kt"],
+.protyle-wysiwyg [custom-z="kt"] {
     font-family: "Charis SIL", FZKai-Z03, Kai, SimKai, STKaiti, serif;
     font-size: 108%;
 }
 
 /*内容块、页面块自定义仿宋*/
-.protyle-wysiwyg[custom-zt="fs"],
-.protyle-wysiwyg [custom-zt="fs"] {
+.protyle-wysiwyg[custom-z="fs"],
+.protyle-wysiwyg [custom-z="fs"] {
     font-family: "Charis SIL", FZFangSong-Z02, Fangsong, serif;
     font-size: 108%;
 }
