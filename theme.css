@@ -2,7 +2,7 @@
 
 :root {
     /* 主色 */
-    --b3-theme-primary: #aaa;
+    --b3-theme-primary: #4285f4;
     --b3-theme-primary-light: rgba(66, 133, 244, 0.54);
     --b3-theme-primary-lighter: rgba(66, 133, 244, 0.38);
     --b3-theme-primary-lightest: rgba(66, 133, 244, 0.12);
@@ -360,7 +360,7 @@ mark {
     display: inline-block; 
     font-weight: 400;
     height: 16px;
-    line-height: 18px;
+    line-height: 16px;
 }
 
 /* 修改高亮为挖空效果*/
@@ -475,13 +475,13 @@ code {
     margin-top: 0;
 }
 
-.protyle-wysiwyg [data-node-id][fold="1"]:not(.li) div[contenteditable="true"]:after {
+.protyle-wysiwyg [data-type="NodeList"][fold="1"]:not(.li) div[contenteditable="true"]:after,
+.protyle-wysiwyg [data-type="NodeHeading"][fold="1"]:not(.li) div[contenteditable="true"]:after {
     content: " ...";
-    font-size: 60%;
     color: #d62525;
 }
 
-.protyle-wysiwyg [data-node-id].li[fold="1"]>div:nth-child(2)::after {
+.protyle-wysiwyg [data-type="NodeListItem"].li[fold="1"]>div:nth-child(2)::after {
     content: " ...";
     color: #d62525;
 }
@@ -669,7 +669,7 @@ code {
     border-radius: 4px;
     background-color: #dbe4f2 !important;
     border-left: none;
-    color: transparent;
+    color: transparent !important;
 }
 .protyle-wysiwyg [data-node-id][fold="1"].bq:before {
     content: "Quote ...";
@@ -681,6 +681,9 @@ code {
     top: 2px;
     left: 10px;
     z-index: 1;
+}
+.protyle-wysiwyg [data-node-id][fold="1"].bq code:not(.hljs) {
+    background-color: transparent !important;
 }
 
 /* 代码块折叠 */
@@ -716,16 +719,14 @@ code {
     z-index: 1;
 }
 
-/* 超级块折叠 */ /*
+/* 超级块折叠 */
 .protyle-wysiwyg [data-node-id][fold="1"]:not(.li).sb {
     opacity: 1;
+    font-size: 88% !important;
+    height: 2.5em !important;
+    padding-bottom: 5px;
     background-color: #dbe4f2 !important;
 }
-.protyle-wysiwyg [data-node-id][fold="1"]:not(.li).sb::before {
-   content: 'Super Block';
-    color: #888;
-    padding: 0 0 0 8px;
-} */
 
 /* 有序列表数字背景 */
 .protyle-wysiwyg [data-node-id].li>.protyle-action:after {
@@ -846,7 +847,6 @@ div[data-type="NodeParagraph"] span[data-type="a"]:before{
     background-color: transparent;
     padding: 5px 10px;
 }
-
 .protyle-wysiwyg .protyle-wysiwyg__embed div {
     background-color: #eff0f1 !important;
     color: #333;
@@ -861,37 +861,27 @@ div[data-type="NodeParagraph"] span[data-type="a"]:before{
     font-size: 88%;
     text-align: justify;
 }
-
 .protyle-wysiwyg [data-node-id].sb[data-sb-layout="row"]{
     border: 0.1em dashed #fff !important;
     border-radius: 6px !important;
     margin-right: 5px !important;
+    padding: 0 3px;
 }
-
 .protyle-wysiwyg [data-node-id].sb[data-sb-layout="row"]:last-of-type{
     margin-right: 0 !important;
 }
-
 /* 二级超级块 */
 .protyle-wysiwyg [data-node-id].sb[data-sb-layout="col"] .sb {
     border: 0.1em dashed transparent;
     border-radius: 0px;
     box-sizing: border-box;
-    margin: 0.1em 0 0.1em 0.1em;
-}
-.protyle-wysiwyg [data-node-id].sb[data-sb-layout="col"] .sb:nth-last-child(2) {
-    margin-right: 0.1em;
 }
 /* 子超级块 */
 .protyle-wysiwyg [data-node-id].sb[data-sb-layout="col"]>div {
     border: 0.1em dashed transparent;
     border-radius: 0px;
     box-sizing: border-box;
-    margin: 0.1em 0 0.1em 0.1em;
     background-color: #fff;
-}
-.protyle-wysiwyg [data-node-id].sb[data-sb-layout="col"]>div:nth-last-child(2) {
-    margin-right: 0.1em;
 }
 
 /*四种卡片样式背景*/
@@ -996,7 +986,7 @@ div[data-type="NodeParagraph"] span[data-type="a"]:before{
     text-shadow: none !important;
 }
 
-/* 按/弹出菜单 */
+/* 按/弹出菜单 */ /*
 .b3-menu.b3-list.b3-list--background {
     column-count: 4;
     column-gap: 5px;
@@ -1004,7 +994,7 @@ div[data-type="NodeParagraph"] span[data-type="a"]:before{
     max-height: 280px !important;
     border: 0.05em solid #fff;
     padding: 2px 4px 0 4px;
-}
+} */
 
 .b3-list-item__first .b3-list-item__meta {
     color: var(--b3-theme-on-surface);
@@ -1022,6 +1012,11 @@ div[data-type="NodeParagraph"] span[data-type="a"]:before{
 .b3-list-item.b3-list-item--two[data-value="%23%23%23%23%23%23%20%E2%80%B8"], 
 .b3-list-item.b3-list-item--two[data-value="%3Cvideo%20controls%3D%22controls%22%20src%3D%22%22%3E%3C%2Fvideo%3E"] {
     border-bottom: none !important;
+}
+
+/*浮动工具条高亮*/
+.protyle-toolbar__item--current {
+    color: #b88 !important;
 }
 
 /*浮动工具条镂空*/
@@ -1193,7 +1188,16 @@ strong[style*="color5"],
 strong[style*="color6"],
 strong[style*="color7"],
 strong[style*="color8"],
-strong[style*="color9"] {
+strong[style*="color9"],
+strong[style*="background1"],
+strong[style*="background2"],
+strong[style*="background3"],
+strong[style*="background4"],
+strong[style*="background5"],
+strong[style*="background6"],
+strong[style*="background7"],
+strong[style*="background8"],
+strong[style*="background9"] {
     font-weight: 500 !important;
 }
 
@@ -1362,6 +1366,10 @@ strong[style*="color9"] {
 /* 面板拖动 */
 .layout__resize:hover:after {
     background-color: #ccc;
+}
+
+.b3-slider::-webkit-slider-thumb {
+    background-color: #aaa;
 }
 
 
