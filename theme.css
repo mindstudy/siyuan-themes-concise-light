@@ -1122,6 +1122,11 @@ button .b3-list-item__meta mark {
     color: #aaa;
 }
 
+/* 按/弹出菜单隐藏分割线*/
+.b3-list-item--two+.b3-menu__separator {
+    display: none;
+}
+
 /* 字体设置面板 */
 .protyle-util {
     background-color: #eee !important;
