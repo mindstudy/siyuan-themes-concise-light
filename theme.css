@@ -986,34 +986,6 @@ div[data-type="NodeParagraph"] span[data-type="a"]:before{
     text-shadow: none !important;
 }
 
-/* 按/弹出菜单 */ /*
-.b3-menu.b3-list.b3-list--background {
-    column-count: 4;
-    column-gap: 5px;
-    min-width: 50vw !important;
-    max-height: 280px !important;
-    border: 0.05em solid #fff;
-    padding: 2px 4px 0 4px;
-} */
-
-.b3-list-item__first .b3-list-item__meta {
-    color: var(--b3-theme-on-surface);
-}
-
-/* 隐藏分割线及插入五线谱 */
-.b3-list-item--two+.b3-menu__separator,
-.b3-list-item--two[data-value="%60%60%60abc%0A%60%60%60"] {
-    display: none;
-}
-
-/* 隐藏最底一行下划虚线 */
-.b3-list-item.b3-list-item--two[data-value="italic"], 
-.b3-list-item.b3-list-item--two[data-value="style%E2%80%8B"], 
-.b3-list-item.b3-list-item--two[data-value="%23%23%23%23%23%23%20%E2%80%B8"], 
-.b3-list-item.b3-list-item--two[data-value="%3Cvideo%20controls%3D%22controls%22%20src%3D%22%22%3E%3C%2Fvideo%3E"] {
-    border-bottom: none !important;
-}
-
 /*浮动工具条高亮*/
 .protyle-toolbar__item--current {
     color: #b88 !important;
@@ -1242,33 +1214,6 @@ strong[style*="background9"] {
     font-size: 13px !important;
     color: #eee !important;
 }
-
-/*鼠标浮窗增加提示*/
-/*
-.block__popover .block__icons::after {
-    content: "引用块：";
-    color: #999;
-    font-size: 13px;
-    margin: 3px 0 0 15px;
-    padding: 0 0 6px 0;
-    display: inline-block;
-    float: left;
-}
-
-.block__popover[style*="left: 51"] .block__icons::after,
-.block__popover[style*="left: 21"] .block__icons::after  {
-    content: "反向链接：";
-}
-*/
-
-/*鼠标浮窗子元素特征属性*/
-/*
-.block__popover span[data-type="block-ref"]::after {
-}
-
-.block__popover .protyle-attr--refcount::after {
-}
-*/
 
 /*浮窗超链接/网址*/
 .block__popover span[data-type="a"]:before{
