@@ -1063,6 +1063,13 @@ button[data-type="style4"]{
     border: none !important;
 }
 
+/*内容块、页面块自定义黑体*/
+.protyle-wysiwyg[custom-z="ht"],
+.protyle-wysiwyg [custom-z="ht"] {
+    font-family: var(--b3-font-family);
+    font-size: 17px;
+}
+
 /*内容块、页面块自定义楷体*/
 .protyle-wysiwyg[custom-z="kt"],
 .protyle-wysiwyg [custom-z="kt"] {
