@@ -450,8 +450,7 @@ code {
 .protyle-content .protyle-wysiwyg .h1[fold="1"] {
     font-size: 1.5em !important;
     font-weight: normal;
-    line-height: 1.25;
-    height: 32px;
+    line-height: 1.5;
     font-family: "Charis SIL", FZYaSong-M-GBK, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif;
 }
 
@@ -459,8 +458,7 @@ code {
 .protyle-content .protyle-wysiwyg .h2[fold="1"] {
     font-size: 1.4em !important;
     font-weight: normal;
-    line-height: 1.25;
-    height: 32px;
+    line-height: 1.5;
     font-family: "Charis SIL", FZYaSong-M-GBK, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif;
 }
 
@@ -468,8 +466,7 @@ code {
 .protyle-content .protyle-wysiwyg .h3[fold="1"] {
     font-size: 1.3em !important;
     font-weight: normal;
-    line-height: 1.25;
-    height: 32px;
+    line-height: 1.5;
     font-family: "Charis SIL", FZYaSong-M-GBK, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif;
 }
 
@@ -477,7 +474,7 @@ code {
 .protyle-content .protyle-wysiwyg .h4[fold="1"] {
     font-size: 1.2em !important;
     font-weight: normal;
-    line-height: 1.25;
+    line-height: 1.5;
     font-family: "Charis SIL", FZYaSong-M-GBK, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif;
 }
 
@@ -485,7 +482,7 @@ code {
 .protyle-content .protyle-wysiwyg .h5[fold="1"] {
     font-size: 1.1em !important;
     font-weight: normal;
-    line-height: 1.25;
+    line-height: 1.5;
     font-family: "Charis SIL", FZYaSong-M-GBK, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif;
 }
 
@@ -493,7 +490,7 @@ code {
 .protyle-content .protyle-wysiwyg .h6[fold="1"] {
     font-size: 1em !important;
     font-weight: normal;
-    line-height: 1.25;
+    line-height: 1.5;
     font-family: "Charis SIL", FZYaSong-M-GBK, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif;
 }
 
