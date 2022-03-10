@@ -264,7 +264,6 @@ li[class~="item--focus"] {
 .item__close {
     opacity: 10%;
 }
-
 .item__close:hover {
     opacity: 88%;
 }
@@ -313,7 +312,7 @@ li[data-type="toggle"] .b3-list-item__text {
 
 /* 文档正文 */
 .protyle-content .protyle-wysiwyg {
-    font-family: "Charis SIL", "Gentium Plus", KaTeX_Main, "Gentium Plus", "FZYouSong GBK 506L", "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif;
+    font-family: "Charis SIL", "Gentium Plus", "FZYouSongJ GBK 506L",  "FZYouSong GBK 506L", "Gentium Plus", "FZYouSong GBK 506L", "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif;
     font-size: 18px !important;
     cursor: default;
 }
@@ -431,6 +430,48 @@ code {
     font-weight: 400 !important;
 }
 
+/* 待办列表 */
+.protyle-action--task svg use {
+    opacity: 0;
+}
+[data-subtype="t"][data-node-id].li>[data-node-id] {
+margin: 0 0 0 20px !important;
+}
+.protyle-action--task::before {
+content: "";
+display: inline-block;
+position: absolute;
+width: 15px;
+height: 15px;
+left: 0;
+top:10px;
+border: 1px solid #cccccc;
+border-radius: 50%;
+background-color: #fefefe;
+transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+.protyle-task--done .protyle-action--task::before {
+background-color: #84cde4;
+border-color: #84cde4;
+}
+.protyle-task--done .protyle-action--task::after {
+font-family: "Font Awesome 6 Free Solid", "Font Awesome 6 Free Regular", "Font Awesome 6 Brands Regular";
+content: "\f00c" !important;
+display: inline-block;
+position: absolute;
+width: 15px !important;
+height: 15px !important;
+left: 12px !important;
+top: 10px !important;
+font-size: 11px;
+color: #fff;
+box-sizing: border-box;
+}
+[data-subtype="t"] [data-type="NodeParagraph"]{
+    font-family: var(--b3-font-family);
+    font-size: 17px;
+}
+
 /* 折叠字号统一 */
 .protyle-wysiwyg [data-node-id][fold="1"]:not(.li) {
     font-size: 18px !important;
@@ -449,49 +490,42 @@ code {
 .protyle-content .protyle-wysiwyg .h1,
 .protyle-content .protyle-wysiwyg .h1[fold="1"] {
     font-size: 1.5em !important;
-    font-weight: normal;
-    line-height: 1.5;
-    font-family: "Charis SIL", FZYaSong-M-GBK, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif;
 }
-
 .protyle-content .protyle-wysiwyg .h2,
 .protyle-content .protyle-wysiwyg .h2[fold="1"] {
     font-size: 1.4em !important;
-    font-weight: normal;
-    line-height: 1.5;
-    font-family: "Charis SIL", FZYaSong-M-GBK, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif;
 }
-
 .protyle-content .protyle-wysiwyg .h3,
 .protyle-content .protyle-wysiwyg .h3[fold="1"] {
     font-size: 1.3em !important;
-    font-weight: normal;
-    line-height: 1.5;
-    font-family: "Charis SIL", FZYaSong-M-GBK, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif;
 }
-
 .protyle-content .protyle-wysiwyg .h4,
 .protyle-content .protyle-wysiwyg .h4[fold="1"] {
     font-size: 1.2em !important;
-    font-weight: normal;
-    line-height: 1.5;
-    font-family: "Charis SIL", FZYaSong-M-GBK, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif;
 }
-
 .protyle-content .protyle-wysiwyg .h5,
 .protyle-content .protyle-wysiwyg .h5[fold="1"] {
     font-size: 1.1em !important;
-    font-weight: normal;
-    line-height: 1.5;
-    font-family: "Charis SIL", FZYaSong-M-GBK, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif;
 }
-
 .protyle-content .protyle-wysiwyg .h6,
 .protyle-content .protyle-wysiwyg .h6[fold="1"] {
     font-size: 1em !important;
+}
+.protyle-content .protyle-wysiwyg .h1,
+.protyle-content .protyle-wysiwyg .h2,
+.protyle-content .protyle-wysiwyg .h3,
+.protyle-content .protyle-wysiwyg .h4,
+.protyle-content .protyle-wysiwyg .h5,
+.protyle-content .protyle-wysiwyg .h6,
+.protyle-content .protyle-wysiwyg .h1[fold="1"],
+.protyle-content .protyle-wysiwyg .h2[fold="1"],
+.protyle-content .protyle-wysiwyg .h3[fold="1"],
+.protyle-content .protyle-wysiwyg .h4[fold="1"],
+.protyle-content .protyle-wysiwyg .h5[fold="1"],
+.protyle-content .protyle-wysiwyg .h6[fold="1"] {
     font-weight: normal;
     line-height: 1.5;
-    font-family: "Charis SIL", FZYaSong-M-GBK, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif;
+    font-family: "Charis SIL", "Gentium Plus", FZYaSong-M-GBK, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif;
 }
 
 .protyle-content .protyle-wysiwyg .p[fold="1"] {
@@ -957,7 +991,7 @@ span[data-type="a"]:hover{
 /*块图标外观菜单楷体*/
 #commonMenu .b3-menu__item:nth-of-type(13) .b3-menu__submenu .b3-menu__item:nth-of-type(6) .b3-menu__label:before {
     content: "🄰 楷体";
-    font-family: "Charis SIL", FZKai-Z03, Kai, SimKai, STKaiti, serif;
+    font-family: "Charis SIL", "Gentium Plus", FZKai-Z03, Kai, SimKai, STKaiti, serif;
     -webkit-text-fill-color: #333 !important;
     font-weight: normal;
     font-size: 108%;
@@ -967,7 +1001,7 @@ span[data-type="a"]:hover{
 /*块图标外观菜单仿宋*/
 #commonMenu .b3-menu__item:nth-of-type(13) .b3-menu__submenu .b3-menu__item:nth-of-type(7) .b3-menu__label:before {
     content: "🄰 仿宋";
-    font-family: "Charis SIL", FZFangSong-Z02, Fangsong, serif;
+    font-family: "Charis SIL", "Gentium Plus", FZFangSong-Z02, Fangsong, serif;
     -webkit-text-fill-color: #333 !important;
     text-shadow: none !important;
     font-size: 108%;
@@ -983,21 +1017,21 @@ span[data-type="a"]:hover{
 
 /*外观菜单设置内容块楷体仿宋*/
 .protyle-wysiwyg [data-node-id][style$="transparent;"] {
-    font-family: "Charis SIL", FZKai-Z03, Kai, SimKai, STKaiti, serif !important;
+    font-family: "Charis SIL", "Gentium Plus", FZKai-Z03, Kai, SimKai, STKaiti, serif !important;
     font-size: 108%;
     -webkit-text-stroke: 0 !important;
     -webkit-text-fill-color: inherit !important;
     text-shadow: none !important;
 }
 .protyle-wysiwyg [data-node-id][style$="var(--b3-border-color);"] {
-    font-family: "Charis SIL", FZFangSong-Z02, Fangsong, serif !important;
+    font-family: "Charis SIL", "Gentium Plus", FZFangSong-Z02, Fangsong, serif !important;
     font-size: 108%;
     -webkit-text-stroke: 0 !important;
     -webkit-text-fill-color: inherit !important;
     text-shadow: none !important;
 }
 .protyle-wysiwyg [data-node-id][style$=");"] {
-    font-family: "Charis SIL", FZFangSong-Z02, Fangsong, serif !important;
+    font-family: "Charis SIL", "Gentium Plus", FZFangSong-Z02, Fangsong, serif !important;
     font-size: 108%;
     -webkit-text-stroke: 0 !important;
     -webkit-text-fill-color: inherit !important;
@@ -1011,7 +1045,7 @@ span[data-type="a"]:hover{
 
 /*浮动工具条镂空*/
 .protyle-wysiwyg strong[style*="text-fill-color"] {
-    font-family: "Charis SIL", FZKai-Z03, Kai, SimKai, STKaiti, serif;
+    font-family: "Charis SIL", "Gentium Plus", FZKai-Z03, Kai, SimKai, STKaiti, serif;
     -webkit-text-stroke: 0 !important;
     -webkit-text-fill-color: inherit !important;
     font-weight: normal;
@@ -1020,7 +1054,7 @@ span[data-type="a"]:hover{
 
 /*浮动工具条投影*/
 .protyle-wysiwyg strong[style*="text-shadow"]  {
-    font-family: "Charis SIL", FZFangSong-Z02, Fangsong, serif;
+    font-family: "Charis SIL", "Gentium Plus", FZFangSong-Z02, Fangsong, serif;
     text-shadow: none !important;
     font-weight: normal;
     font-size: 102%;
@@ -1029,7 +1063,7 @@ span[data-type="a"]:hover{
 /*楷体浮动工具条*/
 button[data-type="style2"]:before {
     content: "楷体";
-    font-family: "Charis SIL", FZKai-Z03, Kai, SimKai, STKaiti, serif;
+    font-family: "Charis SIL", "Gentium Plus", FZKai-Z03, Kai, SimKai, STKaiti, serif;
     -webkit-text-fill-color: #000 !important;
     font-weight: normal;
     font-size: 108%;
@@ -1040,7 +1074,7 @@ button[data-type="style2"]:before {
 /*仿宋浮动工具条*/
 button[data-type="style4"]:before {
     content: "仿宋";
-    font-family: "Charis SIL", FZFangSong-Z02, Fangsong, serif;
+    font-family: "Charis SIL", "Gentium Plus", FZFangSong-Z02, Fangsong, serif;
     text-shadow: none !important;
     font-size: 108% !important;
     margin: 0 0 0 -20px;
@@ -1064,20 +1098,20 @@ button[data-type="style4"]{
 .protyle-wysiwyg[custom-z="ht"],
 .protyle-wysiwyg [custom-z="ht"] {
     font-family: var(--b3-font-family);
-    font-size: 17px;
+    font-size: 0.96em;
 }
 
 /*内容块、页面块自定义楷体*/
 .protyle-wysiwyg[custom-z="kt"],
 .protyle-wysiwyg [custom-z="kt"] {
-    font-family: "Charis SIL", FZKai-Z03, Kai, SimKai, STKaiti, serif;
+    font-family: "Charis SIL", "Gentium Plus", FZKai-Z03, Kai, SimKai, STKaiti, serif;
     font-size: 108%;
 }
 
 /*内容块、页面块自定义仿宋*/
 .protyle-wysiwyg[custom-z="fs"],
 .protyle-wysiwyg [custom-z="fs"] {
-    font-family: "Charis SIL", FZFangSong-Z02, Fangsong, serif;
+    font-family: "Charis SIL", "Gentium Plus", FZFangSong-Z02, Fangsong, serif;
     font-size: 108%;
 }
 
