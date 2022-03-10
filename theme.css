@@ -471,6 +471,33 @@ box-sizing: border-box;
     font-family: var(--b3-font-family);
     font-size: 17px;
 }
+.block__popover [data-subtype="t"] [data-type="NodeParagraph"]{
+    font-size: 13px;
+}
+.block__popover .protyle-action--task::before{
+width: 10px !important;
+height: 10px !important;
+left: 5px !important;
+top: 4px !important;
+font-size: 10px;
+}
+.block__popover .protyle-task--done .protyle-action--task::after
+{
+width: 10px !important;
+height: 10px !important;
+left: 15px !important;
+top: 1px !important;
+font-size: 10px;
+}
+.block__popover [data-subtype="t"][data-node-id].li>[data-node-id] {
+margin: 0 0 0 23px !important;
+}
+.block__popover .protyle-wysiwyg [data-subtype="t"] {
+margin: 0 0 0 -2px !important;
+}
+.block__popover .protyle-wysiwyg [data-subtype="t"] .li {
+    min-height: 25px;
+}
 
 /* 折叠字号统一 */
 .protyle-wysiwyg [data-node-id][fold="1"]:not(.li) {
@@ -1353,6 +1380,7 @@ strong[style*="background9"] {
 .block__popover [data-subtype^="h"] div[contenteditable="true"]{
     padding-bottom: 3px !important;
 }
+
 
 /* 块图标弹出菜单 */
 .tooltip {
