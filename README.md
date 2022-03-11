@@ -2,9 +2,9 @@
 
 
 
-## 特别提醒
+## 特别说明
 
-- 对于不熟悉、不使用思源笔记快捷键的朋友，本主题会很难用，请谨慎下载，谢谢理解。
+- 由于隐藏了部分界面元素，本主题需要熟悉快捷键才比较好用，谢谢理解。
 
 ## 主题特点
 
@@ -55,36 +55,42 @@
 
 ## 字体选择
 
-本主题需要安装图标字体 Font Awesome 6.0.0，主题文件夹下font/之中的3个字体安装即可。
+### 代码字体
 
-对于长文档阅读、外语学习推荐使用衬线字体，缓解长时间使用的视觉疲劳。
-
-- 正文英文衬线字体：Charis SIL、Gentium Plus，英文字符、音标、法语、德语、拉丁语、希腊语等显示良好
-- 正文中文衬线字体（除标记类文字）：方正悠宋GBK / FZYouSongJ GBK 505L/506L，多个字号建议全装，可选择自己喜欢的字号更改 theme.css 正文字体
-- 标题中文衬线字体：方正准雅宋GBK / FZYaSong-M-GBK
-
-未安装上述衬线字体时，界面显示为无衬线字体（黑体）
-- 正文标记类文字、其他界面：无衬线字体（黑体）顺序为苹方、雅黑等
 - 明色主题配套代码块主题，推荐在设置>代码块主题选择 atom-one-light
 - 暗色主题配套代码块主题，推荐在设置>代码块主题选择 atom-one-dark
 
-Charis SIL、Gentium Plus 的官方网站免费下载（安装其中的regular正体即可，粗体斜体貌似显示不佳）：
+### 图标字体
 
-https://software.sil.org/charis/
+- 本主题使用图标字体 Font Awesome 6.0.0，需要安装主题文件夹下font/之中的3个otf字体。
 
-https://software.sil.org/gentium/
+### 无衬线字体
 
-方正字体网站以设计师身份注册，可免费个人使用。
+- 第一次使用本主题，一般情况下未安装后面提到的衬线字体，界面会显示为无衬线字体（黑体
+- 正文标记类文字、其他界面：无衬线字体（黑体）顺序为苹方、雅黑等
 
-方正系列字体对中日韩文字的支持很好，但对西文特殊字符支持不佳，故需结合 Charis SIL、Gentium Plus 使用。
+### 衬线字体
 
-方正悠宋GBK
+对于长文档阅读、外语学习推荐使用衬线字体，缓解长时间使用的视觉疲劳。
 
-https://www.foundertype.com/index.php/FontInfo/index/id/5710
+西方语言衬线字体
 
-方正雅宋GBK
+- 正文英文衬线字体：Charis SIL、Gentium Plus，英文字符、音标、法语、德语、拉丁语、希腊语等显示良好
 
-https://www.foundertype.com/index.php/FontInfo/index/id/193
+- Charis SIL、Gentium Plus 的官方网站免费下载（安装其中的regular正体即可，官方提供的粗体斜体Mac系统貌似显示不佳）
+
+- Charis SIL下载 https://software.sil.org/charis/
+
+  Gentium Plus下载 https://software.sil.org/gentium/
+
+中日韩衬线字体
+
+- 正文中文衬线字体：方正悠宋GBK / FZYouSongJ GBK 505L/506L，多个字号建议全装，可选择自己喜欢的字号更改 theme.css 正文字体
+- 标题中文衬线字体：方正准雅宋GBK / FZYaSong-M-GBK
+- 方正字体网站以设计师身份注册，可免费个人使用。
+- 方正系列字体对中日韩文字的支持很好，但对西文特殊字符支持不佳，故需结合 Charis SIL、Gentium Plus 使用。
+- 方正悠宋GBK下载 https://www.foundertype.com/index.php/FontInfo/index/id/5710
+- 方正雅宋GBK下载 https://www.foundertype.com/index.php/FontInfo/index/id/193
 
 本主题相关字体在 Mac 系统下显示良好。其他系统显示效果可能有差异，可选择自己喜欢的字体做调整。
 
@@ -92,9 +98,11 @@ https://www.foundertype.com/index.php/FontInfo/index/id/193
 
 其他字体参考网站：https://www.qiuziti.com
 
-## 一些说明
+## 自助修改
 
-### 隐藏元素
+如果使用本主题，但对局部不满意，熟悉css的话可以自行修改。
+
+### 恢复隐藏元素
 
 如果想让某个图标恢复显示，可以搜索一下，找到具体位置，然后删除 `display: none !important;`这一类隐藏语句即可。如果多个图标被一起隐藏，比如下面的css语句，如果想恢复被隐藏的日记图标，就把`#barDailyNote`连同跟在它后面的逗号一起删掉。
 
@@ -109,7 +117,7 @@ https://www.foundertype.com/index.php/FontInfo/index/id/193
 }
 ```
 
-### emoji
+### 恢复emoji
 
 本主题隐藏了文档树emoji图标替换面板，如不需要隐藏，请用 EmEditor/Vscode 等文本编辑器打开
 
@@ -122,7 +130,9 @@ Siyuan/conf/appearance/themes/Concise Lght/theme.css，搜索“emoji”，删�
 }
 ```
 
-### 鼠标浮现
+### 恢复页签关闭按钮
+
+此处现在是鼠标划过才浮现。
 
 每个页签右侧关闭按钮默认隐藏，鼠标划过该位置时显示。快捷键 Ctrl+w / Cmd+w 关闭更快。
 
@@ -136,6 +146,10 @@ Siyuan/conf/appearance/themes/Concise Lght/theme.css，搜索“emoji”，删�
 }
 ```
 
+### 恢复长文档右侧滚动条
+
+此处现在是鼠标划过才浮现。
+
 由于分屏编辑时页面右侧的滚动条有一定的干扰，本主题在长文档时编辑页面右侧的滚动条默认隐藏，鼠标划过该位置时显示。如需恢复，请删除下面的语句：
 
 ```css
@@ -148,7 +162,7 @@ Siyuan/conf/appearance/themes/Concise Lght/theme.css，搜索“emoji”，删�
 }
 ```
 
-### 挖空
+### 恢复删除线
 
 本主题将删除线设置为挖空复习效果，如不需要，请用 EmEditor/Vscode 等文本编辑器打开对应主题目录的 theme.css，搜索“挖空”，删除下面的语句：
 
@@ -167,11 +181,13 @@ Siyuan/conf/appearance/themes/Concise Lght/theme.css，搜索“emoji”，删�
     border-bottom:  none;
 ```
 
-###镂空/投影
+### 恢复镂空/投影
 
 由于行内文字的镂空/投影效果基本用不上，本主题将镂空修改为楷体，投影修改为仿宋。由于涉及代码较多，这里就不贴出删除代码。有需要请单独反馈。
 
-### 自定义属性
+## 自定义属性
+
+本主题对内容块可以使用下列自定义属性，方法是在内容块左边的块图标上单击或右键，点击“属性”，然后按“添加”，输入需要的属性名和属性值即可。
 
 | 属性名 | 属性值 | 作用                |
 | ------ | ------ | ------------------- |
@@ -182,7 +198,7 @@ Siyuan/conf/appearance/themes/Concise Lght/theme.css，搜索“emoji”，删�
 
 注意 f - bg 列表块转换为表格功能在左边表格内容较多时会有撑开现象，另外在不同的电脑上可以会出现部分边线变粗情况，请酌情使用。
 
-## 版本说明
+## 版本更新
 
 本主题不定期更新，由于主题上传更新有一定时间的等待期，一般 Github 上的仓库会有最新版本，可打包下载，覆盖 Siyuan/conf/appearance/themes/里的同名主题即可。
 
