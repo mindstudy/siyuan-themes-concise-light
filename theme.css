@@ -181,6 +181,7 @@
 
 /* 文档树tab */
 .block__logo {
+    color: #888;
     margin: 0 0 0 24px;
 }
 
@@ -198,6 +199,16 @@
 .block__icon svg {
     opacity: 80%;
     width: 12px;
+}
+
+/* 面板缩放图标 */
+[data-type="expand"] svg,
+[data-type="collapse"] svg,
+[data-type="mExpand"] svg,
+[data-type="mCollapse"] svg {
+    height: 10px !important;
+    width: 10px !important;
+    color: #888;
 }
 
 /* 文档树当前文档标题背景 */
@@ -248,7 +259,7 @@ ul.fn__flex-1 li[data-type="toggle"] {
 /*当前文档标题*/
 li[class~="item--focus"] {
     font-style: normal !important;
-    color: #000 !important;
+    color: #555 !important;
 }
 
 /*当前文档标题背景*/
@@ -298,7 +309,7 @@ li[class~="item--focus"] {
 /*底部已关闭笔记本*/
 li[data-type="toggle"] .b3-list-item__arrow,
 li[data-type="toggle"] .b3-list-item__text {
-    color: #666 !important;
+    color: #888 !important;
 }
 
 /* 文档标题 */
@@ -314,6 +325,7 @@ li[data-type="toggle"] .b3-list-item__text {
 .protyle-content .protyle-wysiwyg {
     font-family: "Charis SIL", "Gentium Plus", "FZYouSongJ GBK 506L",  "FZYouSong GBK 506L", "Gentium Plus", "FZYouSong GBK 506L", "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif;
     font-size: 18px !important;
+    letter-spacing: 0.02em !important;
     cursor: default;
 }
 
@@ -342,8 +354,9 @@ div[data-type="NodeHeading"]:first-of-type {
     margin-top: 0 !important;
 }
 
-.protyle-wysiwyg s{
-    color: #aaa;
+/* 引述块边线 */
+.protyle-wysiwyg .bq{
+    border-left: 3px solid var(--b3-border-color);
 }
 
 /* 已完成任务列表 */
@@ -361,6 +374,20 @@ mark {
     height: 16px;
     line-height: 16px;
 }
+#searchList mark,
+.sy__backlink mark,
+.protyle-wysiwyg [data-node-id] span[data-type="search-mark"] {
+    display: inline-block !important; 
+    background-color: #caeffd;
+    color: #555;
+    line-height: 16px !important;
+}
+#searchList mark{
+    padding: 1px 0 !important;
+}
+.protyle-wysiwyg [data-node-id] span[data-type="search-mark"] {
+    padding: 2px 0 4px 0!important;
+}
 
 /* 双链弹出菜单mark*/
 .b3-menu mark {
@@ -377,6 +404,10 @@ mark {
 .b3-menu button .b3-list-item__meta,
 .b3-menu button .b3-list-item__meta mark {
     font-size: 13px;
+    color: #666;
+}
+
+.b3-menu button .b3-list-item__first+.b3-list-item__meta{
     color: #aaa;
 }
 
@@ -387,6 +418,50 @@ mark {
 
 .b3-menu button .b3-list-item__meta mark {
     background-color: transparent !important;
+}
+
+/* 双链建议菜单 */
+.b3-menu button .b3-list-item__meta,
+.b3-menu button .fn__flex.b3-list-item__meta span,
+.b3-menu button .fn__flex.b3-list-item__first,
+.b3-menu button .b3-list-item__text,
+.b3-menu .b3-list-item--two .b3-list-item__first {
+    display: inline !important;
+}
+.b3-menu button .b3-list-item__text,
+.b3-menu button .b3-list-item__graphic.popover__block{
+    float: left;
+}
+.b3-menu button .b3-list-item__text{
+    margin:0 2px 0 12px;
+}
+.b3-menu button .b3-list-item__graphic.popover__block{
+    color: #999;
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    left: 5px;
+    top: 4px;
+}
+.b3-menu button .svg--small{
+    margin-left: 3px !important;
+}
+
+/* 按/弹出菜单 */
+.b3-menu.b3-list.b3-list--background .b3-list-item__first .b3-list-item__graphic {
+    height: 12px;
+    color: #999;
+}
+.b3-menu.b3-list.b3-list--background .b3-menu__accelerator {
+    float: right !important;
+}
+.b3-menu button .b3-color__square{
+    margin: 0 0 0 12px;
+}
+.b3-menu button .b3-color__square+.b3-list-item__text{
+    position: absolute;
+    left: 28px;
+    top: 0;
 }
 
 .sy__backlink mark {
@@ -401,17 +476,16 @@ mark {
     transition: color 0.2s ease-in-out !important;
     text-decoration: none;
 }
-
 .protyle-wysiwyg [data-node-id] [spellcheck="false"] s:hover{
     color: #333;
     background-color: transparent;
     text-decoration: none;
     border-bottom:  none;
-} /* 挖空效果*/
+} 
 
 .protyle-wysiwyg kbd {
-    font-size: 92%;
-    padding: 6px 3px 3px 3px !important;
+    font-size: 15px;
+    padding: 4px 1px 1px 1px !important;
     color: #666;
     box-shadow: none;
 }
@@ -431,41 +505,43 @@ code {
 }
 
 /* 待办列表 */
-.protyle-action--task svg use {
+.protyle-action--task svg {
     opacity: 0;
 }
 [data-subtype="t"][data-node-id].li>[data-node-id] {
-margin: 0 0 0 20px !important;
+    margin: 0 0 0 20px !important;
 }
 .protyle-action--task::before {
-content: "";
-display: inline-block;
-position: absolute;
-width: 15px;
-height: 15px;
-left: 0;
-top:10px;
-border: 1px solid #cccccc;
-border-radius: 50%;
-background-color: #fefefe;
-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    left: 0.1em;
+    top:10px;
+    border: 1px solid #cccccc;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
 }
 .protyle-task--done .protyle-action--task::before {
-background-color: #84cde4;
-border-color: #84cde4;
+    background-color: transparent;
+    border: none !important; 
+    font-family: "Font Awesome 6 Free Solid";
+    content: "\f058" !important;
+    display: inline-block;
+    position: absolute;
+    width: 15px !important;
+    height: 15px !important;
+    left: 0.1em;
+    top: 0.1em;
+    font-size: 17px;
+    color: #84cde4;
+    box-sizing: border-box;
 }
 .protyle-task--done .protyle-action--task::after {
-font-family: "Font Awesome 6 Free Solid", "Font Awesome 6 Free Regular", "Font Awesome 6 Brands Regular";
-content: "\f00c" !important;
-display: inline-block;
-position: absolute;
-width: 15px !important;
-height: 15px !important;
-left: 12px !important;
-top: 10px !important;
-font-size: 11px;
-color: #fff;
-box-sizing: border-box;
+    background-color: transparent !important;
+    opacity: 0 !important;
 }
 [data-subtype="t"] [data-type="NodeParagraph"]{
     font-family: var(--b3-font-family);
@@ -475,25 +551,25 @@ box-sizing: border-box;
     font-size: 13px;
 }
 .block__popover .protyle-action--task::before{
-width: 10px !important;
-height: 10px !important;
-left: 5px !important;
-top: 4px !important;
-font-size: 10px;
+    width: 10px !important;
+    height: 10px !important;
+    left: 5px !important;
+    top: 4px !important;
+    font-size: 10px;
 }
 .block__popover .protyle-task--done .protyle-action--task::after
 {
-width: 10px !important;
-height: 10px !important;
-left: 15px !important;
-top: 1px !important;
-font-size: 10px;
+    width: 10px !important;
+    height: 10px !important;
+    left: 15px !important;
+    top: 1px !important;
+    font-size: 10px;
 }
 .block__popover [data-subtype="t"][data-node-id].li>[data-node-id] {
-margin: 0 0 0 23px !important;
+    margin: 0 0 0 23px !important;
 }
 .block__popover .protyle-wysiwyg [data-subtype="t"] {
-margin: 0 0 0 -2px !important;
+    margin: 0 0 0 -2px !important;
 }
 .block__popover .protyle-wysiwyg [data-subtype="t"] .li {
     min-height: 25px;
@@ -994,7 +1070,8 @@ span[data-type="a"]:hover{
 }
 
 /* 块图标外观菜单 */
-#commonMenu .b3-menu__item:nth-of-type(13) .b3-menu__submenu{
+#commonMenu .b3-menu__item:nth-of-type(12) .b3-menu__submenu,
+#commonMenu .b3-menu__item:nth-of-type(13) .b3-menu__submenu {
     column-count: 3;
     column-gap: 5px;
     max-height: 360px !important;
@@ -1003,19 +1080,21 @@ span[data-type="a"]:hover{
 }
 
 /* 块图标外观菜单隐藏分割线 */
+#commonMenu .b3-menu__item:nth-of-type(12) .b3-menu__submenu .b3-menu__separator,
 #commonMenu .b3-menu__item:nth-of-type(13) .b3-menu__submenu .b3-menu__separator {
     display: none;
 }
-
 /*块图标外观菜单镂空投影*/
+#commonMenu .b3-menu__item:nth-of-type(12) .b3-menu__submenu .b3-menu__item:nth-of-type(6),
+#commonMenu .b3-menu__item:nth-of-type(12) .b3-menu__submenu .b3-menu__item:nth-of-type(7),
 #commonMenu .b3-menu__item:nth-of-type(13) .b3-menu__submenu .b3-menu__item:nth-of-type(6),
 #commonMenu .b3-menu__item:nth-of-type(13) .b3-menu__submenu .b3-menu__item:nth-of-type(7) {
     -webkit-text-fill-color: transparent !important;
     -webkit-text-stroke: 0 !important;
     text-shadow: none !important;
 }
-
 /*块图标外观菜单楷体*/
+#commonMenu .b3-menu__item:nth-of-type(12) .b3-menu__submenu .b3-menu__item:nth-of-type(6) .b3-menu__label:before,
 #commonMenu .b3-menu__item:nth-of-type(13) .b3-menu__submenu .b3-menu__item:nth-of-type(6) .b3-menu__label:before {
     content: "🄰 楷体";
     font-family: "Charis SIL", "Gentium Plus", FZKai-Z03, Kai, SimKai, STKaiti, serif;
@@ -1023,9 +1102,10 @@ span[data-type="a"]:hover{
     font-weight: normal;
     font-size: 108%;
     padding: 0;
+    margin-left: 1px;
 }
-
 /*块图标外观菜单仿宋*/
+#commonMenu .b3-menu__item:nth-of-type(12) .b3-menu__submenu .b3-menu__item:nth-of-type(7) .b3-menu__label:before,
 #commonMenu .b3-menu__item:nth-of-type(13) .b3-menu__submenu .b3-menu__item:nth-of-type(7) .b3-menu__label:before {
     content: "🄰 仿宋";
     font-family: "Charis SIL", "Gentium Plus", FZFangSong-Z02, Fangsong, serif;
@@ -1033,8 +1113,12 @@ span[data-type="a"]:hover{
     text-shadow: none !important;
     font-size: 108%;
     padding: 0;
+    margin-left: 1px;
 }
-
+#commonMenu .b3-menu__item:nth-of-type(12) .b3-menu__submenu .b3-menu__item:nth-of-type(6)  .fn__flex,
+#commonMenu .b3-menu__item:nth-of-type(12) .b3-menu__submenu .b3-menu__item:nth-of-type(7)  .fn__flex,
+#commonMenu .b3-menu__item:nth-of-type(12) .b3-menu__submenu .b3-menu__item:nth-of-type(6)  .b3-menu__icon,
+#commonMenu .b3-menu__item:nth-of-type(12) .b3-menu__submenu .b3-menu__item:nth-of-type(7)  .b3-menu__icon,
 #commonMenu .b3-menu__item:nth-of-type(13) .b3-menu__submenu .b3-menu__item:nth-of-type(6)  .fn__flex,
 #commonMenu .b3-menu__item:nth-of-type(13) .b3-menu__submenu .b3-menu__item:nth-of-type(7)  .fn__flex,
 #commonMenu .b3-menu__item:nth-of-type(13) .b3-menu__submenu .b3-menu__item:nth-of-type(6)  .b3-menu__icon,
@@ -1269,6 +1353,21 @@ strong[style*="background9"] {
     font-weight: 500 !important;
 }
 
+strong[style*="background1"],
+strong[style*="background2"],
+strong[style*="background3"],
+strong[style*="background4"],
+strong[style*="background5"],
+strong[style*="background6"],
+strong[style*="background7"],
+strong[style*="background8"],
+strong[style*="background9"] {
+    display: inline-block; 
+    height: 16px;
+    line-height: 16px;
+    padding: 2px 0 4px 0;
+}
+
 /* 引用块、反向链接弹出菜单 */
 .block__popover .protyle-breadcrumb,
 .block__popover .protyle-wysiwyg,
@@ -1409,9 +1508,44 @@ strong[style*="background9"] {
     display: none !important;
 }
 
+/* 隐藏笔记本/文档前图标 */
+.b3-list-item__icon{
+    display: none !important;
+}
+
+/* 面板折叠箭头 */
+.b3-list-item__arrow,
+.b3-tooltips__nw svg{
+  height: 7px;
+  width: 10px;
+  color: #777;
+}
+
 /* 面板拖动 */
 .layout__resize:hover:after {
     background-color: #ccc;
+}
+
+/* 面板搜索图标 */
+.b3-form__icon--small .b3-form__icon-icon {
+    height: 12px;
+    width: 12px;
+    margin-top: 1px;
+    color: #999;
+}
+.b3-form__icon--small .b3-text-filed {
+    background-color: transparent !important;
+}
+.b3-list--empty {
+    color: #bbb;
+}
+/* 反链面板文字 */
+[data-treetype="backlink"] .b3-list-item__text {
+    color: #555;
+}
+/* 反链面板图标 */
+[data-treetype="backlink"] svg {
+    color: #888;
 }
 
 /* 自定义属性，列表转化为表格 */
