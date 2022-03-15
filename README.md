@@ -16,6 +16,8 @@
 
   [**《思源笔记基本功能详解》**](https://www.yuque.com/u25584857/ryp75p/cd49lz)
 
+  [**《思源笔记双链使用详解》**](https://www.yuque.com/u25584857/ryp75p/tcv57u)
+
   [**《思源笔记外观修改详解》**](https://www.yuque.com/u25584857/ryp75p/sgf58w)
 
 ## 快捷键
@@ -54,7 +56,7 @@
 
 ##### 图标字体
 
-- 本主题使用图标字体 Font Awesome 6.0.0，需要安装主题文件夹下font/之中的3个otf字体。
+- 本主题使用图标字体 Font Awesome 6.0.0。
 
 ##### 无衬线字体
 

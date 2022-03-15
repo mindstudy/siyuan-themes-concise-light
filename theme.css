@@ -154,7 +154,10 @@
     mix-blend-mode: darken;
 }
 
-
+@font-face {
+    font-family: "Font Awesome 6 Free Solid";
+    src:url('fonts/Font Awesome 6 Free-Solid-900.otf')
+}
 
 /* 日记、同步、主题、多页面前后切换图标隐藏 */
 #barDailyNote,
@@ -182,7 +185,12 @@
 /* 文档树tab */
 .block__logo {
     color: #888;
+    font-size: 13px;
     margin: 0 0 0 24px;
+}
+
+.file-tree .b3-list-item__text{
+    font-size: 14px;
 }
 
 /* 文档树及右边图标下移 */
@@ -310,6 +318,7 @@ li[class~="item--focus"] {
 li[data-type="toggle"] .b3-list-item__arrow,
 li[data-type="toggle"] .b3-list-item__text {
     color: #888 !important;
+    font-size: 13px;
 }
 
 /* 文档标题 */
@@ -1267,31 +1276,25 @@ button[data-type="style4"]{
     color: #3083ac;
     opacity: 0.6;
 }
-
 /* 双链建议弹出菜单 */
 button.b3-list-item--focus{
     background-color: #fff !important;
 }
-
 button.b3-list-item--focus:hover{
     background-color: #eee !important;
 }
-
 button.b3-list-item{
     border-bottom: 1px dashed #ccc;
 }
-
 button.b3-list-item,
 button.b3-list-item .fn__flex,
 button .b3-list-item__first {
     line-height: 20px;
 }
-
 button .b3-list-item__first,
 button .b3-list-item__text {
     font-size: 13px;
 }
-
 button .b3-list-item__meta {
     font-size: 13px;
     color: #aaa;
