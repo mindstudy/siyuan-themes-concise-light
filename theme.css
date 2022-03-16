@@ -1507,6 +1507,16 @@ strong[style*="background9"] {
     font-family: var(--b3-font-family) !important;
 }
 
+/* 隐藏文档树 emoji 图标修改面板 */
+#commonMenu .emojis{
+    display: none !important;
+}
+
+/* 隐藏笔记本/文档前图标 */
+.b3-list-item__icon{
+    display: none !important;
+}
+
 /* 面板折叠箭头 */
 .b3-list-item__arrow,
 .b3-tooltips__nw svg{
