@@ -21,7 +21,7 @@
     --b3-theme-on-error: #fff;
 
     /* 字体 */
-    --b3-font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif !important;
+    --b3-font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols";
     --b3-font-family-code: "Roboto", "Noto Sans", "Microsoft YaHei Mono", "JetBrainsMono-Regular", mononoki, Consolas, "Liberation Mono", Menlo, Courier, monospace, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols", sans-serif; 
     --b3-font-family-graph: mononoki;
     --b3-font-family-emoji: "Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI", "Apple Color Emoji", "Twemoji Mozilla", "Noto Color Emoji", "Android Emoji";
@@ -323,7 +323,7 @@ li[data-type="toggle"] .b3-list-item__text {
 
 /* 文档标题 */
 .protyle-content .protyle-title__input {
-    font-family: "Charis SIL", FZYaSong-M-GBK, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif;
+    font-family: "Charis SIL", "Gentium Plus", FZYaSong-M-GBK, var(--b3-font-family);
     font-size: 30px;
     font-weight: 500;
     margin: 0 0 0 -4px;
@@ -332,7 +332,7 @@ li[data-type="toggle"] .b3-list-item__text {
 
 /* 文档正文 */
 .protyle-content .protyle-wysiwyg {
-    font-family: "Charis SIL", "Gentium Plus", "FZYouSongJ GBK 506L",  "FZYouSong GBK 506L", "Gentium Plus", "FZYouSong GBK 506L", "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif;
+    font-family: "Charis SIL", "Gentium Plus", "FZYouSongJ GBK 506L", var(--b3-font-family);
     font-size: 18px !important;
     letter-spacing: 0.02em !important;
     cursor: default;
@@ -466,6 +466,7 @@ mark {
 }
 .b3-menu button .b3-color__square{
     margin: 0 0 0 12px;
+    box-shadow: 0 0 0 0.05em #666 inset;
 }
 .b3-menu button .b3-color__square+.b3-list-item__text{
     position: absolute;
@@ -637,7 +638,7 @@ code {
 .protyle-content .protyle-wysiwyg .h6[fold="1"] {
     font-weight: normal;
     line-height: 1.5;
-    font-family: "Charis SIL", "Gentium Plus", FZYaSong-M-GBK, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif;
+    font-family: "Charis SIL", "Gentium Plus", FZYaSong-M-GBK, var(--b3-font-family);
 }
 
 .protyle-content .protyle-wysiwyg .p[fold="1"] {
@@ -1106,7 +1107,7 @@ span[data-type="a"]:hover{
 #commonMenu .b3-menu__item:nth-of-type(12) .b3-menu__submenu .b3-menu__item:nth-of-type(6) .b3-menu__label:before,
 #commonMenu .b3-menu__item:nth-of-type(13) .b3-menu__submenu .b3-menu__item:nth-of-type(6) .b3-menu__label:before {
     content: "🄰 楷体";
-    font-family: "Charis SIL", "Gentium Plus", FZKai-Z03, Kai, SimKai, STKaiti, serif;
+    font-family: "Charis SIL", "Gentium Plus", FZNewKai-Z03, FZKai-Z03, Kai, SimKai, STKaiti, serif;
     -webkit-text-fill-color: #333 !important;
     font-weight: normal;
     font-size: 108%;
@@ -1137,7 +1138,7 @@ span[data-type="a"]:hover{
 
 /*外观菜单设置内容块楷体仿宋*/
 .protyle-wysiwyg [data-node-id][style$="transparent;"] {
-    font-family: "Charis SIL", "Gentium Plus", FZKai-Z03, Kai, SimKai, STKaiti, serif !important;
+    font-family: "Charis SIL", "Gentium Plus", FZNewKai-Z03, FZKai-Z03, Kai, SimKai, STKaiti, serif !important;
     font-size: 108%;
     -webkit-text-stroke: 0 !important;
     -webkit-text-fill-color: inherit !important;
@@ -1165,7 +1166,7 @@ span[data-type="a"]:hover{
 
 /*浮动工具条镂空*/
 .protyle-wysiwyg strong[style*="text-fill-color"] {
-    font-family: "Charis SIL", "Gentium Plus", FZKai-Z03, Kai, SimKai, STKaiti, serif;
+    font-family: "Charis SIL", "Gentium Plus", FZNewKai-Z03, FZKai-Z03, Kai, SimKai, STKaiti, serif;
     -webkit-text-stroke: 0 !important;
     -webkit-text-fill-color: inherit !important;
     font-weight: normal;
@@ -1183,7 +1184,7 @@ span[data-type="a"]:hover{
 /*楷体浮动工具条*/
 button[data-type="style2"]:before {
     content: "楷体";
-    font-family: "Charis SIL", "Gentium Plus", FZKai-Z03, Kai, SimKai, STKaiti, serif;
+    font-family: "Charis SIL", "Gentium Plus", FZNewKai-Z03, FZKai-Z03, Kai, SimKai, STKaiti, serif;
     -webkit-text-fill-color: #000 !important;
     font-weight: normal;
     font-size: 108%;
@@ -1224,7 +1225,7 @@ button[data-type="style4"]{
 /*内容块、页面块自定义楷体*/
 .protyle-wysiwyg[custom-z="kt"],
 .protyle-wysiwyg [custom-z="kt"] {
-    font-family: "Charis SIL", "Gentium Plus", FZKai-Z03, Kai, SimKai, STKaiti, serif;
+    font-family: "Charis SIL", "Gentium Plus", FZNewKai-Z03, FZKai-Z03, Kai, SimKai, STKaiti, serif;
     font-size: 108%;
 }
 
@@ -1504,16 +1505,6 @@ strong[style*="background9"] {
 /* 修正设置面板部分字体被编辑器字体影响 */
 .b3-dialog .fn__flex-column .b3-label__text{
     font-family: var(--b3-font-family) !important;
-}
-
-/* 隐藏文档树 emoji 图标修改面板 */
-#commonMenu .emojis{
-    display: none !important;
-}
-
-/* 隐藏笔记本/文档前图标 */
-.b3-list-item__icon{
-    display: none !important;
 }
 
 /* 面板折叠箭头 */
