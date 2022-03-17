@@ -22,7 +22,7 @@
 
     /* 字体 */
     --b3-font-family: "PingFang SC", "PingFang TC", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols";
-    --b3-font-family-code: "Roboto", "Noto Sans", "Microsoft YaHei Mono", "JetBrainsMono-Regular", mononoki, Consolas, "Liberation Mono", Menlo, Courier, monospace, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols", sans-serif; 
+    --b3-font-family-code: "Roboto", "Noto Sans", "Microsoft YaHei Mono", "JetBrainsMono-Regular", mononoki, Consolas, "Liberation Mono", Menlo, Courier, monospace, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols", sans-serif;
     --b3-font-family-graph: mononoki;
     --b3-font-family-emoji: "Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI", "Apple Color Emoji", "Twemoji Mozilla", "Noto Color Emoji", "Android Emoji";
     --b3-font-family-math: KaTeX_Math;
@@ -165,7 +165,7 @@
 
 @font-face {
     font-family: "Font Awesome 6 Free Solid";
-    src:url('fonts/Font Awesome 6 Free-Solid-900.otf')
+    src: url('fonts/Font Awesome 6 Free-Solid-900.otf');
 }
 
 /* 日记、同步、主题、多页面前后切换图标隐藏 */
@@ -175,6 +175,11 @@
 #barDock,
 #barForward {
     display: none !important;
+}
+
+#barThemeMode,
+#barSearch {
+    color: #999;
 }
 
 /* 左边栏 */
@@ -230,7 +235,11 @@
 
 /* 文档树当前文档标题背景 */
 .b3-list--background .b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) {
-    background-color: #ddd;
+    background-color: #f1f1f1;
+}
+/* 文档树鼠标浮动文档标题背景 */
+.b3-list--background .b3-list-item:hover:not(.b3-list-item--focus) {
+background-color: #f1f1f1;
 }
 
 /* 文档树左上角图标 */
@@ -249,6 +258,29 @@ span[data-type="close"] svg {
 /* 最小化图标 */
 span[aria-label*="最小化"] {
     display: none !important;
+}
+
+/* 文档树反链计数背景 */
+.file-tree .b3-list-item .counter {
+    background-color: transparent;
+    color: #777;
+}
+
+/* 编辑页面、反链面板反链计数背景 */
+.protyle-content .protyle-attr--refcount.popover__block,
+.sy__backlink .counter {
+    background-color: transparent;
+}
+.sy__backlink .counter {
+    opacity: 0;
+}
+.sy__backlink .counter.listCount,
+.sy__backlink .counter.listMCount,
+.sy__backlink .backlinkList>ul>li .counter,
+.sy__backlink .backlinkMList>ul>li .counter,
+.sy__backlink .counter:hover {
+    opacity: 1;
+    color: #777;
 }
 
 /*alt 1-4 文档、大纲、收藏、标签, 最小化, alt 7 反链*/
@@ -294,6 +326,9 @@ li[class~="item--focus"] {
 .item__close:hover {
     opacity: 88%;
 }
+.item__close:hover svg {
+    background-color: transparent !important;
+}
 
 .layout-tab-container,
 .layout-tab-container .protyle,
@@ -327,6 +362,14 @@ li[data-type="toggle"] .b3-list-item__text {
     color: #888 !important;
     font-size: 13px;
 }
+.b3-list li[data-type="open"]:hover {
+    background-color: #f1f1f1;
+}
+/*底部已关闭笔记本删除图标*/
+li[data-type="toggle"]>ul [data-type="remove"] svg {
+    height: 10px;
+    width: 10px;
+}
 
 /* 文档标题 */
 .protyle-content .protyle-title__input {
@@ -334,7 +377,11 @@ li[data-type="toggle"] .b3-list-item__text {
     font-size: 30px;
     font-weight: 500;
     margin: 0 0 0 -4px;
-    background-color: transparent; 
+    background-color: transparent;
+}
+/* 文档标题图标下划线 */
+.protyle-content span[data-type="a"]:hover{
+    box-shadow: none;
 }
 
 /* 文档正文 */
@@ -377,23 +424,31 @@ div[data-type="NodeHeading"]:first-of-type {
 
 mark {
     font-family: var(--b3-font-family);
-    font-size: 92%;
+    font-size: 17px;
     padding: 3px;
-    display: inline-block; 
+    display: inline-block;
     font-weight: 400;
     height: 16px;
     line-height: 16px;
+    border-radius: 1px;
 }
 #searchList mark,
 .sy__backlink mark,
 .protyle-wysiwyg [data-node-id] span[data-type="search-mark"] {
-    display: inline-block !important; 
-    background-color: #caeffd;
-    color: #555 !important;
+    display: inline-block !important;
+    background-color: #b7e4ff;
+    color: #266996 !important;
     line-height: 16px !important;
+}
+#searchList mark,
+.sy__backlink mark{
+    font-size: 14px;
 }
 #searchList mark{
     padding: 1px 0 !important;
+}
+#searchList .b3-list-item__meta mark{
+    font-size: 12px;
 }
 .protyle-wysiwyg [data-node-id] span[data-type="search-mark"] {
     padding: 2px 0 4px 0!important;
@@ -487,7 +542,7 @@ mark {
     background-color: transparent;
     text-decoration: none;
     border-bottom:  none;
-} 
+}
 
 .protyle-wysiwyg kbd {
     font-size: 15px;
@@ -532,7 +587,7 @@ code {
 }
 .protyle-task--done .protyle-action--task::before {
     background-color: transparent;
-    border: none !important; 
+    border: none !important;
     font-family: "Font Awesome 6 Free Solid";
     content: "\f058" !important;
     display: inline-block;
@@ -563,8 +618,7 @@ code {
     top: 4px !important;
     font-size: 10px;
 }
-.block__popover .protyle-task--done .protyle-action--task::after
-{
+.block__popover .protyle-task--done .protyle-action--task::after {
     width: 10px !important;
     height: 10px !important;
     left: 15px !important;
@@ -886,7 +940,7 @@ code {
     background-color: #bbb;
 }
 .protyle-wysiwyg [data-node-id][fold="1"]:not(.li).code-block::before{
-    content: 'Code ...'; 
+    content: 'Code ...';
     color: #888;
     font-style: italic;
     position: absolute;
@@ -1210,7 +1264,7 @@ button[data-type="style4"]:before {
     -webkit-text-fill-color: #000 !important;
 }
 
-button[data-type="style2"], 
+button[data-type="style2"],
 button[data-type="style4"]{
     -webkit-text-fill-color: transparent !important;
     -webkit-text-stroke: 0 !important;
@@ -1255,7 +1309,7 @@ button[data-type="style4"]{
 /* 全局搜索窗口 */
 .layout-tab-container>.fn__flex-1>.fn__flex-column[style="height: 100%"]>.fn__flex-column[style*="min-height"] {
     min-height: 5% !important;
-    max-height: 25% !important; 
+    max-height: 25% !important;
 }
 
 .block__popover,
@@ -1276,7 +1330,7 @@ button[data-type="style4"]{
     background-color: #aaa;
 }
 .b3-slider:focus::-webkit-slider-thumb, .b3-slider:hover::-webkit-slider-thumb {
-    transform:scale(1)
+    transform:scale(1);
 }
 
 /* 双链建议弹出菜单当前块 */
@@ -1374,7 +1428,7 @@ strong[style*="background6"],
 strong[style*="background7"],
 strong[style*="background8"],
 strong[style*="background9"] {
-    display: inline-block; 
+    display: inline-block;
     height: 16px;
     line-height: 16px;
     padding: 2px 0 4px 0;
@@ -1397,7 +1451,7 @@ strong[style*="background9"] {
 .block__popover .protyle-wysiwyg .h5,
 .block__popover .protyle-wysiwyg .h6 {
     font-family: var(--b3-font-family);
-    font-size: 14px !important;   
+    font-size: 14px !important;
     margin: 6px 0 0 0 !important;
     color: #555;
 }
@@ -1466,7 +1520,7 @@ strong[style*="background9"] {
     padding-bottom: 5px;
 }
 
-.block__popover .b3-tooltips__sw::before, 
+.block__popover .b3-tooltips__sw::before,
 .block__popover .b3-tooltips__sw::after{
     margin: 0;
     bottom: 0;
@@ -1508,6 +1562,11 @@ strong[style*="background9"] {
 
 .b3-menu__item--readonly>span>div {
     margin-left: 0 !important;
+}
+
+/* 搜索界面图标 */
+.b3-dialog #searchList .b3-list-item__graphic{
+    color: #888;
 }
 
 /* 修正设置面板部分字体被编辑器字体影响 */
