@@ -1,4 +1,5 @@
 {
+  "foldTip": "确定修改为编辑模式并记录折叠状态？",
   "copyHPath": "复制可读路径",
   "justify": "两侧对齐",
   "height": "高度",
@@ -115,7 +116,7 @@
   "stateExcepted": "\uD83D\uDEA7 状态异常",
   "rebuildIndex": "重建索引",
   "rebuildIndexTip": "发现了一个系统运行时错误，请选择需要退出还是重建索引进行修复",
-  "closeNotebook": "已关闭的笔记本",
+  "closeNotebook": "已关闭",
   "widget": "挂件",
   "customEmoji": "添加自定义表情",
   "customEmojiTip": "打开 <a href=\"javascript:void(0)\" id=\"appearanceOpenEmoji\">Emoji 文件夹</a> 放入图片后并点击刷新按钮",
@@ -607,8 +608,6 @@
   "about12": "启用后将允许同一局域网内的其他设备进行访问。修改后会自动关闭应用，请手动重启",
   "about13": "API token",
   "about14": "调用 API 时需要通过该 token 进行鉴权",
-  "about15": "更新检查",
-  "about16": "开启后会在启动时检查是否有更新，如果不是最新版则进行提示",
   "about17": "设置为 <code>直接连接</code> 时不启用代理。修改后会自动关闭应用，请手动重启",
   "checkUpdate": "检查更新",
   "currentVer": "当前版本",

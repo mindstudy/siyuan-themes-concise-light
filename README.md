@@ -4,6 +4,7 @@
 
 ## 特别说明
 
+- ！！！由于思源笔记css类名更改，本主题适配思源笔记1.9.1及以上版本
 - 由于隐藏了部分界面元素，本主题需要熟悉思源笔记快捷键，谢谢理解。
 
 ## 主题特点
@@ -61,6 +62,8 @@
 ##### 无衬线字体
 
 - 正文标记类文字、除编辑、搜索界面：无衬线字体（黑体）。
+- Mac系统自带苹方黑体，显示效果很好。
+- Win 系统可在这里下载体验苹方字体：https://uiux.chat/d/63-windows-otf
 
 ##### 衬线字体
 
@@ -69,27 +72,29 @@
 西方语言衬线字体
 
 - 正文英文衬线字体：Charis SIL、Gentium Plus，英文字符、音标、法语、德语、拉丁语、希腊语等显示良好
-
 - Charis SIL、Gentium Plus 的官方网站免费下载（安装其中的regular正体即可，官方提供的粗体斜体Mac系统貌似显示不佳）
-
 - Charis SIL下载 https://software.sil.org/charis/
-
-  Gentium Plus下载 https://software.sil.org/gentium/
+- Gentium Plus下载 https://software.sil.org/gentium/
 
 中日韩衬线字体
 
 - 正文中文衬线字体：方正悠宋GBK / FZYouSongJ GBK 505L/506L，多个字号建议全装，可选择自己喜欢的字号更改 theme.css 正文字体
 - 标题中文衬线字体：方正准雅宋GBK / FZYaSong-M-GBK
 - 方正字体网站以设计师身份注册，可免费个人使用。
-- 方正系列字体对中日韩文字的支持很好，但对西文特殊字符支持不佳，故需结合 Charis SIL、Gentium Plus 使用。
+- 方正系列字体对中日韩文字的支持很好，但对西文特殊字符支持不佳，故需结合 Charis SIL、Gentium Plus 使用。下载时注意选择GBK版本。
 - 方正悠宋GBK下载 https://www.foundertype.com/index.php/FontInfo/index/id/5710
 - 方正雅宋GBK下载 https://www.foundertype.com/index.php/FontInfo/index/id/193
 
-本主题上述字体在 Mac 系统下显示良好。其他系统显示效果可能有差异，可选择自己喜欢的字体修改 theme.css。
+另外本主题也会用到楷体和仿宋，推荐下载：
 
-字体替换时，字体全称中间如果有空格，css里面需对全称加英文引号。全称最好用字体的英文名，不然其他系统可能显示不正常。
+- 方正新楷体GBK下载 https://www.foundertype.com/index.php/FontInfo/index/id/290
+- 方正仿宋GBK下载 https://www.foundertype.com/index.php/FontInfo/index/id/128
 
-其他字体参考网站：https://www.qiuziti.com
+本主题所用字体的字符集涵盖面广，在 Mac 系统下显示良好，其他系统显示效果可能有差异。
+
+字体替换时，字体全称中间如果有空格，css里面需对全称加英文引号。全称最好也加上字体的英文名，不然其他系统可能显示不正常。
+
+可另选自己喜欢的字体修改 theme.css。其他字体参考网站：https://www.qiuziti.com
 
 ## 自助修改
 
