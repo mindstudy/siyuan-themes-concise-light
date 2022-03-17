@@ -160,7 +160,7 @@
 }
 
 .b3-text-field::-webkit-calendar-picker-indicator {
-    filter: invert(1)
+    filter: invert(1);
 }
 
 @font-face {
@@ -406,26 +406,21 @@ mark {
     padding: 0;
     margin: 2px 1px 0 0;
 }
-
 .b3-menu .ft__on-background {
     color: #aaa;
 }
-
 .b3-menu button .b3-list-item__meta,
 .b3-menu button .b3-list-item__meta mark {
     font-size: 13px;
     color: #666;
 }
-
 .b3-menu button .b3-list-item__first+.b3-list-item__meta{
     color: #aaa;
 }
-
 .b3-menu button .b3-list-item__text mark {
     color: #cc5132;
     background-color: #fff;
 }
-
 .b3-menu button .b3-list-item__meta mark {
     background-color: transparent !important;
 }
@@ -1385,8 +1380,8 @@ strong[style*="background9"] {
 .block__popover .protyle-breadcrumb,
 .block__popover .protyle-wysiwyg,
 .block__popover .protyle-wysiwyg--attr {
-    font-family: var(--b3-font-family)
-    font-size: 13px !important;
+    font-family: var(--b3-font-family);
+    font-size: 14px !important;
     font-weight: normal !important;
     padding: 0 25px 0 25px !important;
 }
@@ -1398,7 +1393,7 @@ strong[style*="background9"] {
 .block__popover .protyle-wysiwyg .h5,
 .block__popover .protyle-wysiwyg .h6 {
     font-family: var(--b3-font-family);
-    font-size: 13px !important;   
+    font-size: 14px !important;   
     margin: 6px 0 0 0 !important;
     color: #555;
 }
