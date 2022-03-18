@@ -386,6 +386,7 @@ li[data-type="toggle"]>ul [data-type="remove"] svg {
     font-family: "Charis SIL", "Gentium Plus", "FZYouSongJ GBK 506L", var(--b3-font-family);
     font-size: 18px !important;
     letter-spacing: 0.02em !important;
+    text-align: justify;
     cursor: default;
 }
 
@@ -430,6 +431,7 @@ mark {
     height: 16px;
     line-height: 16px;
     border-radius: 1px;
+    color: #266996 !important;
 }
 #searchList mark,
 .sy__backlink mark,
