@@ -219,7 +219,7 @@
 }
 
 .block__icon svg {
-    opacity: 80%;
+    opacity: 0.8;
     width: 12px;
 }
 
@@ -241,7 +241,6 @@
 .b3-list--background .b3-list-item:hover:not(.b3-list-item--focus) {
 background-color: #f1f1f1;
 }
-
 /* 文档树左上角图标 */
 span[data-type="pin"] svg {
     max-height: 10px;
@@ -254,12 +253,10 @@ span[data-type="close"] svg {
     margin-bottom: -8px;
     float: right;
 }
-
 /* 最小化图标 */
 span[aria-label*="最小化"] {
     display: none !important;
 }
-
 /* 文档树反链计数背景 */
 .file-tree .b3-list-item .counter {
     background-color: transparent;
@@ -321,10 +318,10 @@ li[class~="item--focus"] {
 
 /*页签右边关闭按钮鼠标悬浮显示*/
 .item__close {
-    opacity: 10%;
+    opacity: 0.1;
 }
 .item__close:hover {
-    opacity: 88%;
+    opacity: 0.88;
 }
 .item__close:hover svg {
     background-color: transparent !important;
@@ -343,7 +340,7 @@ li[class~="item--focus"] {
     display: none !important;
 }
 .layout-tab-container .protyle-breadcrumb .b3-tooltips  {
-    opacity: 60% !important;
+    opacity: 0.6 !important;
 }
 
 /*大纲块标记*/
@@ -939,7 +936,18 @@ code {
 }
 .protyle-wysiwyg [data-node-id][fold="1"]:not(.li).code-block .protyle-icons{
     opacity: 1;
-    background-color: #bbb;
+}
+[data-type="NodeCodeBlock"] .protyle-icons,
+[data-type="NodeCodeBlock"] .protyle-icons>span:hover{
+    background-color: transparent;
+}
+[data-type="NodeCodeBlock"] .protyle-icons>span:hover,
+[data-type="NodeCodeBlock"] .protyle-icons svg{
+    color: #999;
+}
+[data-type="NodeCodeBlock"] .protyle-action__language{
+    color: #999;
+    font-family: var(--b3-font-family-code);
 }
 .protyle-wysiwyg [data-node-id][fold="1"]:not(.li).code-block::before{
     content: 'Code ...';
@@ -954,7 +962,7 @@ code {
 /* 超级块折叠 */
 .protyle-wysiwyg [data-node-id][fold="1"]:not(.li).sb {
     opacity: 1;
-    font-size: 88% !important;
+    font-size: 0.9em !important;
     height: 2.5em !important;
     padding-bottom: 5px;
     background-color: #dbe4f2 !important;
@@ -1030,7 +1038,8 @@ span[data-type="a"]{
     font-weight: 400 !important;
 }
 span[data-type="a"]:hover{
-    box-shadow: inset 0 -0.05em #42a7f0;
+    text-decoration: #42a7f0 underline;
+    text-underline-offset: 4px;
 }
 
 /*标签*/
@@ -1088,7 +1097,7 @@ span[data-type="a"]:hover{
     flex-wrap: wrap;
     font-family: var(--b3-font-family);
     font-weight: 400;
-    font-size: 88%;
+    font-size: 0.9em;
     text-align: justify;
 }
 .protyle-wysiwyg [data-node-id].sb[data-sb-layout="row"]{
@@ -1117,12 +1126,18 @@ span[data-type="a"]:hover{
 /*四种卡片样式背景*/
 .protyle-wysiwyg [style*="-card-"] {
     font-family: var(--b3-font-family);
-    font-size: 90%;
+    font-size: 0.9em;
 }
 
 /*表格边线、背景*/
 .protyle-wysiwyg table thead tr {
-    background-color: #eee !important;
+    background-color: #ebf2ff !important;
+}
+.protyle-wysiwyg table tr{
+    background-color: #f3f3f3 !important;
+}
+.protyle-wysiwyg table tbody tr:nth-child(2n) {
+    background-color: #f3f3f3 !important; /*#f8f9fa*/
 }
 
 .protyle-wysiwyg table tbody{
@@ -1151,7 +1166,6 @@ span[data-type="a"]:hover{
     border: 0.05em solid #555;
     padding: 2px 4px 0 4px;
 }
-
 /* 块图标外观菜单隐藏分割线 */
 #commonMenu .b3-menu__item:nth-of-type(12) .b3-menu__submenu .b3-menu__separator,
 #commonMenu .b3-menu__item:nth-of-type(13) .b3-menu__submenu .b3-menu__separator {
@@ -1302,7 +1316,7 @@ button[data-type="style4"]{
 
 /* 全局搜索窗口 */
 .layout-tab-container>.fn__flex-1>.fn__flex-column[style="height: 100%"]>.fn__flex-column[style*="min-height"] {
-    min-height: 5% !important;
+    min-height: auto !important;
     max-height: 25% !important;
 }
 
@@ -1422,10 +1436,10 @@ strong[style*="background6"],
 strong[style*="background7"],
 strong[style*="background8"],
 strong[style*="background9"] {
-    display: inline-block;
-    height: 16px;
-    line-height: 16px;
-    padding: 2px 0 4px 0;
+    display: inline;
+    line-height: 1.625;
+    line-height: 1.625;
+    padding: 0 0 2px 0;
 }
 
 /* 引用块、反向链接弹出菜单 */
@@ -1618,6 +1632,11 @@ strong[style*="background9"] {
 .protyle-wysiwyg [custom-f="bg"] .li{
    display: flex;
    outline: thin solid #888;
+   margin-top: 0.05em;
+}
+.protyle-wysiwyg [custom-f="bg"] .li>.list>.li,
+.protyle-wysiwyg [custom-f="bg"] .li>.list>.li>.list>.li{
+   margin-top: 0;
 }
 .protyle-wysiwyg [custom-f="bg"] .li .list{
    padding: 0;
