@@ -426,7 +426,6 @@ div[data-type="NodeHeading"]:first-of-type {
 }
 
 mark {
-    padding: 0 0.1em;
     font-weight: 400;
     height: 16px;
     line-height: 16px;
