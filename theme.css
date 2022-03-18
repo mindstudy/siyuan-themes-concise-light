@@ -428,8 +428,8 @@ div[data-type="NodeHeading"]:first-of-type {
 mark {
     font-family: var(--b3-font-family);
     font-size: 17px;
-    padding: 3px;
-    display: inline-block;
+    padding: 2px 1px 2px 1px;
+    display: inline;
     font-weight: 400;
     height: 16px;
     line-height: 16px;
@@ -438,7 +438,7 @@ mark {
 #searchList mark,
 .sy__backlink mark,
 .protyle-wysiwyg [data-node-id] span[data-type="search-mark"] {
-    display: inline-block !important;
+    display: inline !important;
     background-color: #b7e4ff;
     color: #266996 !important;
     line-height: 16px !important;
