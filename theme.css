@@ -426,10 +426,7 @@ div[data-type="NodeHeading"]:first-of-type {
 }
 
 mark {
-    font-family: var(--b3-font-family);
-    font-size: 0.88em;
-    padding: 2px 1px 2px 1px;
-    display: inline;
+    padding: 0 0.1em;
     font-weight: 400;
     height: 16px;
     line-height: 16px;
@@ -1425,20 +1422,6 @@ strong[style*="background7"],
 strong[style*="background8"],
 strong[style*="background9"] {
     font-weight: 500 !important;
-}
-
-strong[style*="background1"],
-strong[style*="background2"],
-strong[style*="background3"],
-strong[style*="background4"],
-strong[style*="background5"],
-strong[style*="background6"],
-strong[style*="background7"],
-strong[style*="background8"],
-strong[style*="background9"] {
-    display: inline;
-    line-height: 1.625;
-    padding: 0 0 2px 0;
 }
 
 /* 引用块、反向链接弹出菜单 */
