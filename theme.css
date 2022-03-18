@@ -427,7 +427,7 @@ div[data-type="NodeHeading"]:first-of-type {
 
 mark {
     font-family: var(--b3-font-family);
-    font-size: 17px;
+    font-size: 0.88em;
     padding: 2px 1px 2px 1px;
     display: inline;
     font-weight: 400;
@@ -548,7 +548,7 @@ mark {
 }
 
 .protyle-wysiwyg kbd {
-    font-size: 15px;
+    font-size: 0.88em;
     padding: 4px 1px 1px 1px !important;
     color: #666;
     box-shadow: none;
@@ -1044,10 +1044,10 @@ span[data-type="a"]:hover{
 
 /*标签*/
 .protyle-wysiwyg [data-node-id] span[data-type="tag"]{
-    font-size: 15px;
+    font-size: 0.88em;
     font-family: var(--b3-font-family);
     font-weight: 400 !important;
-    padding: 0 3px 0 3px;
+    padding: 2px;
     border-radius: 5px;
     border: 0 !important;
     background: #6b9ac9;
