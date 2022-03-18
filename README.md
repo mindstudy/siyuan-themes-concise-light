@@ -77,10 +77,10 @@
 
 中日韩衬线字体
 
-- 正文中文衬线字体：方正悠宋GBK / FZYouSongJ GBK 505L/506L，多个字号建议全装，可选择自己喜欢的字号更改 theme.css 正文字体
-- 标题中文衬线字体：方正准雅宋GBK / FZYaSong-M-GBK
 - 方正字体网站以设计师身份注册，可免费个人使用。
 - 方正系列字体对中日韩文字的支持很好，但对西文特殊字符支持不佳，故需结合 Charis SIL、Gentium Plus 使用。下载时注意选择GBK版本。
+- 正文中文衬线字体：方正悠宋GBK / FZYouSongJ GBK 505L/506L，多个字号建议全装，可选择自己喜欢的字号更改 theme.css 正文字体
+- 标题中文衬线字体：方正准雅宋GBK / FZYaSong-M-GBK
 - 方正悠宋GBK下载 https://www.foundertype.com/index.php/FontInfo/index/id/5710
 - 方正雅宋GBK下载 https://www.foundertype.com/index.php/FontInfo/index/id/193
 
@@ -187,6 +187,8 @@ Siyuan/conf/appearance/themes/Concise Lght/theme.css，搜索“emoji”，删�
 ##### 恢复镂空/投影
 
 由于行内文字的镂空/投影效果基本不用，本主题将镂空修改为楷体，投影修改为仿宋。由于涉及代码较多，这里就不贴出删除代码。有需要请单独反馈。
+
+楷体、仿宋设置优先级：选中文字工具条设置>块图标外观设置>块图标属性设置
 
 ## 自定义属性
 
