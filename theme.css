@@ -1184,82 +1184,6 @@ span[data-type="a"]:hover{
     border: 0.05em solid #888 !important;
 }
 
-/* 块图标外观菜单 */
-#commonMenu .b3-menu__item:nth-of-type(12) .b3-menu__submenu,
-#commonMenu .b3-menu__item:nth-of-type(13) .b3-menu__submenu {
-    column-count: 3;
-    column-gap: 5px;
-    max-height: 360px !important;
-    border: 0.05em solid #555;
-    padding: 2px 4px 0 4px;
-}
-/* 块图标外观菜单隐藏分割线 */
-#commonMenu .b3-menu__item:nth-of-type(12) .b3-menu__submenu .b3-menu__separator,
-#commonMenu .b3-menu__item:nth-of-type(13) .b3-menu__submenu .b3-menu__separator {
-    display: none;
-}
-/*块图标外观菜单镂空投影*/
-#commonMenu .b3-menu__item:nth-of-type(12) .b3-menu__submenu .b3-menu__item:nth-of-type(6),
-#commonMenu .b3-menu__item:nth-of-type(12) .b3-menu__submenu .b3-menu__item:nth-of-type(7),
-#commonMenu .b3-menu__item:nth-of-type(13) .b3-menu__submenu .b3-menu__item:nth-of-type(6),
-#commonMenu .b3-menu__item:nth-of-type(13) .b3-menu__submenu .b3-menu__item:nth-of-type(7) {
-    -webkit-text-fill-color: transparent !important;
-    -webkit-text-stroke: 0 !important;
-    text-shadow: none !important;
-}
-/*块图标外观菜单楷体*/
-#commonMenu .b3-menu__item:nth-of-type(12) .b3-menu__submenu .b3-menu__item:nth-of-type(6) .b3-menu__label:before,
-#commonMenu .b3-menu__item:nth-of-type(13) .b3-menu__submenu .b3-menu__item:nth-of-type(6) .b3-menu__label:before {
-    content: "🄰 楷体";
-    font-family: "Charis SIL", "Gentium Book Plus", "Gentium Plus", FZNewKai-Z03, "方正新楷体 GBK", Kai, "楷体", SimKai, STKaiti, serif;
-    -webkit-text-fill-color: #333 !important;
-    font-weight: normal;
-    font-size: 1.1em;
-    padding: 0;
-    margin-left: 1px;
-}
-/*块图标外观菜单仿宋*/
-#commonMenu .b3-menu__item:nth-of-type(12) .b3-menu__submenu .b3-menu__item:nth-of-type(7) .b3-menu__label:before,
-#commonMenu .b3-menu__item:nth-of-type(13) .b3-menu__submenu .b3-menu__item:nth-of-type(7) .b3-menu__label:before {
-    content: "🄰 仿宋";
-    font-family: "Charis SIL", "Gentium Book Plus", "Gentium Plus", FZFangSong-Z02, "方正仿宋 GBK", Fangsong, "仿宋", serif;
-    -webkit-text-fill-color: #333 !important;
-    text-shadow: none !important;
-    font-size: 1.1em;
-    padding: 0;
-    margin-left: 1px;
-}
-#commonMenu .b3-menu__item:nth-of-type(12) .b3-menu__submenu .b3-menu__item:nth-of-type(6)  .fn__flex,
-#commonMenu .b3-menu__item:nth-of-type(12) .b3-menu__submenu .b3-menu__item:nth-of-type(7)  .fn__flex,
-#commonMenu .b3-menu__item:nth-of-type(12) .b3-menu__submenu .b3-menu__item:nth-of-type(6)  .b3-menu__icon,
-#commonMenu .b3-menu__item:nth-of-type(12) .b3-menu__submenu .b3-menu__item:nth-of-type(7)  .b3-menu__icon,
-#commonMenu .b3-menu__item:nth-of-type(13) .b3-menu__submenu .b3-menu__item:nth-of-type(6)  .fn__flex,
-#commonMenu .b3-menu__item:nth-of-type(13) .b3-menu__submenu .b3-menu__item:nth-of-type(7)  .fn__flex,
-#commonMenu .b3-menu__item:nth-of-type(13) .b3-menu__submenu .b3-menu__item:nth-of-type(6)  .b3-menu__icon,
-#commonMenu .b3-menu__item:nth-of-type(13) .b3-menu__submenu .b3-menu__item:nth-of-type(7)  .b3-menu__icon {
-    display: none;
-}
-
-/*外观菜单设置内容块楷体仿宋*/
-.protyle-wysiwyg [data-node-id][style$="transparent;"] {
-    font-family: "Charis SIL", "Gentium Book Plus", "Gentium Plus", FZNewKai-Z03, "方正新楷体 GBK", Kai, "楷体", SimKai, STKaiti, serif !important;
-    -webkit-text-stroke: 0 !important;
-    -webkit-text-fill-color: inherit !important;
-    text-shadow: none !important;
-}
-.protyle-wysiwyg [data-node-id][style$="var(--b3-border-color);"] {
-    font-family: "Charis SIL", "Gentium Book Plus", "Gentium Plus", FZFangSong-Z02, "方正仿宋 GBK", Fangsong, "仿宋", serif !important;
-    -webkit-text-stroke: 0 !important;
-    -webkit-text-fill-color: inherit !important;
-    text-shadow: none !important;
-}
-.protyle-wysiwyg [data-node-id][style$=");"] {
-    font-family: "Charis SIL", "Gentium Book Plus", "Gentium Plus", FZFangSong-Z02, "方正仿宋 GBK", Fangsong, "仿宋", serif !important;
-    -webkit-text-stroke: 0 !important;
-    -webkit-text-fill-color: inherit !important;
-    text-shadow: none !important;
-}
-
 /*浮动工具条高亮*/
 .protyle-toolbar__item--current {
     color: #b88 !important;
@@ -1595,6 +1519,12 @@ strong[style*="background9"] {
     display: none;
     color: #eee;
     font-weight: 400;
+}
+/* 恢复双链弹出菜单自定义字体 */
+.block__popover [custom-z="ht"],
+.block__popover [custom-z="kt"],
+.block__popover [custom-z="fs"] {
+    font-family: var(--b3-font-family) !important;
 }
 
 /* 块图标右键菜单 */
