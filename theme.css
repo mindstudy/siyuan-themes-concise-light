@@ -315,10 +315,10 @@ li[class~="item--focus"] {
 }
 
 /*当前页签背景*/
-.layout-tab-bar .item {
-    box-shadow: 1px 4px 2px 0 #ddd;
+.layout-tab-bar .item{
+    box-shadow: none;
 }
-.layout-tab-bar .item--focus {
+.layout-tab-bar .item.item--focus {
     background-color: #f7f7f7;
 }
 
@@ -418,11 +418,6 @@ li[data-type="toggle"] .b3-list-item__text {
 .protyle-wysiwyg [data-node-id]:hover {
     background-color: #dce4f3;
 }
-/* 消除列表项高亮背景影响 */
-.protyle-wysiwyg [data-node-id].li:hover,
-.protyle-wysiwyg [data-node-id].list:hover {
-    background-color: transparent !important;
-}
 
 .protyle-wysiwyg [data-node-id] span[data-type="block-ref"],
 .protyle-wysiwyg [data-node-id] span[data-type="file-annotation-ref"] {
@@ -464,17 +459,18 @@ mark {
 #searchList mark,
 .sy__backlink mark,
 .protyle-wysiwyg [data-node-id] span[data-type="search-mark"] {
+    font-family: var(--b3-font-family);
     display: inline !important;
-    background-color: #b7e4ff;
-    color: #266996 !important;
+    background-color: #4189b3;
+    color: #fff;
     line-height: 16px !important;
 }
 #searchList mark,
 .sy__backlink mark{
-    font-size: 14px;
+    font-size: 0.96em !important;
 }
 #searchList mark{
-    padding: 1px 0 !important;
+    padding: 1px !important;
 }
 #searchList .b3-list-item__meta mark{
     font-size: 12px;
@@ -1319,6 +1315,20 @@ code {
 [data-type="NodeBlockQueryEmbed"] [data-type="NodeHeading"].h6 .protyle-attr {
     padding-top: 22px;
 }
+/*列表图标位置*/
+[data-type="NodeBlockQueryEmbed"] .protyle-wysiwyg__embed .li:before,
+[data-type="NodeBlockQueryEmbed"] .protyle-wysiwyg__embed .li .list:before {
+    padding-top: 10px !important;
+}
+[data-type="NodeBlockQueryEmbed"] .protyle-wysiwyg__embed .li .protyle-action{
+    top: 8px;
+}
+[data-type="NodeBlockQueryEmbed"] [data-subtype="t"] .protyle-action--task::before {
+    top: 9px;
+}
+[data-type="NodeBlockQueryEmbed"] [data-subtype="t"] .protyle-task--done .protyle-action--task::before {
+    top: 0px;
+}
 
 /* 正向链接/目标链接/引用块 */
 span[data-type="block-ref"],
@@ -1934,43 +1944,76 @@ strong[style*="background9"] {
 /* 自定义属性，列表转化为表格 */
 /* 对所有子列表项设置格式*/
 .protyle-wysiwyg [custom-f="bg"] .li{
-   display: flex;
-   outline: thin solid #888;
-   margin-top: 0.05em;
-}
-.protyle-wysiwyg [custom-f="bg"] .li>.list>.li,
-.protyle-wysiwyg [custom-f="bg"] .li>.list>.li>.list>.li{
-   margin-top: 0;
+    display: flex;
+    outline: 0.05em solid #888;
+    background-color: #eff0f1;
 }
 .protyle-wysiwyg [custom-f="bg"] .li .list{
-   padding: 0;
-   margin: 0;
-   width: 100%;
-   outline: thin solid #888;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    outline: 0.05em solid #888;
 }
 .protyle-wysiwyg [custom-f="bg"] [data-node-id].li>[data-node-id] {
     margin-left: 0 !important;
 }
 /* 对符号后文字设置格式 */
 .protyle-wysiwyg [custom-f="bg"] .p {
-   text-align: left;
-   align-items: center;
-   display: flex;
-   min-width: 100px;
-   margin: 0;
+    text-align: left;
+    align-items: center;
+    display: flex;
+    min-width: 100px;
+    margin: 0;
 }
 .protyle-wysiwyg [custom-f="bg"] .li>.list>.li {
-   outline: none !important;
-   border-top: thin solid #888;
+    outline: none !important;
+    border-top: 0.05em solid #888;
 }
 .protyle-wysiwyg [custom-f="bg"] .li>.list>.li:first-of-type {
-   border-top: none !important;
+    border-top: none !important;
 }
 /* 去除小竖线 */
 .list[data-node-id][data-type="NodeList"][custom-f="bg"] .li>:before{
-   display: none ;
+    display: none ;
 }
 /* 设置前面的符号居中对齐 */
 .list[data-node-id][data-type="NodeList"][custom-f="bg"] .protyle-action {
    display: none;
 }/* 自定义属性，列表转化为表格 END */
+
+/*---------社区老铁 abbj 提供的搜索窗口左右排列-------------*/
+/*放大搜索窗口尺寸*/
+/*不添加[data-key]属性选择器将会同时影响alt+p窗口*/
+div[data-key] .b3-dialog__container {
+    width: 95vw !important;
+}
+div[data-key] .b3-dialog__container .fn__flex-column {
+	height:95vh !important;
+	width: 95vw !important;
+}
+/*先把容器改成左右排列并自动换行*/
+div[data-key] .b3-dialog__container .fn__flex-column {
+	flex-direction: row !important;
+	flex-wrap: wrap;
+}
+/*设置需要占满一行的项目*/
+div[data-key] .b3-dialog__container .fn__flex-column .search__header {
+	width:100vw;
+	flex-shrink:0;
+}
+div[data-key] .b3-dialog__container .fn__flex-column .b3-form__space--small {
+	width:100vw;
+}
+/*搜索结果列表占一半宽度，靠左排列*/
+div[data-key] .b3-dialog__container .fn__flex-column #searchList {
+	float:left;
+	width:45vw;
+	height:calc(100% - 85px) !important;
+}
+/*结果预览占剩余宽度*/
+div[data-key] .b3-dialog__container .fn__flex-column #searchPreview {
+	width:45vw;
+}
+.spread-search__preview {
+    border-top: none;
+}/*---------搜索窗口改造 end -------------*/

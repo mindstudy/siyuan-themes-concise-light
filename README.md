@@ -4,8 +4,9 @@
 
 ## 特别说明
 
-- 由于隐藏了部分界面元素，本主题需要熟悉思源笔记快捷键，谢谢理解。
-- 完整体验需要安装四种衬线字体，详见“字体选择”部分的说明。
+- 由于隐藏了部分界面元素，本主题需要熟悉思源笔记快捷键，谢谢理解
+- 完整体验本主题需要安装四种衬线字体，详见“字体选择”部分的说明
+- 主题一些效果受社区老铁们的真知灼见所启发，时有借鉴，在此深表感谢
 
 ## 主题特点
 
@@ -34,8 +35,6 @@
   [**《思源笔记双链使用详解》**](https://www.yuque.com/u25584857/ryp75p/tcv57u)
 
   [**《思源笔记外观修改详解》**](https://www.yuque.com/u25584857/ryp75p/sgf58w)
-
-
 
 部分主题效果图：
 
@@ -230,11 +229,13 @@ Siyuan/conf/appearance/themes/Concise Lght/theme.css，搜索“emoji”，删�
 | z      | kt     | 整块/整页转换为楷体 |
 | z      | fs     | 整块/整页转换为仿宋 |
 
-注意 f - bg 列表块转换为表格功能在左边表格内容较多时会有撑开现象，另外在不同的电脑上浏览器渲染可能不同，会出现部分边线变粗情况，请酌情使用。
+注意 f - bg 列表块转换为表格功能在左边表格内容较多时会有撑开现象，请酌情使用。
 
 ## 版本更新
 
-本主题不定期更新，由于主题上传更新有一定时间的等待期，一般 Github 上的仓库会有最新版本，可打包下载，覆盖 Siyuan/conf/appearance/themes/里的同名主题即可。
+本主题不定期更新，由于主题上传更新有一定时间的等待期，一般 Github 上的仓库会有最新版本，可打包下载，覆盖 Siyuan/conf/appearance/themes/里的同名主题即可。另外更新内容放在语雀：
+
+https://www.yuque.com/u25584857/ryp75p/zlocwl
 
 ## 问题反馈
 
@@ -242,9 +243,7 @@ Siyuan/conf/appearance/themes/Concise Lght/theme.css，搜索“emoji”，删�
 
 https://github.com/mindstudy/siyuan-themes-concise-light/issues
 
-或是语雀相关链接反馈：
 
-https://www.yuque.com/u25584857/ryp75p/zlocwl
 
 
 
