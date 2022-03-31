@@ -760,6 +760,9 @@ code {
 .protyle-gutters button {
     padding: 2px 4px;
 }
+.protyle-wysiwyg div[fold="1"][data-type="NodeHeading"]:before {
+    background-color: transparent;
+}
 
 /* 其他折叠 */
 .protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeIFrame"],
