@@ -22,6 +22,8 @@
 
     /* 字体 */
     --b3-font-family: "PingFang SC Light", "PingFang TC Light", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols";
+    --b3-font-family-text: "Charis SIL", "Gentium Book Plus", "Gentium Plus", "FZYouSongJ GBK 506L", "方正悠宋 GBK 506L", "PingFang SC Light", "PingFang TC Light", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols";
+    --b3-font-family-title: "Charis SIL", "Gentium Book Plus", "Gentium Plus", FZYaSong-M-GBK, "方正准雅宋 GBK", "PingFang SC Light", "PingFang TC Light", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols";
     --b3-font-family-code: "Roboto", "Noto Sans", "Microsoft YaHei Mono", "JetBrainsMono-Regular", mononoki, Consolas, "Liberation Mono", Menlo, Courier, monospace, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols", sans-serif;
     --b3-font-family-graph: mononoki;
     --b3-font-family-emoji: "Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI", "Apple Color Emoji", "Twemoji Mozilla", "Noto Color Emoji", "Android Emoji";
@@ -168,6 +170,16 @@
     src: url('fonts/Font Awesome 6 Free-Solid-900.otf');
 }
 
+@font-face {
+    font-family: "Font Awesome 6 Free Regular";
+    src: url('fonts/Font Awesome 6 Free-Regular-400');
+}
+
+@font-face {
+    font-family: "Font Awesome 6 Free Brands Regular";
+    src: url('fonts/Font Awesome 6 Brands-Regular-400');
+}
+
 /* 日记、同步、主题、多页面前后切换图标隐藏 */
 #barDailyNote,
 #barSync,
@@ -267,6 +279,15 @@ span[aria-label*="最小化"] {
 .file-tree [data-type="new"].b3-list-item__action svg:hover{
     height: 12px;
     width: 12px;
+}
+
+/* 垂直分割线 */
+.layout__resize:after {
+    background-color: transparent;
+}
+
+.layout__wnd--active .layout-tab-bar .item--focus {
+box-shadow: none;
 }
 
 /* 编辑页面、反链面板反链计数背景 */
@@ -395,7 +416,7 @@ li[data-type="toggle"] .b3-list-item__text {
     margin-top: 0 !important;
 }
 .protyle-content .protyle-title__input {
-    font-family: "Charis SIL", "Gentium Book Plus", "Gentium Plus", FZYaSong-M-GBK, "方正准雅宋 GBK", var(--b3-font-family);
+    font-family: var(--b3-font-family-title);
     font-size: 30px;
     font-weight: 500;
     margin: 0 0 0 -4px;
@@ -408,7 +429,7 @@ li[data-type="toggle"] .b3-list-item__text {
 }
 /* 文档正文 */
 .protyle-content .protyle-wysiwyg {
-    font-family: "Charis SIL", "Gentium Book Plus", "Gentium Plus", "FZYouSongJ GBK 506L", "方正悠宋 GBK 506L", var(--b3-font-family);
+    font-family: var(--b3-font-family-text);
     font-size: 18px !important;
     text-align: justify;
     cursor: default;
@@ -451,7 +472,7 @@ div[data-type="NodeHeading"]:first-of-type {
 }
 
 mark {
-    font-family: serif, "Charis SIL", "Gentium Book Plus", "Gentium Plus", "FZYouSongJ GBK 506L", "方正悠宋 GBK 506L", var(--b3-font-family);
+    font-family: serif, var(--b3-font-family-text);
     font-weight: 400;
     border-radius: 1px;
     padding: 1px;
@@ -472,8 +493,16 @@ mark {
 #searchList mark{
     padding: 1px !important;
 }
+#searchList .b3-list-item__meta{
+   max-width: 100px;
+   white-space:nowrap; 
+}
 #searchList .b3-list-item__meta mark{
     font-size: 12px;
+}
+#searchPreview [data-type="search-mark"]{
+    font-family: serif, var(--b3-font-family-text);
+    padding: 0  0 2px 0!important;
 }
 .protyle-wysiwyg [data-node-id] span[data-type="search-mark"] {
     padding: 2px 0 4px 0!important;
@@ -532,6 +561,9 @@ mark {
 }
 .b3-menu button .svg--small{
     margin-left: 3px !important;
+}
+.b3-menu button.b3-list-item>.fn__flex.b3-list-item__meta {
+    margin-left: 10px;
 }
 
 /* 按/弹出菜单 */
@@ -619,7 +651,7 @@ code {
     background-color: transparent;
     border: none !important;
     font-family: "Font Awesome 6 Free Solid";
-    content: "\f058" !important;
+    content: "\f14a" !important;
     display: inline-block;
     position: absolute;
     width: 15px !important;
@@ -627,7 +659,7 @@ code {
     left: 0.1em;
     top: 0.1em;
     font-size: 17px;
-    color: #5ba2b8;
+    color: #84cde4;
     box-sizing: border-box;
 }
 .protyle-task--done .protyle-action--task::after {
@@ -701,7 +733,7 @@ code {
 .protyle-content .protyle-wysiwyg .h6[fold="1"] {
     font-weight: normal;
     line-height: 1.5;
-    font-family: "Charis SIL", "Gentium Book Plus", "Gentium Plus", FZYaSong-M-GBK, var(--b3-font-family);
+    font-family: var(--b3-font-family-title);
 }
 
 .protyle-content .protyle-wysiwyg .p[fold="1"] {
@@ -724,6 +756,9 @@ code {
 .protyle-wysiwyg [data-type="NodeListItem"].li[fold="1"]>div:nth-child(2)::after {
     content: " ...";
     color: #d62525;
+}
+.protyle-gutters button {
+    padding: 2px 4px;
 }
 
 /* 其他折叠 */
@@ -1552,9 +1587,9 @@ button[data-type="style4"]{
     max-height: 25% !important;
 }
 
-/* 聚焦模式背景*/
-.protyle-title+[data-doc-type="NodeHeading"]>div,
-.protyle-title+[data-doc-type="NodeParagraph"]>div,
+/* 聚焦模式背景，主程序聚焦返回待改进，暂时取消*/ /*
+.protyle-title+[data-doc-type="NodeHeading"],
+.protyle-title+[data-doc-type="NodeParagraph"],
 .protyle-title+[data-doc-type="NodeList"]>div,
 .protyle-title+[data-doc-type="NodeListItem"]>div,
 .protyle-title+[data-doc-type="NodeBlockquote"]>div,
@@ -1569,6 +1604,76 @@ button[data-type="style4"]{
 .protyle-title+[data-doc-type="NodeAudio"]>div,
 .protyle-title+[data-doc-type="NodeSuperBlock"]>div {
     background-color: #e7e7fc !important;
+} */
+
+/* 块图标外观菜单 */
+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__submenu {
+    column-count: 3;
+    column-gap: 5px;
+    max-height: 360px !important;
+    border: 0.05em solid #555;
+    padding: 2px 4px 0 4px;
+}
+/* 块图标外观菜单隐藏分割线 */
+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item  .b3-menu__separator {
+    display: none;
+}
+/*块图标外观菜单镂空投影*/
+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item  .b3-menu__item:nth-of-type(6),
+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item  .b3-menu__item:nth-of-type(7) {
+    -webkit-text-fill-color: transparent !important;
+    -webkit-text-stroke: 0 !important;
+    text-shadow: none !important;
+}
+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(6)  .fn__flex,
+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(7)  .fn__flex,
+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(6)  .b3-menu__icon,
+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(7)  .b3-menu__icon {
+    display: none;
+}
+/*块图标外观菜单楷体*/
+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(6) .b3-menu__label:before {
+    content: "🄰 楷体";
+    font-family: "Charis SIL", "Gentium Book Plus", "Gentium Plus", FZNewKai-Z03, "方正新楷体 GBK", Kai, "楷体", SimKai, STKaiti, serif;
+    -webkit-text-fill-color: #333 !important;
+    font-weight: normal;
+    font-size: 1.1em;
+    padding: 0;
+    margin-left: 1px;
+}
+/*块图标外观菜单仿宋*/
+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(7) .b3-menu__label:before {
+    content: "🄰 仿宋";
+    font-family: "Charis SIL", "Gentium Book Plus", "Gentium Plus", FZFangSong-Z02, "方正仿宋 GBK", Fangsong, "仿宋", serif;
+    -webkit-text-fill-color: #333 !important;
+    text-shadow: none !important;
+    font-size: 1.1em;
+    padding: 0;
+    margin-left: 1px;
+}
+/*转换内容块为楷体仿宋*/
+.protyle-wysiwyg [data-node-id][style$="transparent;"] {
+    font-family: "Charis SIL", "Gentium Book Plus", "Gentium Plus", FZNewKai-Z03, "方正新楷体 GBK", Kai, "楷体", SimKai, STKaiti, serif !important;
+    -webkit-text-stroke: 0 !important;
+    -webkit-text-fill-color: inherit !important;
+    text-shadow: none !important;
+}
+.protyle-wysiwyg [data-node-id][style$="var(--b3-border-color);"] {
+    font-family: "Charis SIL", "Gentium Book Plus", "Gentium Plus", FZFangSong-Z02, "方正仿宋 GBK", Fangsong, "仿宋", serif !important;
+    -webkit-text-stroke: 0 !important;
+    -webkit-text-fill-color: inherit !important;
+    text-shadow: none !important;
+}
+.protyle-wysiwyg [data-node-id][style$=");"] {
+    font-family: "Charis SIL", "Gentium Book Plus", "Gentium Plus", FZFangSong-Z02, "方正仿宋 GBK", Fangsong, "仿宋", serif !important;
+    -webkit-text-stroke: 0 !important;
+    -webkit-text-fill-color: inherit !important;
+    text-shadow: none !important;
+}
+
+/* 双击图片浏览隐藏文件名*/
+.viewer-container .viewer-title{
+    display: none;
 }
 
 .block__popover{
@@ -1700,7 +1805,7 @@ strong[style*="background6"],
 strong[style*="background7"],
 strong[style*="background8"],
 strong[style*="background9"] {
-    font-family: serif, "Charis SIL", "Gentium Book Plus", "Gentium Plus", "FZYouSongJ GBK 506L", "方正悠宋 GBK 506L", var(--b3-font-family);
+    font-family: serif, var(--b3-font-family-text);
     border-radius: 1px;
     padding: 1px;
 }
@@ -2004,16 +2109,16 @@ div[data-key] .b3-dialog__container .fn__flex-column .search__header {
 div[data-key] .b3-dialog__container .fn__flex-column .b3-form__space--small {
 	width:100vw;
 }
-/*搜索结果列表占一半宽度，靠左排列*/
+/*搜索结果列表宽度，靠左排列*/
 div[data-key] .b3-dialog__container .fn__flex-column #searchList {
 	float:left;
-	width:45vw;
+	width:25vw;
 	height:calc(100% - 85px) !important;
 }
-/*结果预览占剩余宽度*/
+/*结果预览占剩余宽度*/ /*
 div[data-key] .b3-dialog__container .fn__flex-column #searchPreview {
 	width:45vw;
-}
+} */
 .spread-search__preview {
     border-top: none;
 }/*---------搜索窗口改造 end -------------*/
