@@ -259,7 +259,6 @@ span[data-type="pin"] svg {
     margin-bottom: -8px;
     float: right;
 }
-
 span[data-type="close"] svg {
     max-height: 10px;
     margin-bottom: -8px;
@@ -422,6 +421,7 @@ li[data-type="toggle"] .b3-list-item__text {
     margin: 0 0 0 -4px;
     letter-spacing: 0.05em !important;
     background-color: transparent;
+    max-width: calc(100% - 120px) !important;
 }
 /* 文档标题图标下划线 */
 .protyle-content span[data-type="a"]:hover{
@@ -503,6 +503,9 @@ mark {
 #searchPreview [data-type="search-mark"]{
     font-family: serif, var(--b3-font-family-text);
     padding: 0  0 2px 0!important;
+}
+#searchPreview [data-type="NodeHeading"] [data-type="search-mark"]{
+    font-family: serif, var(--b3-font-family-title);
 }
 .protyle-wysiwyg [data-node-id] span[data-type="search-mark"] {
     padding: 2px 0 4px 0!important;
@@ -1296,7 +1299,12 @@ code {
 [data-type="NodeHeading"].h6 .protyle-attr {
     padding-top: 10px;
 }
-
+[data-marker="*"].li .protyle-attr,
+[data-marker*="."].li .protyle-attr {
+    padding-top: 10px;
+    top:0px;
+    right: -5px;
+}
 [data-type="NodeBlockQueryEmbed"] [data-type="NodeParagraph"] .protyle-attr,
 [data-type="NodeBlockQueryEmbed"] [data-type="NodeList"] .protyle-attr,
 [data-type="NodeBlockQueryEmbed"] [data-type="NodeBlockquote"] .protyle-attr,
@@ -1925,9 +1933,24 @@ strong[style*="background9"] {
     padding-top: 0px;
     top: -12px;
 }
-.block__popover [data-type="NodeList"] .protyle-attr {
+.block__popover [data-marker="*"].li .protyle-attr,
+.block__popover [data-marker*="."].li .protyle-attr {
     padding-top: 0px;
-    top: -15px;
+    top:2px;
+    right: 0px;
+}
+.block__popover .li[bookmark],
+.block__popover .li[alias],
+.block__popover .li[name],
+.block__popover .li[memo],
+.block__popover .list[bookmark],
+.block__popover .list[alias],
+.block__popover .list[name],
+.block__popover .list[memo] {
+    margin-top: 0px !important;
+}
+.block__popover [data-type="NodeBlockquote"] {
+    padding: 6px 6px 0 6px!important;
 }
 .block__popover [data-type="NodeBlockquote"] .protyle-attr,
 .block__popover [data-type="NodeTable"] .protyle-attr,

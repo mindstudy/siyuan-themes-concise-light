@@ -76,6 +76,12 @@
 
 ## 字体选择
 
+字号大小
+
+- 本主题主要使用场景为较大屏幕的桌面显示器/笔记本，视距较长(60-70cm)
+- 本主题正文使用衬线字体，字号18px效果更好，字号16px及以下无衬线字体表现更好
+- 可根据自己喜好调整字体字号，如有需要可到文末链接处反馈
+
 ##### 代码字体
 
 - 可使用 Roboto、Noto Sans，效果不错。
@@ -90,7 +96,9 @@
 
 ##### 衬线字体
 
-对于长文档阅读、外语学习，推荐使用衬线字体，辨识度高，缓解长时间使用的视觉疲劳。本主题使用了 Charis SIL、Gentium Plus、方正悠宋、方正准雅宋等衬线字体，需自行安装。不安装界面会显示为无衬线字体（黑体），并不影响使用本主题。
+- 长文档阅读、外语学习，长视距下推荐使用衬线字体，辨识度高，缓解长时间使用的视觉疲劳。
+- 本主题使用了 Charis SIL、Gentium Plus、方正悠宋、方正准雅宋等衬线字体，需自行安装。
+- 不安装界面会显示为无衬线字体（黑体），但并不影响使用本主题。
 
 西方语言衬线字体
 
@@ -108,7 +116,7 @@
 - 方正悠宋GBK下载 https://www.foundertype.com/index.php/FontInfo/index/id/5710
 - 方正雅宋GBK下载 https://www.foundertype.com/index.php/FontInfo/index/id/193
 
-另外本主题也会用到楷体和仿宋，推荐下载：
+另外本主题也会用到楷体和仿宋，一般系统都会自带。大字符集推荐下载：
 
 - 方正新楷体GBK下载 https://www.foundertype.com/index.php/FontInfo/index/id/290
 - 方正仿宋GBK下载 https://www.foundertype.com/index.php/FontInfo/index/id/128
