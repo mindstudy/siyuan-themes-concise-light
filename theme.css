@@ -1994,9 +1994,8 @@ strong[style*="background9"] {
     margin-bottom:  0;
 }
 
-/* 块图标弹出菜单 */
+/* 块图标弹出菜单/链接提示 */
 .tooltip {
-    display: none;
     color: #eee;
     font-weight: 400;
 }
@@ -2128,9 +2127,10 @@ div[data-key] .b3-dialog__container .fn__flex-column {
 	flex-wrap: wrap;
 }
 /*设置需要占满一行的项目*/
-div[data-key] .b3-dialog__container .fn__flex-column .search__header {
+div[data-key] .b3-dialog__container .fn__flex-column .search__header,
+div[data-key] .b3-dialog__container .fn__flex-column .b3-form__space--small {
 	width:100vw;
-	flex-shrink:0;
+	/*flex-shrink:0;*/
 }
 div[data-key] .b3-dialog__container .fn__flex-column .b3-form__space--small {
 	width:100vw;
@@ -2140,11 +2140,13 @@ div[data-key] .b3-dialog__container .fn__flex-column #searchList {
 	float:left;
 	width:25vw;
 	height:calc(100% - 85px) !important;
+	overflow-x: hidden !important;
+	overflow-y: auto;
 }
-/*结果预览占剩余宽度*/ /*
+/*结果预览自动占满剩余宽度，高度和结果列表等高*/
 div[data-key] .b3-dialog__container .fn__flex-column #searchPreview {
-	width:45vw;
-} */
+	height:calc(100% - 85px) !important;
+}
 .spread-search__preview {
     border-top: none;
 }/*---------搜索窗口改造 end -------------*/
