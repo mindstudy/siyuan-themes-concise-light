@@ -8,6 +8,12 @@
 - 完整体验本主题需要安装四种衬线字体，详见“字体选择”部分的说明
 - 主题一些效果受社区老铁们的真知灼见所启发，时有借鉴，在此深表感谢
 
+## 版本更新
+
+本主题不定期更新，由于主题上传集市更新有一定时间的等待期，一般集市更新会慢一些。Github 上的仓库会有最新版本，可打包下载，覆盖 Siyuan/conf/appearance/themes/里的同名主题即可。另外更新内容放在语雀：
+
+https://www.yuque.com/u25584857/ryp75p/zlocwl
+
 ## 主题特点
 
 - 隐藏部分界面元素，界面简明，利于沉浸专注
@@ -76,6 +82,20 @@
   
   其它快捷键参见“设置-快捷键”。
 
+## 自定义属性
+
+本主题对内容块可以使用下列自定义属性，方法是在内容块左边的块图标上单击或右键，点击“属性”，然后按“添加”，输入需要的属性名和属性值即可。
+
+| 属性名 | 属性值 | 作用                     |
+| ------ | ------ | ------------------------ |
+| f      | bg     | 列表块转换为表格         |
+| f      | dt     | 无序列表块转换为思维导图 |
+| z      | ht     | 整块/整页转换为黑体      |
+| z      | kt     | 整块/整页转换为楷体      |
+| z      | fs     | 整块/整页转换为仿宋      |
+
+注意 f - bg 列表块转换为表格功能在左边表格内容较多时会有撑开现象，请酌情使用。
+
 ## 字体选择
 
 ##### 代码字体
@@ -127,120 +147,19 @@
 
 如果使用本主题，但对局部不满意，熟悉css的话可以自行修改。
 
-##### 恢复部分隐藏图标
+详见 https://www.yuque.com/u25584857/ryp75p/zlocwl#OXvNu
 
-如果想让某个图标恢复显示，可以搜索一下，找到具体位置，然后删除 `display: none !important;`这一类隐藏语句即可。如果多个图标被一起隐藏，比如下面的css语句，如果想恢复被隐藏的日记图标，就把`#barDailyNote`连同跟在它后面的逗号一起删掉。
-
-```css
-/* 日记、同步、主题、多页面前、后切换图标隐藏 */
-#barDailyNote,
-#barSync,
-#barBack,
-#barDock,
-#barForward {
-    display: none !important;
-}
-```
-
-##### 恢复笔记本/文档前图标
-
-搜索并删除
-
-```css
-/* 隐藏笔记本/文档前图标 */
-.b3-list-item__icon{
-    display: none !important;
-}
-```
-
-##### 恢复emoji
-
-本主题隐藏了文档树emoji图标替换面板，如不需要隐藏，请用 EmEditor/Vscode 等文本编辑器打开
-
-Siyuan/conf/appearance/themes/Concise Lght/theme.css，搜索“emoji”，删除下面的语句：
-
-```css
-/* 隐藏文档树 emoji 图标修改面板 */
-#commonMenu .emojis{
-    display: none !important;
-}
-```
-
-##### 恢复页签关闭按钮
-
-本主题每个页签右侧关闭按钮默认隐藏，鼠标划过该位置时显示。快捷键 Ctrl+w / Cmd+w 关闭更快。
-
-```css
-/*文档标题右边关闭按钮*/
-.item__close {
-    opacity: 10%;
-}
-.item__close:hover {
-    opacity: 88%;
-}
-```
-
-##### 恢复长文档右侧滚动条
-
-本主题鼠标划过才浮现。由于分屏编辑时页面右侧的滚动条有一定的干扰，本主题在长文档时编辑页面右侧的滚动条默认隐藏，鼠标划过该位置时显示。如需恢复，请删除下面的语句：
-
-```css
-/* 长文档滚动条 */
-.protyle-scroll.b3-tooltips.b3-tooltips__s{
-    opacity: 0;
-}
-.protyle-scroll.b3-tooltips.b3-tooltips__s:hover{
-    opacity: 1;
-}
-```
-
-##### 恢复删除线
-
-本主题将删除线设置为挖空复习效果，如需恢复，请用 EmEditor/Vscode 等文本编辑器打开对应主题目录的 theme.css，搜索“挖空”，删除下面的语句：
-
-```css
-.protyle-wysiwyg s{
-    color: transparent;
-    border-bottom: 1px solid #555;
-    transition: color 0.2s ease-in-out !important;
-    text-decoration: none;
-}
-.protyle-wysiwyg [data-node-id] [spellcheck="false"] s:hover{
-    color: #333;
-    background-color: transparent;
-    text-decoration: none;
-    border-bottom:  none;
-```
-
-##### 其他恢复
-
-由于本主题隐藏的界面元素较多，有些比较复杂，这里就不一一贴出删除代码。如有需要可以单独反馈。
-
-## 自定义属性
-
-本主题对内容块可以使用下列自定义属性，方法是在内容块左边的块图标上单击或右键，点击“属性”，然后按“添加”，输入需要的属性名和属性值即可。
-
-| 属性名 | 属性值 | 作用                     |
-| ------ | ------ | ------------------------ |
-| f      | bg     | 列表块转换为表格         |
-| f      | dt     | 无序列表块转换为思维导图 |
-| z      | ht     | 整块/整页转换为黑体      |
-| z      | kt     | 整块/整页转换为楷体      |
-| z      | fs     | 整块/整页转换为仿宋      |
-
-注意 f - bg 列表块转换为表格功能在左边表格内容较多时会有撑开现象，请酌情使用。
-
-## 版本更新
-
-本主题不定期更新，由于主题上传更新有一定时间的等待期，一般 Github 上的仓库会有最新版本，可打包下载，覆盖 Siyuan/conf/appearance/themes/里的同名主题即可。另外更新内容放在语雀：
-
-https://www.yuque.com/u25584857/ryp75p/zlocwl
+以及 https://www.yuque.com/u25584857/ryp75p/sgf58w
 
 ## 问题反馈
 
 有任何问题，可去 Github Issue 反馈：
 
 https://github.com/mindstudy/siyuan-themes-concise-light/issues
+
+或者语雀：
+
+https://www.yuque.com/u25584857/ryp75p/sgf58w
 
 
 
