@@ -1527,20 +1527,34 @@ span[data-type="a"]:hover{
 .protyle-wysiwyg table tbody td {
     border: 0.05em solid #888 !important;
 }
+/* 边线透明 */
+.protyle-wysiwyg table th:first-child,
+.protyle-wysiwyg table tr td:first-child {
+    border-left-color: transparent !important;
+}
 .protyle-wysiwyg table th:last-child,
 .protyle-wysiwyg table tr td:last-child {
     border-right-color: transparent !important;
 }
-.protyle-wysiwyg table th,
-.protyle-wysiwyg table tr td {
+.protyle-wysiwyg table th[colspan]:first-of-type,
+.protyle-wysiwyg table tr td[colspan]:first-of-type {
     border-left-color: transparent !important;
 }
-.protyle-wysiwyg table th[colspan],
-.protyle-wysiwyg table tr td[colspan] {
+.protyle-wysiwyg table th[rowspan="1"]:first-of-type,
+.protyle-wysiwyg table tr td:not(:first-of-type):not([colspan="1"])[rowspan] {
     border-right-color: transparent !important;
+}
+.protyle-wysiwyg table th[rowspan="1"]:first-of-type+th:not(.fn__none),
+.protyle-wysiwyg table th.fn__none+th:not(.fn__none),
+.protyle-wysiwyg table td.fn__none+td:not(.fn__none) {
+    border-left: 0.055em solid #888 !important;
 }
 .protyle-wysiwyg table tbody tr:last-child {
     border-bottom: 0.1em solid #888 !important;
+}
+.protyle-action__table .table__select {
+    background: #df1b1b;
+    opacity: 0.1;
 }
 
 /*浮动工具条高亮*/
@@ -2121,7 +2135,7 @@ strong[style*="background9"] {
 }
 /* 去除小竖线 */
 .list[data-node-id][data-type="NodeList"][custom-f="bg"] .li>:before{
-    display: none ;
+    opacity: 0;
 }
 /* 隐藏列表符号 */
 .list[data-node-id][data-type="NodeList"][custom-f="bg"] .protyle-action {
@@ -2337,7 +2351,7 @@ div[data-node-index]>[data-type="NodeListItem"]::before{
 }
 /* 隐藏列表符号 */
 .list[data-node-id][data-type="NodeList"][custom-f="dt"][data-subtype="u"] .protyle-action  {
-   display: none;
+    opacity: 0;
 }/* 自定义属性，列表转化为思维导图 END */
 
 
@@ -2402,7 +2416,7 @@ div[data-node-index]>[data-type="NodeListItem"]::before{
 }
 /* 去除小竖线 */
 .list[custom-f="kb"][data-node-id] .li>:not(.protyle-action--task):before {
-    display: none;
+    opacity: 0;
 }
 /* 对除了第一层之外的子列表 .protyle-action 移动 */
 .protyle-wysiwyg *[custom-f~=kb] .li .list .protyle-action{
