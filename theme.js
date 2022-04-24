@@ -28,7 +28,9 @@
   生成列表菜单项目=function(){
     let 块标菜单 = document.getElementById("commonMenu")
     let  最后项 = 块标菜单.querySelector(".b3-menu__item--readonly")
-    if(最后项){
+    selectid = getBlockSelected()
+    id = selectid.id
+    if(最后项 && selectid.type=="NodeList"){
       块标菜单.insertBefore(选择视图按钮(),最后项)
       块标菜单.insertBefore(菜单分隔项(),最后项)
     }
@@ -53,10 +55,6 @@
       node.appendChild(列表转换表格按钮(id))
 	  node.appendChild(列表转换看板按钮(id))
       node.appendChild(列表恢复默认按钮(id))
-    }
-    if(selectid.type=="NodeTable"){
-      node.appendChild(页面宽度视图按钮(id))
-      node.appendChild(自动宽度视图按钮(id))
     }
     return node;
   }
@@ -103,27 +101,6 @@
     button.setAttribute("custom-attr-value",'')
   
     button.innerHTML=`<svg class="b3-menu__icon" style=""><use xlink:href="#iconList"></use></svg><span class="b3-menu__label">恢复为列表</span>`
-    return button
-  }
-  页面宽度视图按钮=function(id){
-    let button = document.createElement("button")
-    button.className="b3-menu__item"
-    button.onclick=视图菜单监听器
-    button.setAttribute("data-node-id",id)
-    button.setAttribute("custom-attr-name","f")
-    button.setAttribute("custom-attr-value","auto")
-  
-    button.innerHTML=`<svg class="b3-menu__icon" style=""><use xlink:href="#iconTable"></use></svg><span class="b3-menu__label">页面宽度</span>`
-    return button
-  }
-  自动宽度视图按钮=function(id){
-    let button = document.createElement("button")
-    button.className="b3-menu__item"
-    button.setAttribute("data-node-id",id)
-    button.setAttribute("custom-attr-name","f")
-    button.setAttribute("custom-attr-value","")
-    button.innerHTML=`<svg class="b3-menu__icon" style=""><use xlink:href="#iconTable"></use></svg><span class="b3-menu__label">自动宽度</span>`
-    button.onclick=视图菜单监听器
     return button
   }
   菜单分隔项=function(className = 'b3-menu__separator') {
