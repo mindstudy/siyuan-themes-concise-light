@@ -1533,7 +1533,8 @@ span[data-type="a"]:hover{
     border-left-color: transparent !important;
 }
 .protyle-wysiwyg table th:last-child,
-.protyle-wysiwyg table tr td:last-child {
+.protyle-wysiwyg table tr td:last-child,
+.protyle-wysiwyg table tbody tr {
     border-right-color: transparent !important;
 }
 .protyle-wysiwyg table th[colspan]:first-of-type,
@@ -1547,7 +1548,7 @@ span[data-type="a"]:hover{
 .protyle-wysiwyg table th[rowspan="1"]:first-of-type+th:not(.fn__none),
 .protyle-wysiwyg table th.fn__none+th:not(.fn__none),
 .protyle-wysiwyg table td.fn__none+td:not(.fn__none) {
-    border-left: 0.055em solid #888 !important;
+    border-left: 0.052em solid #888 !important;
 }
 .protyle-wysiwyg table tbody tr:last-child {
     border-bottom: 0.1em solid #888 !important;
@@ -2102,6 +2103,10 @@ strong[style*="background9"] {
     color: #888;
 }
 
+.protyle-wysiwyg [data-node-id][fold="1"]:not(.li):not([data-type="NodeHeading"]) {
+    opacity: 1;
+}
+
 /* 自定义属性，列表转化为表格 */
 /* 对所有子列表项设置格式*/
 .protyle-wysiwyg [custom-f="bg"] .li{
@@ -2140,7 +2145,8 @@ strong[style*="background9"] {
 /* 隐藏列表符号 */
 .list[data-node-id][data-type="NodeList"][custom-f="bg"] .protyle-action {
    display: none;
-}/* 自定义属性，列表转化为表格 END */
+}
+/* 自定义属性，列表转化为表格 END */
 
 /*---------社区老铁 abbj 提供的搜索窗口左右排列-------------*/
 /*放大搜索窗口尺寸*/
