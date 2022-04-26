@@ -55,16 +55,16 @@
     --b3-card-success-background: rgb(237, 247, 237);
 
     /* 自定义文字 */
-    --b3-font-color1: #ca4f49;
-    --b3-font-color2: #de7802;
-    --b3-font-color3: #be961e;
-    --b3-font-color4: #5ba121;
-    --b3-font-color5: #549ecf;
+    --b3-font-color1: #e16d66;
+    --b3-font-color2: #d68801;
+    --b3-font-color3: #a69909;
+    --b3-font-color4: #4b990a;
+    --b3-font-color5: #1799f0;
     --b3-font-color6: #5588fd;
     --b3-font-color7: #a36dad;
     --b3-font-color8: #c27557;
-    --b3-font-color9: #d89a3c;
-    --b3-font-color10: #e0b00f;
+    --b3-font-color9: #996c29;
+    --b3-font-color10: #c09b20;
     --b3-font-color11: #7ea889;
     --b3-font-color12: #789fbe;
     --b3-font-color13: #888;
@@ -2238,7 +2238,7 @@ div[data-key] .b3-dialog__container .fn__flex-column #searchPreview {
 	border-radius:3px;
 	box-shadow: #0f0f0f1a 0px 0px 0px 1px, #0f0f0f1a 0px 2px 4px;
 	white-space: nowrap;
-    z-index: 0;
+    z-index: 1;
 }
 .protyle-wysiwyg *[custom-f="dt"] [data-subtype="t"] .li div>div[spellcheck="false"],
 .protyle-wysiwyg *[custom-f="dt"][data-subtype="t"] .li div>div[spellcheck="false"]{
