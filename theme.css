@@ -22,8 +22,8 @@
 
     /* 字体 */
     --b3-font-family: "PingFang SC Light", "PingFang TC Light", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols";
-    --b3-font-family-text: "Charis SIL", "Gentium Book Plus", "Gentium Plus", "FZYouSongJ GBK 506L", "方正悠宋 GBK 506L", "PingFang SC Light", "PingFang TC Light", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols";
-    --b3-font-family-title: "Charis SIL", "Gentium Book Plus", "Gentium Plus", FZYaSong-M-GBK, "方正准雅宋 GBK", "PingFang SC Light", "PingFang TC Light", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols";
+    --b3-font-family-text: "Charis SIL", "Gentium Book Plus", "Gentium Plus", "FZYouSongJ GBK 506L", "方正悠宋 GBK 506L", "方正悠宋+ GBK 506L", "FZYouSongJ GBK", "方正悠宋+ GBK", "方正悠宋 GBK", "方正悠宋", "PingFang SC Light", "PingFang TC Light", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols";
+    --b3-font-family-title: "Charis SIL", "Gentium Book Plus", "Gentium Plus", "FZYaSong-M-GBK", "方正准雅宋_GBK", "方正准雅宋 GBK", "方正准雅宋", "方正雅宋简体 Medium", "方正雅宋简体", "PingFang SC Light", "PingFang TC Light", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols";
     --b3-font-family-code: "Roboto", "Noto Sans", "Microsoft YaHei Mono", "JetBrainsMono-Regular", mononoki, Consolas, "Liberation Mono", Menlo, Courier, monospace, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols", sans-serif;
     --b3-font-family-graph: mononoki;
     --b3-font-family-emoji: "Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI", "Apple Color Emoji", "Twemoji Mozilla", "Noto Color Emoji", "Android Emoji";
