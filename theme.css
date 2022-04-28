@@ -1433,6 +1433,10 @@ span[data-type="a"]:hover{
     color: #666 !important;
     padding-left: 10px;
 }
+/*引述块之间的间隔*/
+[data-type="NodeBlockquote"]+[data-type="NodeBlockquote"] {
+    margin-top: 12px;
+}
 
 /*代码块*/
 .protyle-wysiwyg .hljs{
@@ -2149,8 +2153,21 @@ strong[style*="background9"] {
 .list[data-node-id][data-type="NodeList"][custom-f="bg"] .li>:before{
     opacity: 0;
 }
+.list[data-node-id][data-type="NodeList"][custom-f="bg"] [data-subtype="t"] {
+    align-items: center;
+}
+.list[data-node-id][data-type="NodeList"][custom-f="bg"] [data-subtype="t"] .protyle-action {
+    top: unset;
+}
+.list[data-node-id][data-type="NodeList"][custom-f="bg"] [data-subtype="t"] .protyle-action--task::before {
+    opacity: 1;
+    margin-left: 5px;
+}
+.list[data-node-id][data-type="NodeList"][custom-f="bg"] [data-subtype="t"] [spellcheck="false"] {
+    margin-left: 25px;
+}
 /* 隐藏列表符号 */
-.list[data-node-id][data-type="NodeList"][custom-f="bg"] .protyle-action {
+.list[data-node-id][data-type="NodeList"][custom-f="bg"] div.[data-node-id]:not([data-subtype="t"]) .protyle-action {
    display: none;
 }
 /* 自定义属性，列表转化为表格 END */
