@@ -2167,8 +2167,8 @@ strong[style*="background9"] {
     margin-left: 25px;
 }
 /* 隐藏列表符号 */
-.list[data-node-id][data-type="NodeList"][custom-f="bg"] div.[data-node-id]:not([data-subtype="t"]) .protyle-action {
-   display: none;
+.list[data-node-id][data-type="NodeList"][custom-f="bg"] div[data-node-id]:not([data-subtype="t"]) .protyle-action {
+   display: none !important;
 }
 /* 自定义属性，列表转化为表格 END */
 
