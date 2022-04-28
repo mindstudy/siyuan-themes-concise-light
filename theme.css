@@ -1430,7 +1430,7 @@ span[data-type="a"]:hover{
 
 /*引述块文字*/
 .protyle-wysiwyg .bq {
-    color: #666 !important;
+    color: #333 !important;
     padding-left: 10px;
 }
 /*引述块之间的间隔*/
