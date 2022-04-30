@@ -1449,9 +1449,6 @@ span[data-type="a"]:hover{
    color: #aaa !important;
    font-weight: 400;
 }
-.protyle-linenumber__rows span{
-   height: 1.63em !important;
-}
 
 /*嵌入块*/
 .protyle-wysiwyg [data-node-id].render-node[data-type="NodeBlockQueryEmbed"]{
