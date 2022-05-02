@@ -472,6 +472,8 @@ mark {
     font-weight: 400;
     border-radius: 1px;
     padding: 1px;
+    background-color: #f2d2ac !important;
+    color: #7d4101 !important;
 }
 #searchList mark,
 .sy__backlink mark,
@@ -1860,7 +1862,6 @@ strong[style*="background8"],
 strong[style*="background9"] {
     font-weight: 500 !important;
 }
-
 strong[style*="background1"],
 strong[style*="background2"],
 strong[style*="background3"],
@@ -1873,6 +1874,9 @@ strong[style*="background9"] {
     font-family: serif, var(--b3-font-family-text);
     border-radius: 1px;
     padding: 1px;
+}
+strong[style*="background"]:empty{
+    display: none;
 }
 
 /* 引用块、反向链接浮窗背景 */
