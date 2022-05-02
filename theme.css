@@ -2465,7 +2465,7 @@ div[data-node-index]>[data-type="NodeListItem"]::before{
     transform: translate(0, -50%);
     border-radius: 3px;
 }
-.protyle-wysiwyg [data-subtype="t"][custom-f~=kb]>[data-subtype="t"]>.protyle-action--task::before {
+.protyle-wysiwyg [data-subtype="t"][custom-f~=kb]>[data-subtype="t"].protyle-task--done>.protyle-action--task::before {
     background-color: transparent;
     border: none !important;
     font-family: "Font Awesome 6 Free Solid";
@@ -2481,8 +2481,15 @@ div[data-node-index]>[data-type="NodeListItem"]::before{
     box-sizing: border-box;
     z-index: 9;
 }
+.protyle-wysiwyg [data-subtype="t"][custom-f~=kb]>[data-subtype="t"]>.protyle-action--task::before {
+    top: 8px;
+    left: 0em;
+}
 .protyle-wysiwyg [data-subtype="t"][custom-f~=kb]>[data-subtype="t"]>[data-subtype="t"]>[data-subtype="t"]>.protyle-action--task::before {
     left: 0.7em;
+}
+.protyle-wysiwyg [data-subtype="t"][custom-f~=kb]>[data-subtype="t"]>[data-subtype="t"]>[data-subtype="t"].protyle-task--done>.protyle-action--task::before {
+    left: 0.65em;
 }
 .protyle-wysiwyg [data-subtype="t"][custom-f~=kb] {
     margin-left: 10px;
