@@ -2540,7 +2540,8 @@ div[data-node-index]>[data-type="NodeListItem"]::before{
 .b3-color__square[data-type="color"][style*="background-color:var(--b3-font-"]:before {
     display: inline-block;
     position: absolute;
-    font-size: 15px;
+    font-size: 1.2em;
+    font-weight:600;
 }
 .b3-color__square[data-type="color"][style="background-color:var(--b3-font-color1)"]:before {
     content: "红";
@@ -2605,70 +2606,71 @@ div[data-node-index]>[data-type="NodeListItem"]::before{
     position: absolute;
     font-size: 14px;
     padding: 1px;
+    font-weight:600;
 }
 .b3-color__square[data-type="backgroundColor"][style="background-color:var(--b3-font-background1)"]:before {
     content: "红";
-    color: #666;
+    color: #777;
     background-color: var(--b3-font-background1);
 }
 .b3-color__square[data-type="backgroundColor"][style="background-color:var(--b3-font-background2)"]:before {
     content: "橙";
-    color: #666;
+    color: #777;
     background-color: var(--b3-font-background2);
 }
 .b3-color__square[data-type="backgroundColor"][style="background-color:var(--b3-font-background3)"]:before {
     content: "黄";
-    color: #666;
+    color: #777;
     background-color: var(--b3-font-background3);
 }
 .b3-color__square[data-type="backgroundColor"][style="background-color:var(--b3-font-background4)"]:before {
     content: "绿";
-    color: #666;
+    color: #777;
     background-color: var(--b3-font-background4);
 }
 .b3-color__square[data-type="backgroundColor"][style="background-color:var(--b3-font-background5)"]:before {
     content: "青";
-    color: #666;
+    color: #777;
     background-color: var(--b3-font-background5);
 }
 .b3-color__square[data-type="backgroundColor"][style="background-color:var(--b3-font-background6)"]:before {
     content: "蓝";
-    color: #666;
+    color: #777;
     background-color: var(--b3-font-background6);
 }
 .b3-color__square[data-type="backgroundColor"][style="background-color:var(--b3-font-background7)"]:before {
     content: "紫";
-    color: #666;
+    color: #777;
     background-color: var(--b3-font-background7);
 }
 .b3-color__square[data-type="backgroundColor"][style="background-color:var(--b3-font-background8)"]:before {
     content: "粉";
-    color: #666;
+    color: #777;
     background-color: var(--b3-font-background8);
 }
 .b3-color__square[data-type="backgroundColor"][style="background-color:var(--b3-font-background9)"]:before {
     content: "桔";
-    color: #666;
+    color: #777;
     background-color: var(--b3-font-background9);
 }
 .b3-color__square[data-type="backgroundColor"][style="background-color:var(--b3-font-background10)"]:before {
     content: "杏";
-    color: #666;
+    color: #777;
     background-color: var(--b3-font-background10);
 }
 .b3-color__square[data-type="backgroundColor"][style="background-color:var(--b3-font-background11)"]:before {
     content: "碧";
-    color: #666;
+    color: #777;
     background-color: var(--b3-font-background11);
 }
 .b3-color__square[data-type="backgroundColor"][style="background-color:var(--b3-font-background12)"]:before {
     content: "棕";
-    color: #666;
+    color: #777;
     background-color: var(--b3-font-background12);
 }
 .b3-color__square[data-type="backgroundColor"][style="background-color:var(--b3-font-background13)"]:before {
     content: "灰";
-    color: #666;
+    color: #777;
     background-color: var(--b3-font-background13);
 }
 
