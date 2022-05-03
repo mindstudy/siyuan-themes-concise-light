@@ -24,7 +24,7 @@
     --b3-font-family: "PingFang SC Light", "PingFang TC Light", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif, "Segoe UI Emoji", "Noto Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols", "Apple Color Emoji";
     --b3-font-family-text: "Charis SIL", "Gentium Book Plus", "Gentium Plus", "FZYouSongJ GBK 506L", "方正悠宋 GBK 506L", "方正悠宋+ GBK 506L", "FZYouSongJ GBK", "方正悠宋+ GBK", "方正悠宋 GBK", "方正悠宋", "PingFang SC Light", "PingFang TC Light", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif, "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols", "Apple Color Emoji";
     --b3-font-family-title: "Charis SIL", "Gentium Book Plus", "Gentium Plus", "FZYaSong-M-GBK", "方正准雅宋_GBK", "方正准雅宋 GBK", "方正准雅宋", "方正雅宋简体 Medium", "方正雅宋简体", "PingFang SC Light", "PingFang TC Light", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif, "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols", "Apple Color Emoji";
-    --b3-font-family-code: "Roboto", "Noto Sans", "Microsoft YaHei Mono", "JetBrainsMono-Regular", mononoki, Consolas, "Liberation Mono", Menlo, Courier, monospace, "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols", "Apple Color Emoji" sans-serif;
+    --b3-font-family-code: "Roboto", "Noto Sans", "Microsoft YaHei Mono", "JetBrainsMono-Regular", mononoki, Consolas, "Liberation Mono", Menlo, Courier, monospace, "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols", "Apple Color Emoji", sans-serif;
     --b3-font-family-graph: mononoki;
     --b3-font-family-emoji: "Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI", "Twemoji Mozilla", "Noto Color Emoji", "Android Emoji", "Apple Color Emoji";
     --b3-font-family-math: KaTeX_Math;
@@ -1410,10 +1410,10 @@ span[data-type="a"]:hover{
 
 /*标签*/
 .protyle-wysiwyg [data-node-id] span[data-type="tag"]{
-    font-size: 0.9em;
-    font-family: var(--b3-font-family);
-    font-weight: 400 !important;
-    padding: 2px;
+    font-size: 15px;
+    font-family: var(--b3-font-family-code);
+    font-weight: 400;
+    padding: 3px !important;
     border-radius: 5px;
     border: 0 !important;
     background: #6b9ac9;
@@ -1814,7 +1814,10 @@ button .b3-list-item__meta {
 
 /* 字体设置面板 */
 .protyle-util {
-    background-color: #eee !important;
+    background-color: #efefef !important;
+}
+.protyle-util .b3-list-item.b3-list-item--focus{
+    background-color: #ddd !important;
 }
 
 .b3-button--outline {
