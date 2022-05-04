@@ -55,32 +55,32 @@
     --b3-card-success-background: #edf7ed;
 
     /* 自定义文字 */
-    --b3-font-color1: #f6483f;
-    --b3-font-color2: #ee7823;
-    --b3-font-color3: #dc9f06;
-    --b3-font-color4: #51ae06;
+    --b3-font-color1: #d44039;
+    --b3-font-color2: #d26d24;
+    --b3-font-color3: #ba9a0d;
+    --b3-font-color4: #428c05;
     --b3-font-color5: #1799f0;
     --b3-font-color6: #447cfd;
-    --b3-font-color7: #9d5aa8;
+    --b3-font-color7: #793983;
     --b3-font-color8: #e780c9;
-    --b3-font-color9: #cc7930;
-    --b3-font-color10: #c4ab08;
+    --b3-font-color9: #e77410;
+    --b3-font-color10: #b0c305;
     --b3-font-color11: #2b97ad;
-    --b3-font-color12: #a15b0b;
+    --b3-font-color12: #b66508;
     --b3-font-color13: #888;
     --b3-font-background1: #fdc6c6;
     --b3-font-background2: #fed9cb;
-    --b3-font-background3: #fff8df;
+    --b3-font-background3: #fef6b8;
     --b3-font-background4: #d9f1d5;
     --b3-font-background5: #ddf0ff;
-    --b3-font-background6: #ccdeff;
+    --b3-font-background6: #ccdefd;
     --b3-font-background7: #eccaff;
     --b3-font-background8: #fcdffa;
     --b3-font-background9: #fce8ce;
-    --b3-font-background10: #f5f1c9;
+    --b3-font-background10: #f3eb9e;
     --b3-font-background11: #c7f1ff;
     --b3-font-background12: #eac099;
-    --b3-font-background13: #e0e0e0;
+    --b3-font-background13: #dad9d9;
 
     /* 动画效果 */
     --b3-transition: all .15s cubic-bezier(0, 0, .2, 1) 0ms;
@@ -475,31 +475,29 @@ mark {
     background-color: #f2d2ac !important;
     color: #7d4101 !important;
 }
+#globalSearchList mark,
 #searchList mark,
 .sy__backlink mark,
 .protyle-wysiwyg [data-node-id] span[data-type="search-mark"] {
     font-family: var(--b3-font-family);
     display: inline !important;
-    background-color: #4189b3;
-    color: #fff;
+    background-color: #4189b3 !important;
+    color: #fff !important;
     line-height: 16px !important;
 }
-#searchList mark,
-.sy__backlink mark{
-    font-size: 0.96em !important;
-}
+#globalSearchList mark,
+.sy__backlink mark,
 #searchList mark{
-    padding: 1px !important;
+    padding: 0 0 1px 0 !important;
+    font-size: 1.05em !important;
 }
 #searchList .b3-list-item__meta{
    max-width: 100px;
    white-space:nowrap; 
 }
-#searchList .b3-list-item__meta mark{
-    font-size: 12px;
-}
 #searchPreview [data-type="search-mark"]{
     font-family: serif, var(--b3-font-family-text);
+    font-size: 1.1em;
     padding: 0  0 2px 0!important;
 }
 #searchPreview [data-type="NodeHeading"] [data-type="search-mark"]{
@@ -1019,17 +1017,6 @@ code {
 }
 
 /* 代码块折叠 */
-[data-type="NodeBlockQueryEmbed"] .protyle-icons {
-    background-color: transparent;
-}
-[data-type="NodeBlockQueryEmbed"] .protyle-icons>span>svg {
-    height: 15px !important;
-    width: 10px !important;
-    color: #c2632c;
-}
-[data-type="NodeBlockQueryEmbed"] .protyle-icons>span:hover {
-    background-color: transparent !important;
-}
 .protyle-wysiwyg [data-node-id][fold="1"]:not(.li).code-block {
     border-radius: 4px;
     padding-top: 32px !important;
@@ -1322,7 +1309,7 @@ code {
 [data-type="NodeBlockQueryEmbed"] [data-type="NodeMathBlock"] .protyle-attr,
 [data-type="NodeBlockQueryEmbed"] [data-type="NodeIFrame"] .protyle-attr {
     padding-top: 8px;
-    margin-right: 30px;
+    margin-right: 50px;
     top: -21px;
 }
 [data-type="NodeBlockQueryEmbed"] [data-type="NodeParagraph"]{
@@ -1333,22 +1320,22 @@ code {
 }
 [data-type="NodeBlockQueryEmbed"] [data-type="NodeAudio"] .protyle-attr{
     top: -4px !important;
-    margin-right: 30px;
+    margin-right: 50px;
 }
 [data-type="NodeBlockQueryEmbed"] [data-type="NodeMathBlock"] .protyle-attr{
     top: -7px !important;
-    margin-right: 30px;
+    margin-right: 50px;
 }
 [data-type="NodeBlockQueryEmbed"] [data-type="NodeCodeBlock"] .protyle-attr{
     top: -17px !important;
-    margin-right: 30px;
+    margin-right: 50px;
 }
 [data-type="NodeBlockQueryEmbed"] [data-type="NodeCodeBlock"].render-node .protyle-attr{
     top: -3px !important;
-    margin-right: 30px;
+    margin-right: 50px;
 }
 [data-type="NodeBlockQueryEmbed"] [data-type="NodeSuperBlock"] .protyle-attr{
-    margin-right: 30px;
+    margin-right: 50px;
 }
 [data-type="NodeBlockQueryEmbed"] [data-type="NodeHeading"].h1 .protyle-attr {
     padding-top: 34px;
@@ -1437,18 +1424,62 @@ span[data-type="a"]:hover{
 }
 
 /*代码块*/
-.protyle-wysiwyg .hljs{
+[data-type="NodeCodeBlock"] .hljs{
     background-color: #f9f9f9;
     margin: 0 0 0 5px;
 }
-
-.protyle-linenumber__rows {
+[data-type="NodeCodeBlock"] .protyle-linenumber__rows {
    font-family: var(--b3-font-family-code);
    color: #aaa !important;
    font-weight: 400;
 }
+.protyle-wysiwyg--hl .protyle-linenumber__rows,
+.protyle-wysiwyg--select .protyle-linenumber__rows,
+[data-type="NodeCodeBlock"] .protyle-wysiwyg--select .protyle-linenumber__rows {
+    background-color: #f3f3f3 !important;
+}
+[data-type="NodeCodeBlock"] .protyle-action__language+.fn__flex-1{
+    flex: none;
+}
+[data-type="NodeCodeBlock"] .protyle-action {
+    display: block !important;
+    text-align: right;
+}
+[data-type="NodeCodeBlock"] .protyle-action__language{
+    margin-right: 5px;
+    color: #999 !important;
+}
+[data-type="NodeCodeBlock"] .protyle-action__copy,
+[data-type="NodeCodeBlock"] .protyle-action__copy svg,
+[data-type="NodeCodeBlock"] .protyle-action__menu,
+[data-type="NodeCodeBlock"] .protyle-action__menu svg {
+    vertical-align: middle;
+}
+[data-type="NodeCodeBlock"] .protyle-action__copy svg,
+[data-type="NodeCodeBlock"] .protyle-action__menu svg{
+    margin-top: -5px !important;
+}
+[data-type="NodeCodeBlock"] .protyle-icon {
+    color: #666;
+    background-color: #eee;
+}
+[data-type="NodeCodeBlock"] .protyle-icon:hover {
+    background-color: #ddd;
+}
 
 /*嵌入块*/
+[data-type="NodeBlockQueryEmbed"] .protyle-icons,
+[data-type="NodeBlockQueryEmbed"] .protyle-icon {
+    background-color: transparent;
+}
+[data-type="NodeBlockQueryEmbed"] .protyle-icons>span>svg {
+    height: 15px !important;
+    width: 10px !important;
+    color: #0a7dd0;
+}
+[data-type="NodeBlockQueryEmbed"] .protyle-icons>span:hover {
+    background-color: transparent !important;
+}
 .protyle-wysiwyg [data-node-id].render-node[data-type="NodeBlockQueryEmbed"]{
     border-left: 0;
     box-shadow: 0px 0px 3px 2px #b1b1b1;
@@ -1507,7 +1538,7 @@ span[data-type="a"]:hover{
 .protyle-wysiwyg table thead th {
     font-weight: 400;
     border-top: 0.1em solid #888 !important;
-    border-bottom: 0.06em solid #000 !important;
+    border-bottom: 0.05em solid #000 !important;
 }
 .protyle-wysiwyg table tr{
     background-color: transparent !important;
@@ -2845,4 +2876,42 @@ div[data-node-index]>[data-type="NodeListItem"]::before{
 .b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(35) .b3-menu__label:before {
     content: "🄰 灰色";
     background-color: var(--b3-font-background13);
+}
+
+/* 属性窗口 */
+.b3-dialog__container[style="width:50vw"]{
+    width:36vw !important;
+}
+.b3-dialog__container[style="width:50vw"] .b3-dialog__header{
+    border-bottom: none;
+    padding-bottom: 0cm;
+    font-size: 14px;
+}
+.b3-dialog__container[style="width:50vw"] .b3-dialog__content.custom-attr{
+    padding: 10px 24px 0 0;
+}
+.b3-dialog__container[style="width:50vw"] .b3-dialog__content.custom-attr .fn__flex .ft__on-surface{
+    width: 40px !important;
+    margin-left: 36px;
+}
+.b3-dialog__container[style="width:50vw"] .b3-dialog__content.custom-attr .fn__flex+[style*="background-color: var(--b3-border-color)"]{
+    display: none;
+}
+.b3-dialog__container[style="width:50vw"] .b3-dialog__content.custom-attr .custom-attr__add{
+    margin: 15px 0 0 0;
+    height: 70px;
+}
+.b3-dialog__container[style="width:50vw"] .b3-dialog__content.custom-attr .custom-attr__add [placeholder="属性名"]{
+    width: 60px !important;
+    margin-left: 36px;
+}
+.b3-dialog__container[style="width:50vw"] .b3-dialog__content.custom-attr .custom-attr__add button svg{
+    display: none;
+}
+.b3-dialog__container[style="width:50vw"] .b3-dialog__content.custom-attr .custom-attr__add button{
+    width: 40px !important;
+    margin-left: 16px;
+}
+.b3-dialog__container[style="width:50vw"] .b3-dialog__action{
+    border-top: none;
 }
