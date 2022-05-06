@@ -57,17 +57,17 @@
     /* 自定义文字 */
     --b3-font-color1: #d44039;
     --b3-font-color2: #d26d24;
-    --b3-font-color3: #ba9a0d;
+    --b3-font-color3: #ac8f0d;
     --b3-font-color4: #428c05;
-    --b3-font-color5: #1799f0;
+    --b3-font-color5: #1590e1;
     --b3-font-color6: #6b90e7;
     --b3-font-color7: #a94bb7;
-    --b3-font-color8: #e780c9;
-    --b3-font-color9: #e77410;
-    --b3-font-color10: #96a50d;
+    --b3-font-color8: #d173b7;
+    --b3-font-color9: #de700f;
+    --b3-font-color10: #7e8b0b;
     --b3-font-color11: #2b97ad;
     --b3-font-color12: #b66508;
-    --b3-font-color13: #888;
+    --b3-font-color13: #6f6f6f;
     --b3-font-background1: #ffdbdb;
     --b3-font-background2: #ffe6dd;
     --b3-font-background3: #f5f0c6;
@@ -81,19 +81,19 @@
     --b3-font-background11: #ddf5f7;
     --b3-font-background12: #f0e4d9;
     --b3-font-background13: #dcdcdc;
-    --b3-block-background1: #ffdbdb;
+    --b3-block-background1: #fee0e0;
     --b3-block-background2: #ffe6dd;
-    --b3-block-background3: #f5f0c6;
-    --b3-block-background4: #e3f9de;
+    --b3-block-background3: #f4f0cb;
+    --b3-block-background4: #e3f3df;
     --b3-block-background5: #dfedf7;
     --b3-block-background6: #e7edf8;
-    --b3-block-background7: #f4e2fd;
+    --b3-block-background7: #f5e0ff;
     --b3-block-background8: #f8e7f6;
     --b3-block-background9: #f4e9db;
-    --b3-block-background10: #edeaca;
-    --b3-block-background11: #ddf5f7;
-    --b3-block-background12: #f0e4d9;
-    --b3-block-background13: #e4e4e4;
+    --b3-block-background10: #f0edcd;
+    --b3-block-background11: #dcf3f5;
+    --b3-block-background12: #f5e8dd;
+    --b3-block-background13: #e8e7e7;
 
     /* 动画效果 */
     --b3-transition: all .15s cubic-bezier(0, 0, .2, 1) 0ms;
@@ -2342,7 +2342,9 @@ div[data-key] .b3-dialog__container .fn__flex-column #searchPreview {
 	align-items: center;
 	left:6px;
     margin: 0;
+	flex-shrink:0;/*不压缩宽度*/
 }
+/*取消标题层级提示*/
 .protyle-wysiwyg *[custom-f="dt"] .li [data-type="NodeHeading"]>[spellcheck="false"]:after{
 	display:none;
 }
@@ -2354,7 +2356,7 @@ div[data-key] .b3-dialog__container .fn__flex-column #searchPreview {
 	background-color:#f6f6f6;
 	border-radius:3px;
 	box-shadow: #0f0f0f1a 0px 0px 0px 1px, #0f0f0f1a 0px 2px 4px;
-	white-space: nowrap;
+	/*max-width:20vw; */
     z-index: 1;
 }
 .protyle-wysiwyg *[custom-f="dt"] [data-subtype="t"] .li div>div[spellcheck="false"],
@@ -2434,9 +2436,9 @@ div[data-key] .b3-dialog__container .fn__flex-column #searchPreview {
 	height: 0;  
 }
 /*取消根目录线*/
-div[data-node-index]>[data-type="NodeListItem"]::after,
-div[data-node-index]>[data-type="NodeListItem"]::before{   
-	display: none;
+div[custom-f="dt"]>[data-type="NodeListItem"]::after,
+div[custom-f="dt"]>[data-type="NodeListItem"]::before{   
+	display: none !important;
 }  
 /*文本高亮*/
 .protyle-wysiwyg *[custom-f="dt"] .li div>[spellcheck="false"]:hover, 
@@ -2478,6 +2480,7 @@ div[data-node-index]>[data-type="NodeListItem"]::before{
     z-index: 9;
 }
 /* 隐藏列表符号 */
+.list[data-node-id][data-type="NodeList"][custom-f="dt"] [data-subtype="u"] .protyle-action,
 .list[data-node-id][data-type="NodeList"][custom-f="dt"][data-subtype="u"] .protyle-action  {
     opacity: 0;
 }/* 自定义属性，列表转化为思维导图 END */
@@ -2552,6 +2555,20 @@ div[data-node-index]>[data-type="NodeListItem"]::before{
     top: 50%;
     transform: translate(0, -50%);
     border-radius: 3px;
+}
+.protyle-wysiwyg [custom-f~=kb]>.li[data-subtype="u"]>.protyle-action{
+    position: absolute;
+    top: -0.2em;
+    left: 0.18em;
+}
+.protyle-wysiwyg [custom-f~=kb] .li[data-subtype="o"]>.protyle-action--order{
+	display: inline;
+    position: absolute;
+    top: -0.1em;
+    left: 14px;
+}
+.protyle-wysiwyg [custom-f~=kb] .li [spellcheck="false"]{
+	padding-right: 10px;
 }
 .protyle-wysiwyg [data-subtype="t"][custom-f~=kb]>[data-subtype="t"].protyle-task--done>.protyle-action--task::before {
     background-color: transparent;
