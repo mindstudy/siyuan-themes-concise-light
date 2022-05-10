@@ -230,7 +230,7 @@
 /* 文档树及右边图标下移 */
 .block__icons {
     padding: 0 20px 0 0;
-    background-color: #dbe4f2;
+    background-color: #dce4f3;
 }
 
 /* 文档树定位图标 */
@@ -347,8 +347,15 @@ li[class~="item--focus"] {
 .layout-tab-bar .item{
     box-shadow: none;
 }
+.layout-tab-bar .item:hover{
+    background-color: #f4ebeb !important;
+}
 .layout-tab-bar .item.item--focus {
     background-color: #f7f7f7 !important;
+}
+/*隐藏页签悬浮路径*/
+#tooltip {
+    display: none !important;
 }
 
 /*页签右边关闭按钮鼠标悬浮显示*/
@@ -578,6 +585,10 @@ mark {
 .b3-menu button.b3-list-item>.fn__flex.b3-list-item__meta {
     margin-left: 10px;
 }
+.b3-menu button.b3-list-item mark {
+    background-color: #4189b3 !important;
+    color: #fff !important;
+}
 
 /* 按/弹出菜单 */
 .hint--menu  {
@@ -606,11 +617,6 @@ mark {
 }
 .b3-list-item__first .b3-list-item__meta {
     color: var(--b3-theme-on-surface);
-}
-
-.sy__backlink mark {
-    font-size: 14px;
-    padding: 0 2px;
 }
 
 /* 修改删除线为挖空效果*/
@@ -1381,10 +1387,10 @@ code {
     top: 0px;
 }
 
-/* 正向链接/目标链接/引用块 */
+/* 锚文字/正向链接/块引用 */
 span[data-type="block-ref"],
 span[data-type="file-annotation-ref"] {
-    border-bottom: 1px dotted #222 !important;
+    border-bottom: 1px dashed #222 !important;
 }
 .block__popover span[data-type="block-ref"],
 .block__popover span[data-type="file-annotation-ref"] {
@@ -1392,7 +1398,7 @@ span[data-type="file-annotation-ref"] {
 }
 /*自动探察已有块名/跨笔记本虚拟引用*/
 span[data-type="virtual-block-ref"]{
-    border-bottom: 1px dashed #222 !important;
+    border-bottom: 1px dashed #bbb !important;
 }
 
 /*超链接/网址*/
@@ -1438,11 +1444,13 @@ span[data-type="a"]:hover{
 [data-type="NodeCodeBlock"] .hljs{
     background-color: #f9f9f9;
     margin: 0 0 0 5px;
+    padding: 10px 4px;
 }
 [data-type="NodeCodeBlock"] .protyle-linenumber__rows {
-   font-family: var(--b3-font-family-code);
-   color: #aaa !important;
-   font-weight: 400;
+    font-family: var(--b3-font-family-code);
+    color: #aaa !important;
+    font-weight: 400;
+    padding: 10px 4px;
 }
 .protyle-wysiwyg--hl .protyle-linenumber__rows,
 .protyle-wysiwyg--select .protyle-linenumber__rows,
@@ -1789,7 +1797,7 @@ button[data-type="style4"]{
     max-height: 600px !important;
     min-height: fit-content !important;
     height: fit-content !important;
-    z-index: 9;
+    z-index: 303;
 }
 .block__popover .block__content .protyle {
     max-height: unset !important;
@@ -1852,6 +1860,11 @@ button .b3-list-item__meta {
 /* 按/弹出菜单隐藏分割线*/
 .b3-list-item--two+.b3-menu__separator {
     display: none;
+}
+/* 锚文字设置隐藏分割线*/
+.b3-menu__item--custom+.b3-menu__separator {
+    opacity: 0;
+    margin-top: 3px;
 }
 
 /* 字体设置面板 */
@@ -2141,6 +2154,18 @@ div[style*="font-color"][style*="background13)"]{
 .block__popover [custom-z="fs"] {
     font-family: var(--b3-font-family) !important;
 }
+.block__popover mark {
+    font-family: var(--b3-font-family) !important;
+    padding: 0;
+}
+
+/* 文档树移动菜单 */
+#foldList {
+    margin: 0 15px;
+}
+#foldList .b3-list-item+.b3-list-item{
+    margin-top: 8px !important;
+}
 
 /* 块图标右键菜单 */
 .b3-menu__item--readonly {
@@ -2170,6 +2195,14 @@ div[style*="font-color"][style*="background13)"]{
 /* 隐藏笔记本/文档前图标 */
 .b3-list-item__icon{
     display: none !important;
+}
+
+/* 面板焦点文字颜色 */
+.block__icons.block__icons--active {
+    background-color: #e0e8f8 !important;
+}
+.block__icons.block__icons--active .block__logo {
+    color: #333;
 }
 
 /* 面板折叠箭头 */
@@ -2210,26 +2243,35 @@ div[style*="font-color"][style*="background13)"]{
 .protyle-wysiwyg [data-node-id][fold="1"]:not(.li):not([data-type="NodeHeading"]) {
     opacity: 1;
 }
-/* 取消官方钉住变窄 */
+/* 取消钉住变窄 */
 .layout-tab-bar .item--pin {
     flex:auto;
+    text-align: center !important;
 }
 .layout-tab-bar .item--pin .item__text{
     color: #2e8ed3 !important;
+    max-width:100%;
+}
+.layout-tab-bar .item__text{
+    padding-left: 32px !important;
 }
 
 /* 自定义属性，列表转化为表格 */
-/* 对所有子列表项设置格式*/
-.protyle-wysiwyg [custom-f="bg"] .li{
-    display: flex;
-    outline: 0.05em solid #888;
-    background-color: #eff0f1;
+.list[data-node-id][data-type="NodeList"][custom-f="bg"]{
+	display:table-cell;
 }
+/* 列表块*/
 .protyle-wysiwyg [custom-f="bg"] .li .list{
     padding: 0;
     margin: 0;
     width: 100%;
     outline: 0.05em solid #888;
+}
+/* 列表项*/
+.protyle-wysiwyg [custom-f="bg"] .li{
+    display: flex;
+    outline: 0.05em solid #888;
+    background-color: #eff0f1;
 }
 .protyle-wysiwyg [custom-f="bg"] [data-node-id].li>[data-node-id] {
     margin-left: 0 !important;
@@ -2241,13 +2283,6 @@ div[style*="font-color"][style*="background13)"]{
     display: flex;
     min-width: 100px;
     margin: 0;
-}
-.protyle-wysiwyg [custom-f="bg"] .li>.list>.li {
-    outline: none !important;
-    border-top: 0.05em solid #888;
-}
-.protyle-wysiwyg [custom-f="bg"] .li>.list>.li:first-of-type {
-    border-top: none !important;
 }
 /* 去除小竖线 */
 .list[data-node-id][data-type="NodeList"][custom-f="bg"] .li>:before{
@@ -2272,15 +2307,15 @@ div[style*="font-color"][style*="background13)"]{
 }
 /* 自定义属性，列表转化为表格 END */
 
-/*---------社区老铁 abbj 提供的搜索窗口左右排列-------------*/
+/* 修改自社区老铁 abbj 的搜索窗口左右排列*/
 /*放大搜索窗口尺寸*/
 /*不添加[data-key]属性选择器将会同时影响alt+p窗口*/
 div[data-key] .b3-dialog__container {
-    width: 95vw !important;
+    width: 100vw !important;
 }
 div[data-key] .b3-dialog__container .fn__flex-column {
-	height:95vh !important;
-	width: 95vw !important;
+	height: 100vh !important;
+	width: 100vw !important;
 }
 /*先把容器改成左右排列并自动换行*/
 div[data-key] .b3-dialog__container .fn__flex-column {
@@ -2310,8 +2345,24 @@ div[data-key] .b3-dialog__container .fn__flex-column #searchPreview {
 }
 .spread-search__preview {
     border-top: none;
-}/*---------搜索窗口改造 end -------------*/
-
+}
+.b3-dialog__container svg.b3-dialog__close{
+    top: 15px;
+    right: 15px;
+    z-index: 2;
+    width: 10px;
+}
+.search__header .b3-form__icon-icon {
+    top: 20px;
+    left: 90px;
+    width: 12px;
+}
+.search__header .b3-text-field--text {
+    height: 40px;
+    margin: 8px 0 0 70px;
+    font-size: 16px;
+}
+/*---------搜索窗口改造 end -------------*/
 
 /* 社区老铁Roy-自定义属性，列表转化为思维导图START */
 /*整个导图取消缩进*/
