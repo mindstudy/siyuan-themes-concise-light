@@ -3,8 +3,8 @@
 :root {
     /* 主色 */
     --b3-theme-primary: #4285f4;
-    --b3-theme-primary-light: rgba(66, 133, 244, 0.54);
-    --b3-theme-primary-lighter: rgba(66, 133, 244, 0.38);
+    --b3-theme-primary-light: #305494;
+    --b3-theme-primary-lighter: #2b4571;
     --b3-theme-primary-lightest: #e9f0f9;
     --b3-theme-secondary: #f3a92f;
     --b3-theme-background: #f8f9fa;
@@ -18,6 +18,7 @@
     --b3-theme-on-secondary: #fff;
     --b3-theme-on-background: #202124;
     --b3-theme-on-surface: #5f6368;
+    --b3-theme-on-surface-rgb: 95, 99, 104;
     --b3-theme-on-error: #fff;
 
     /* 字体 */
@@ -43,6 +44,9 @@
 
     /* 提示 */
     --b3-tooltips-color: rgba(0, 0, 0, 0.54);
+
+    /* 遮罩 */
+    --b3-mask-background: rgba(0, 0, 0, 0.78);
 
     /* 超级块、卡片背景 */
     --b3-card-error-color: #a83d5d;
@@ -186,6 +190,15 @@
 @font-face {
     font-family: "Font Awesome 6 Free Brands Regular";
     src: url('fonts/Font Awesome 6 Brands-Regular-400');
+}
+
+.toolbar,
+.layout-tab-bar {
+    background-color: #ececec;
+}
+
+.layout-tab-bar .item:not(:last-child) {
+    box-shadow: 2px -26px 0px 0px var(--b3-theme-surface),1px -4px 1px 0px rgba(var(--b3-theme-on-surface-rgb), 0.1);
 }
 
 /* 日记、同步、主题、多页面前后切换图标隐藏 */
@@ -334,7 +347,6 @@ ul.fn__flex-1 li[data-type="toggle"] {
 .item--unupdate, .item {
     font-style: normal !important;
     color: #888 !important;
-    background-color: #ececec;
 }
 
 /*当前页签标题*/
@@ -348,13 +360,30 @@ li[class~="item--focus"] {
     box-shadow: none;
 }
 .layout-tab-bar .item:hover{
-    background-color: #f4ebeb !important;
+    background-color: #fdf2f2 !important;
 }
 .layout-tab-bar .item.item--focus {
     background-color: #f7f7f7 !important;
 }
-/*隐藏页签悬浮路径*/
-#tooltip {
+/*隐藏页签悬浮路径*/ 
+#tooltip[style^="top: 61.9"] {
+    display: none !important;
+}
+.tooltip,
+.b3-tooltips::after {
+    background-color: #a7a7a7;
+}
+.b3-list-item__action:hover {
+    color: #999;
+    background-color: transparent;
+}
+.b3-list-item__action svg{
+    width: 12px;
+    height: 12px;
+}
+.b3-tooltips__sw::before,
+.b3-tooltips::before,
+.b3-tooltips__nw::before{
     display: none !important;
 }
 
@@ -362,11 +391,23 @@ li[class~="item--focus"] {
 .item__close {
     opacity: 0;
 }
+
+/*恢复历史页签下拉列表*/
+.b3-dialog__container .item__close {
+    opacity: 1;
+}
 .item__close:hover {
     opacity: 0.88;
 }
 .item__close:hover svg {
     background-color: transparent !important;
+}
+.b3-dialog__container .layout-tab-bar .item {
+    line-height: 26px;
+}
+
+.config-bazaar__readme .item__preview {
+    width: 99%;
 }
 
 .layout-tab-container,
@@ -519,7 +560,7 @@ mark {
     padding: 0  0 2px 0!important;
 }
 #searchPreview [data-type="NodeHeading"] [data-type="search-mark"]{
-    font-family: var(--b3-font-family-title). serif;
+    font-family: var(--b3-font-family-title), serif;
 }
 .protyle-wysiwyg [data-node-id] span[data-type="search-mark"] {
     padding: 2px 0 4px 0!important;
@@ -783,11 +824,15 @@ code {
     margin-top: 0;
 }
 
-.protyle-wysiwyg [data-type="NodeList"][fold="1"]:not(.li) div[contenteditable="true"]:after,
 .protyle-wysiwyg [data-type="NodeHeading"][fold="1"]:not(.li) div[contenteditable="true"]:after,
+.protyle-wysiwyg [data-type="NodeList"][fold="1"]:not(.li) div[contenteditable="true"]:after,
 .protyle-wysiwyg [data-type="NodeListItem"].li[fold="1"]>div:nth-child(2)::after {
     content: " ...";
     color: #d62525;
+}
+.protyle-wysiwyg [data-type="NodeList"][fold="1"]:not(.li) div[contenteditable="true"] [spellcheck="false"],
+.protyle-wysiwyg [data-type="NodeListItem"].li[fold="1"]>div:nth-child(2) [spellcheck="false"] {
+    display: inline;
 }
 .protyle-gutters button {
     padding: 2px 4px;
@@ -1719,49 +1764,50 @@ button[data-type="style4"]{
 } */
 
 /* 块图标外观菜单 */
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__submenu {
+.b3-menu__item--show .b3-menu__submenu--row {
+    display: block !important;
+    top: -225px !important;
+    bottom: auto !important;
     column-count: 3;
     column-gap: 5px;
-    max-height: 360px !important;
+    max-height: 450px !important;
     border: 0.05em solid #555;
     padding: 2px 4px 0 4px;
 }
 /* 块图标外观菜单隐藏分割线 */
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item  .b3-menu__separator {
+.b3-menu__submenu--row  .b3-menu__separator {
     display: none;
 }
 /*块图标外观菜单镂空投影*/
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item  .b3-menu__item:nth-of-type(6),
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item  .b3-menu__item:nth-of-type(7) {
+.b3-menu__submenu--row  .b3-menu__item:nth-of-type(6),
+.b3-menu__submenu--row  .b3-menu__item:nth-of-type(7) {
     -webkit-text-fill-color: transparent !important;
     -webkit-text-stroke: 0 !important;
     text-shadow: none !important;
 }
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(6)  .fn__flex,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(7)  .fn__flex,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(6)  .b3-menu__icon,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(7)  .b3-menu__icon {
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(6)  .fn__flex,
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(7)  .fn__flex,
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(6)  .b3-menu__icon,
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(7)  .b3-menu__icon {
     display: none;
 }
 /*块图标外观菜单楷体*/
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(6) .b3-menu__label:before {
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(6) .b3-menu__label:before {
     content: "🄰 楷体";
-    font-family: "Charis SIL", "Gentium Book Plus", "Gentium Plus", FZNewKai-Z03, "方正新楷体 GBK", Kai, "楷体", SimKai, STKaiti, serif;
+    font-family: "Charis SIL", "Gentium Book Plus", "Gentium Plus", FZNewKai-Z03, "方正新楷体 GBK", Kai, "楷体", SimKai, STKaiti, serif !important;
     -webkit-text-fill-color: #333 !important;
     font-weight: normal;
-    font-size: 1.1em;
     padding: 0;
-    margin-left: 1px;
+    margin-left: 10px;
 }
 /*块图标外观菜单仿宋*/
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(7) .b3-menu__label:before {
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(7) .b3-menu__label:before {
     content: "🄰 仿宋";
-    font-family: "Charis SIL", "Gentium Book Plus", "Gentium Plus", FZFangSong-Z02, "方正仿宋 GBK", Fangsong, "仿宋", serif;
+    font-family: "Charis SIL", "Gentium Book Plus", "Gentium Plus", FZFangSong-Z02, "方正仿宋 GBK", Fangsong, "仿宋", serif !important;
     -webkit-text-fill-color: #333 !important;
     text-shadow: none !important;
-    font-size: 1.1em;
     padding: 0;
-    margin-left: 1px;
+    margin-left: 10px;
 }
 /*转换内容块为楷体仿宋*/
 [style*="text-shadow"],
@@ -2255,6 +2301,13 @@ div[style*="font-color"][style*="background13)"]{
 .layout-tab-bar .item__text{
     padding-left: 32px !important;
 }
+.history__text{
+    background-color: #f3f3f3;
+}
+/* 集市下载项宽度 */
+.b3-card {
+    width: 260px;
+}
 
 /* 自定义属性，列表转化为表格 */
 .list[data-node-id][data-type="NodeList"][custom-f="bg"]{
@@ -2347,8 +2400,8 @@ div[data-key] .b3-dialog__container .fn__flex-column #searchPreview {
     border-top: none;
 }
 .b3-dialog__container svg.b3-dialog__close{
-    top: 15px;
-    right: 15px;
+    top: 8px;
+    right: 10px;
     z-index: 2;
     width: 10px;
 }
@@ -2815,173 +2868,157 @@ div[custom-f="dt"]>[data-type="NodeListItem"]::before{
 }
 
 /* 外观菜单字体样式 */
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item{
-    padding: 0 0 0 8px;
+.b3-menu__submenu--row .b3-menu__item {
+    padding: 0 0 0 8px !important;
 }
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(9)  .fn__flex,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(10)  .fn__flex,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(11)  .fn__flex,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(12)  .fn__flex,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(13)  .fn__flex,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(14)  .fn__flex,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(15)  .fn__flex,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(16)  .fn__flex,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(17)  .fn__flex,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(18)  .fn__flex,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(19)  .fn__flex,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(20)  .fn__flex,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(21)  .fn__flex,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(22)  .fn__flex,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(23)  .fn__flex,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(24)  .fn__flex,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(25)  .fn__flex,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(26)  .fn__flex,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(27)  .fn__flex,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(28)  .fn__flex,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(29)  .fn__flex,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(30)  .fn__flex,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(31)  .fn__flex,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(32)  .fn__flex,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(33)  .fn__flex,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(34)  .fn__flex,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(35)  .fn__flex {
+.b3-menu__submenu--row .b3-menu__item .fn__flex {
     display: none;
 }
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(9) .b3-menu__label:before,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(10) .b3-menu__label:before,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(11) .b3-menu__label:before,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(12) .b3-menu__label:before,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(13) .b3-menu__label:before,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(14) .b3-menu__label:before,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(15) .b3-menu__label:before,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(16) .b3-menu__label:before,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(17) .b3-menu__label:before,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(18) .b3-menu__label:before,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(19) .b3-menu__label:before,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(20) .b3-menu__label:before,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(21) .b3-menu__label:before,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(22) .b3-menu__label:before,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(23) .b3-menu__label:before,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(24) .b3-menu__label:before,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(25) .b3-menu__label:before,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(26) .b3-menu__label:before,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(27) .b3-menu__label:before,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(28) .b3-menu__label:before,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(29) .b3-menu__label:before,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(30) .b3-menu__label:before,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(31) .b3-menu__label:before,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(32) .b3-menu__label:before,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(33) .b3-menu__label:before,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(34) .b3-menu__label:before,
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(35) .b3-menu__label:before {
+.b3-menu__submenu--row .b3-menu__item .b3-menu__label:before {
     text-shadow: none !important;
     margin-top: 10px;
-    margin-left: -20px;
+    margin-left: 10px;
     font-family: var(--b3-font-family) !important;
 }
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(9) .b3-menu__label:before {
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(1) .b3-menu__label:before {
+    content: "🄰 错误样式";
+    color: var(--b3-card-error-color);
+    background-color: var(--b3-card-error-background);
+}
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(2) .b3-menu__label:before {
+    content: "🄰 警告样式";
+    color: var(--b3-card-warning-color);
+    background-color: var(--b3-card-warning-background);
+}
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(3) .b3-menu__label:before {
+    content: "🄰 信息样式";
+    color: var(--b3-card-info-color);
+    background-color: var(--b3-card-info-background);
+}
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(4) .b3-menu__label:before {
+    content: "🄰 成功样式";
+    color: var(--b3-card-success-color);
+    background-color: var(--b3-card-success-background);
+}
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(9) .b3-menu__label:before {
     content: "🄰 红色";
     color: var(--b3-font-color1);
 }
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(10) .b3-menu__label:before {
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(10) .b3-menu__label:before {
     content: "🄰 橙色";
     color: var(--b3-font-color2);
 }
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(11) .b3-menu__label:before {
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(11) .b3-menu__label:before {
     content: "🄰 黄色";
     color: var(--b3-font-color3);
 }
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(12) .b3-menu__label:before {
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(12) .b3-menu__label:before {
     content: "🄰 绿色";
     color: var(--b3-font-color4);
 }
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(13) .b3-menu__label:before {
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(13) .b3-menu__label:before {
     content: "🄰 青色";
     color: var(--b3-font-color5);
 }
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(14) .b3-menu__label:before {
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(14) .b3-menu__label:before {
     content: "🄰 蓝色";
     color: var(--b3-font-color6);
 }
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(15) .b3-menu__label:before {
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(15) .b3-menu__label:before {
     content: "🄰 紫色";
     color: var(--b3-font-color7);
 }
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(16) .b3-menu__label:before {
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(16) .b3-menu__label:before {
     content: "🄰 粉色";
     color: var(--b3-font-color8);
 }
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(17) .b3-menu__label:before {
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(17) .b3-menu__label:before {
     content: "🄰 桔色";
     color: var(--b3-font-color9);
 }
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(18) .b3-menu__label:before {
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(18) .b3-menu__label:before {
     content: "🄰 杏色";
     color: var(--b3-font-color10);
 }
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(19) .b3-menu__label:before {
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(19) .b3-menu__label:before {
     content: "🄰 碧色";
     color: var(--b3-font-color11);
 }
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(20) .b3-menu__label:before {
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(20) .b3-menu__label:before {
     content: "🄰 棕色";
     color: var(--b3-font-color12);
 }
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(21) .b3-menu__label:before {
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(21) .b3-menu__label:before {
     content: "🄰 灰色";
     color: var(--b3-font-color13);
 }
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(23) .b3-menu__label:before {
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(23) .b3-menu__label:before {
     content: "🄰 红色";
+    color: var(--b3-font-color1);
     background-color: var(--b3-font-background1);
 }
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(24) .b3-menu__label:before {
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(24) .b3-menu__label:before {
     content: "🄰 橙色";
+    color: var(--b3-font-color2);
     background-color: var(--b3-font-background2);
 }
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(25) .b3-menu__label:before {
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(25) .b3-menu__label:before {
     content: "🄰 黄色";
+    color: var(--b3-font-color3);
     background-color: var(--b3-font-background3);
 }
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(26) .b3-menu__label:before {
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(26) .b3-menu__label:before {
     content: "🄰 绿色";
+    color: var(--b3-font-color4);
     background-color: var(--b3-font-background4);
 }
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(27) .b3-menu__label:before {
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(27) .b3-menu__label:before {
     content: "🄰 青色";
+    color: var(--b3-font-color5);
     background-color: var(--b3-font-background5);
 }
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(28) .b3-menu__label:before {
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(28) .b3-menu__label:before {
     content: "🄰 蓝色";
+    color: var(--b3-font-color6);
     background-color: var(--b3-font-background6);
 }
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(29) .b3-menu__label:before {
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(29) .b3-menu__label:before {
     content: "🄰 紫色";
+    color: var(--b3-font-color7);
     background-color: var(--b3-font-background7);
 }
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(30) .b3-menu__label:before {
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(30) .b3-menu__label:before {
     content: "🄰 粉色";
+    color: var(--b3-font-color8);
     background-color: var(--b3-font-background8);
 }
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(31) .b3-menu__label:before {
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(31) .b3-menu__label:before {
     content: "🄰 桔色";
+    color: var(--b3-font-color9);
     background-color: var(--b3-font-background9);
 }
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(32) .b3-menu__label:before {
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(32) .b3-menu__label:before {
     content: "🄰 杏色";
+    color: var(--b3-font-color10);
     background-color: var(--b3-font-background10);
 }
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(33) .b3-menu__label:before {
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(33) .b3-menu__label:before {
     content: "🄰 碧色";
+    color: var(--b3-font-color11);
     background-color: var(--b3-font-background11);
 }
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(34) .b3-menu__label:before {
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(34) .b3-menu__label:before {
     content: "🄰 棕色";
+    color: var(--b3-font-color12);
     background-color: var(--b3-font-background12);
 }
-.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item+.b3-menu__separator+.b3-menu__item+.b3-menu__item+.b3-menu__item .b3-menu__item:nth-of-type(35) .b3-menu__label:before {
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(35) .b3-menu__label:before {
     content: "🄰 灰色";
+    color: var(--b3-font-color13);
     background-color: var(--b3-font-background13);
+}
+.b3-menu__submenu--row .b3-menu__item:nth-of-type(37) .b3-menu__label:before {
+    content: "🄰 清除样式";
 }
 
 /* 属性窗口 */
