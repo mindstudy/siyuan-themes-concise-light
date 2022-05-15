@@ -304,12 +304,12 @@ span[aria-label*="最小化"] {
     height: 12px;
     width: 12px;
 }
-/* 文档树滚动条 */
+/* 滚动条 */
 [data-type="navigation"] {
     overflow: hidden;
 }
 [data-type="navigation"]:hover {
-    overflow: auto;
+    overflow-y: scroll;
 }
 
 /* 垂直分割线 */
@@ -501,6 +501,13 @@ li[data-type="toggle"] .b3-list-item__text {
     font-size: 18px !important;
     text-align: justify;
     cursor: default;
+}
+.protyle-content {
+    overflow: hidden !important;
+}
+.protyle-content:hover  {
+    overflow-y: overlay !important;
+    z-index: 1;
 }
 
 /* 当前块鼠标浮动高亮背景 */ /*
@@ -1386,7 +1393,6 @@ code {
 [data-type="NodeBlockQueryEmbed"] [data-type="NodeParagraph"] .protyle-attr,
 [data-type="NodeBlockQueryEmbed"] [data-type="NodeList"] .protyle-attr,
 [data-type="NodeBlockQueryEmbed"] [data-type="NodeBlockquote"] .protyle-attr,
-[data-type="NodeBlockQueryEmbed"] [data-type="NodeTable"] .protyle-attr,
 [data-type="NodeBlockQueryEmbed"] [data-type="NodeBlockQueryEmbed"] .protyle-attr,
 [data-type="NodeBlockQueryEmbed"] [data-type="NodeHTMLBlock"] .protyle-attr,
 [data-type="NodeBlockQueryEmbed"] [data-type="NodeVideo"] .protyle-attr,
@@ -1395,6 +1401,17 @@ code {
     padding-top: 8px;
     margin-right: 50px;
     top: -21px;
+}
+[data-type="NodeBlockQueryEmbed"] [data-type="NodeTable"]{
+    padding-top: 8px;
+    top: 5px;
+}
+[data-type="NodeBlockQueryEmbed"] [data-type="NodeTable"] .protyle-attr {
+    margin-right: 50px;
+    padding-top: 4px;
+}
+[data-type="NodeBlockQueryEmbed"] [data-subtype="t"] .protyle-attr {
+    padding-top: 10px;
 }
 [data-type="NodeBlockQueryEmbed"] [data-type="NodeParagraph"]{
     padding-top: 10px;
@@ -2390,6 +2407,7 @@ div[style*="font-color"][style*="background13)"]{
     margin-left: 25px;
 }
 /* 隐藏列表符号 */
+.list[data-node-id][data-type="NodeList"][custom-f="bg"] [data-subtype="u"] .protyle-action,
 .list[data-node-id][data-type="NodeList"][custom-f="bg"] div[data-node-id]:not([data-subtype="t"]) .protyle-action {
    display: none !important;
 }
@@ -2425,7 +2443,7 @@ div[data-key] .b3-dialog__container .fn__flex-column #searchList {
 	width:25vw;
 	height:calc(100% - 85px) !important;
 	overflow-x: hidden !important;
-	overflow-y: auto;
+	overflow-y: scroll;
 }
 /*结果预览自动占满剩余宽度，高度和结果列表等高*/
 div[data-key] .b3-dialog__container .fn__flex-column #searchPreview {
@@ -2449,6 +2467,23 @@ div[data-key] .b3-dialog__container .fn__flex-column #searchPreview {
     height: 40px;
     margin: 8px 0 0 70px;
     font-size: 16px;
+}
+#searchPreview .protyle-breadcrumb {
+    opacity: 0;
+}
+#searchPreview .protyle-breadcrumb:hover {
+    opacity: .8;
+    transition: none;
+}
+#searchPreview .protyle-wysiwyg,
+#searchPreview .protyle-wysiwyg [data-node-id]:first-of-type {
+    padding-top: 0 !important;
+}
+#searchList{
+    overflow: hidden !important;
+}
+#searchList:hover  {
+    overflow-y: overlay !important;
 }
 /*---------搜索窗口改造 end -------------*/
 
@@ -2492,7 +2527,7 @@ div[data-key] .b3-dialog__container .fn__flex-column #searchPreview {
 	margin-left:-6px;
 	padding:5px 10px;
 	margin-top:2px;
-	background-color:#f6f6f6;
+	background-color:#f6f6f6 !important;
 	border-radius:3px;
 	box-shadow: #0f0f0f1a 0px 0px 0px 1px, #0f0f0f1a 0px 2px 4px;
 	/*max-width:20vw; */
@@ -2602,6 +2637,10 @@ div[custom-f="dt"]>[data-type="NodeListItem"]::before{
     background-color: #fff;
     transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
 }
+.block__popover .protyle-wysiwyg [custom-f~=dt] [data-subtype="t"]>.protyle-action--task::before {
+    left: 0.3em;
+    top:1.05em;
+}
 .protyle-wysiwyg [custom-f~=dt] [data-subtype="t"].protyle-task--done >.protyle-action--task::before {
     background-color: transparent;
     border: none !important;
@@ -2617,6 +2656,26 @@ div[custom-f="dt"]>[data-type="NodeListItem"]::before{
     color: #84cde4;
     box-sizing: border-box;
     z-index: 9;
+}
+.block__popover .protyle-wysiwyg [custom-f~=dt] [data-subtype="t"].protyle-task--done >.protyle-action--task::before {
+    left: 0.27em;
+    top: 0.45em;
+}
+/* 导图内嵌入块 */
+.protyle-wysiwyg [custom-f~=dt] .bq{
+    padding: 0 !important;
+    margin: 0 !important;
+    border-left: 0;
+    background-color: transparent !important;
+}
+/* 导图内代码块 */
+.list[data-node-id][data-type="NodeList"][custom-f="dt"] .hljs.protyle-linenumber {
+    padding: 10px 10px;
+    top: 0.08em;
+}
+.block__popover .protyle-wysiwyg [custom-f~=dt] [data-subtype="t"].protyle-task--done >.protyle-action--task::before {
+    left: 0.27em;
+    top: 0.5em;
 }
 /* 隐藏列表符号 */
 .list[data-node-id][data-type="NodeList"][custom-f="dt"] [data-subtype="u"] .protyle-action,
