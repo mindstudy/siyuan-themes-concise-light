@@ -1,4 +1,10 @@
 {
+  "sortByUpdateTimeDesc": "更新时间降序",
+  "sortByUpdateTimeAsc": "更新时间升序",
+  "sortByDownloadsDesc": "下载次数降序",
+  "sortByDownloadsAsc": "下载次数升序",
+  "activationCode": "激活码",
+  "activationCodePlaceholder": "请在这里输入订阅激活码",
   "exportDataTip": "将 <code>工作空间/data/</code> 文件夹下的所有文件以 zip 压缩包方式打包导出",
   "importDataTip": "将导出的 zip 压缩包导入，按路径覆盖 <code>工作空间/data/</code> 文件夹",
   "includeChildDoc": "包含子文档",
@@ -324,8 +330,6 @@
   "font": "字体",
   "folder": "文件夹",
   "day": "天",
-  "subscriptionCount": "推荐",
-  "refCode": "订阅推荐码",
   "pin": "钉住",
   "unpin": "取消钉住",
   "createdAt": "创建于",
@@ -459,7 +463,6 @@
   "account6": "距订阅过期还剩",
   "account7": "更多高级特性",
   "account8": "端到端加密同步",
-  "account9": "\uD83C\uDF81 使用推荐码",
   "account10": "年付订阅",
   "account11": "早鸟优惠活动结束还剩",
   "account12": "相伴一生",
@@ -858,6 +861,7 @@
     "131": "下载耗时 %.2fs",
     "132": "上传耗时 %.2fs",
     "133": "本地数据暂无变更",
-    "134": "为避免刚恢复的数据被同步覆盖，数据同步功能已被自动暂停"
+    "134": "为避免刚恢复的数据被同步覆盖，数据同步功能已被自动暂停",
+    "135": "请确保所有设备已经更新到最新版，然后在主力设备上随意更改一个文档后触发同步，最后再到其他设备触发同步"
   }
 }
