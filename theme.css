@@ -2439,15 +2439,30 @@ div[style*="font-color"][style*="background13)"]{
 }
 /* 集市下载项宽度 */
 .b3-card {
-    width: 250px;
+    width: 19.5vw;
 }
 .b3-dialog__container[style="width:80vw"],
-.b3-tab-container,
 .search__header,
 .search__header input {
     background-color: #f3f3f3 !important;
 }
-
+.b3-tab-container  {
+    background-color: #f7f6f3 !important;
+}
+.search__header+.fn__flex-1>.b3-tab-bar,
+.search__header+.fn__flex-1>.b3-tab-container,
+.search__header+.fn__flex-1>[data-name="bazaar"] .fn__flex-1 {
+    overflow: hidden !important;
+}
+.search__header+.fn__flex-1>.b3-tab-bar:hover,
+.search__header+.fn__flex-1>.b3-tab-container:hover,
+.search__header+.fn__flex-1>[data-name="bazaar"] .fn__flex-1:hover {
+    overflow-y: overlay !important;
+    z-index: 9;
+}
+.b3-dialog .item__text{
+    padding-right: 32px !important;
+}
 
 /* 自定义属性，列表转化为表格 */
 .list[data-node-id][data-type="NodeList"][custom-f="bg"]{
