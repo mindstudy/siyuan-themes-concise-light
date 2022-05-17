@@ -385,7 +385,7 @@ li[class~="item--focus"] {
     background-color: #f7f7f7 !important;
 }
 /*隐藏页签悬浮路径*/ 
-#tooltip[style^="top: 61.9"] {
+#tooltip[style^="top: 67.9"] {
     display: none !important;
 }
 .tooltip,
@@ -790,7 +790,7 @@ code {
 
 /* 弹出浮窗块引用 */
 .block__popover .protyle-wysiwyg span[data-type="block-ref"] {
-    color: #555;
+    color: #222;
 }
 
 /* 折叠字号统一 */
@@ -1529,6 +1529,9 @@ span[data-type="a"]:hover{
     color: #fff !important;
     transition: none;
 }
+.block__popover .protyle-wysiwyg [data-node-id] span[data-type="tag"]{
+    font-size: 13px !important;
+}
 
 /*引述块文字*/
 .protyle-wysiwyg .bq {
@@ -1607,6 +1610,15 @@ span[data-type="a"]:hover{
 .protyle-wysiwyg .protyle-wysiwyg__embed div {
     background-color: transparent !important;
     color: #333;
+}
+.protyle-wysiwyg .protyle-wysiwyg__embed div.hljs {
+    background-color: #f9f9f9 !important;
+}
+.protyle-wysiwyg .protyle-wysiwyg__embed .protyle-linenumber__rows {
+    background-color: #f8f2f2 !important;
+}
+.protyle-wysiwyg .protyle-wysiwyg__embed div.bq {
+    background-color: #f6f6f6 !important;
 }
 .protyle-wysiwyg__embed .protyle-attr {
     top: -12px !important;
@@ -1710,8 +1722,21 @@ span[data-type="a"]:hover{
 }
 
 /*浮动工具条高亮*/
+.protyle-toolbar {
+    column-count: 7;
+    margin-top: -30px;
+    margin-left: -50px;
+    display: block;
+    background-color: #f7f6f3;
+}
+.protyle-toolbar__item{
+    display: block;
+}
 .protyle-toolbar__item--current {
     color: #b88 !important;
+}
+.protyle-toolbar__divider {
+    display: none;
 }
 
 /*浮动工具条提示*/
@@ -1767,6 +1792,14 @@ button[data-type="style4"]{
     -webkit-text-fill-color: transparent !important;
     -webkit-text-stroke: 0 !important;
     text-shadow: none !important;
+    width: 1px;
+}
+button[data-type="style2"]{
+    margin-right: 25px;
+}
+button[data-type="style2"]+button[data-type="style4"]{
+    margin-left: 22px;
+    margin-right: 5px;
 }
 
 /*  去除字体效果边框 */
@@ -1892,8 +1925,13 @@ button[data-type="style4"]{
 .viewer-container .viewer-title{
     display: none;
 }
-
-.block__popover{
+.block__popover .block__content {
+    overflow: hidden;
+}
+.block__popover .block__content:hover {
+    overflow-y: overlay !important;
+}
+.block__popover {
     max-height: 600px !important;
     min-height: fit-content !important;
     height: fit-content !important;
@@ -1984,6 +2022,7 @@ button .b3-list-item__meta {
 
 /* 字体设置面板 */
 .protyle-util {
+    margin-top: 12px;
     background-color: #efefef !important;
 }
 .protyle-util .b3-list-item.b3-list-item--focus{
@@ -2127,13 +2166,13 @@ div[style*="font-color"][style*="background13)"]{
     font-size: 14px !important;
     font-weight: bold;
     margin: 6px 0 0 0 !important;
-    color: #555;
+    color: #222;
 }
 
 .block__popover .protyle-wysiwyg [data-node-id] {
     padding: 0;
     margin: 0;
-    color: #555;
+    color: #222;
 }
 
 .block__popover  .fn__flex-1{
