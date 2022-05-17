@@ -1,9 +1,9 @@
 {
-  "name": "Concise Light",
+  "name": "Concise Dark",
   "author": "mindstudy",
   "url": "https://github.com/mindstudy",
   "version": "2.0.4",
   "modes": [
-    "light"
+    "dark"
   ]
 }
