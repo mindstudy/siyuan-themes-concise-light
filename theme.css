@@ -515,6 +515,7 @@ li[data-type="toggle"] .b3-list-item__text {
     overflow: hidden !important;
 }
 .protyle-content:hover  {
+    overflow-x: overlay !important;
     overflow-y: overlay !important;
     z-index: 1;
 }
@@ -2477,9 +2478,20 @@ div[style*="font-color"][style*="background13)"]{
     font-family: var(--b3-font-family-code);
 }
 
+/* 自定义属性溢出滚动 */
+.protyle-wysiwyg [data-type="NodeList"][custom-f="dt"],
+.protyle-wysiwyg [data-type="NodeList"][custom-f="kb"]{
+	overflow: hidden !important;
+}
+.protyle-wysiwyg [data-type="NodeList"][custom-f="dt"]:hover,
+.protyle-wysiwyg [data-type="NodeList"][custom-f="kb"]:hover {
+	overflow-x: overlay !important;
+    overflow-y: hidden;
+}
+
 /* 自定义属性，列表转化为表格 */
 .list[data-node-id][data-type="NodeList"][custom-f="bg"]{
-	display:table-cell;
+	display: table-cell;
 }
 /* 列表块*/
 .protyle-wysiwyg [custom-f="bg"] .li .list{
@@ -2488,7 +2500,7 @@ div[style*="font-color"][style*="background13)"]{
     width: 100%;
     outline: 0.05em solid #888;
 }
-/* 列表项*/
+/* 列表项 */
 .protyle-wysiwyg [custom-f="bg"] .li{
     display: flex;
     outline: 0.05em solid #888;
