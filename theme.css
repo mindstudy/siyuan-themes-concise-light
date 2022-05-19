@@ -385,7 +385,7 @@ li[class~="item--focus"] {
     background-color: #f7f7f7 !important;
 }
 /*隐藏页签悬浮路径*/ 
-#tooltip[style^="top: 67.9"] {
+#tooltip[style^="top: 59.9"] {
     display: none !important;
 }
 .tooltip,
@@ -912,9 +912,15 @@ code {
 .protyle-wysiwyg [data-type="NodeListItem"].li[fold="1"]>div:nth-child(2) [spellcheck="false"] {
     display: inline;
 }
-
 .protyle-gutters button {
     margin-top: 2px;
+}
+.protyle-gutters button[data-type="fold"] svg{
+    margin-top: 2px;
+    color: #d62525;
+}
+.protyle-gutters button[data-type="fold"] svg[style*="transform"]{
+    color: var(--b3-theme-on-background);
 }
 .protyle-wysiwyg div[fold="1"][data-type="NodeHeading"]:before {
     background-color: transparent;
@@ -1323,6 +1329,7 @@ code {
     content: counter(o6, upper-roman)".";
     font-size: 16px;
 	position: absolute;
+    top: 3px;
 }
 /* 七级有序列表样式 */
 .protyle-wysiwyg .list[data-subtype="o"]>.li[data-subtype="o"]>.list[data-subtype="o"]>.li[data-subtype="o"]>.list[data-subtype="o"]>.li[data-subtype="o"]>.list[data-subtype="o"]>.li[data-subtype="o"]>.list[data-subtype="o"]>.li[data-subtype="o"]>.list[data-subtype="o"]>.li[data-subtype="o"]>.list[data-subtype="o"]>.li[data-subtype="o"]:before {
@@ -1757,7 +1764,6 @@ span[data-type="a"]:hover{
 .protyle-toolbar {
     column-count: 7;
     margin-top: -30px;
-    margin-left: -25px;
     padding: 0 10px;
     display: block;
     background-color: #f7f6f3;
@@ -2454,12 +2460,14 @@ div[style*="font-color"][style*="background13)"]{
 }
 .search__header+.fn__flex-1>.b3-tab-bar,
 .search__header+.fn__flex-1>.b3-tab-container,
-.search__header+.fn__flex-1>[data-name="bazaar"] .fn__flex-1 {
+.search__header+.fn__flex-1>[data-name="bazaar"] .fn__flex-1,
+.config-bazaar__readme .item__main {
     overflow: hidden !important;
 }
 .search__header+.fn__flex-1>.b3-tab-bar:hover,
 .search__header+.fn__flex-1>.b3-tab-container:hover,
-.search__header+.fn__flex-1>[data-name="bazaar"] .fn__flex-1:hover {
+.search__header+.fn__flex-1>[data-name="bazaar"] .fn__flex-1:hover,
+.config-bazaar__readme .item__main:hover {
     overflow-y: overlay !important;
 }
 .b3-dialog .item__text{

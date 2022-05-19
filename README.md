@@ -44,9 +44,7 @@
 一般没打开时，按一次打开，再按一次隐藏。
 
 - 快捷键 Alt + 1 至 9，分别对应 9 个面板，简单易记：文档树、大纲、书签、标签、日记、收集箱、反链、本页关系图、全局关系图
-
 - 如果文档树和标签面板同时出现，左边栏关闭按 Alt+4 再按 Alt+，以此类推
-- 任意面板获得焦点的方式是 Alt + 1
 - 面板如需改变位置请先切换回默认主题，改变好之后再使用本主题
 - 其它快捷键参见“设置-快捷键”
 
@@ -87,7 +85,7 @@ https://github.com/mindstudy/siyuan-themes-concise-light/issues
 
 或者语雀：
 
-https://www.yuque.com/u25584857/ryp75p/sgf58w
+https://www.yuque.com/u25584857/ryp75p/zlocwl
 
 
 
