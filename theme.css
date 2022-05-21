@@ -22,9 +22,9 @@
     --b3-theme-on-error: #fff;
 
     /* 字体 */
-    --b3-font-family: "PingFang SC Light", "PingFang TC Light", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif, "Segoe UI Emoji", "Noto Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols", "Apple Color Emoji";
-    --b3-font-family-text: "Charis SIL", "Gentium Book Plus", "Gentium Plus", "FZYouSongJ GBK 506L", "方正悠宋 GBK 506L", "方正悠宋+ GBK 506L", "FZYouSongJ GBK", "方正悠宋+ GBK", "方正悠宋 GBK", "方正悠宋", "PingFang SC Light", "PingFang TC Light", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif, "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols", "Apple Color Emoji";
-    --b3-font-family-title: "Charis SIL", "Gentium Book Plus", "Gentium Plus", "FZYaSong-M-GBK", "方正准雅宋_GBK", "方正准雅宋 GBK", "方正准雅宋", "方正雅宋简体 Medium", "方正雅宋简体", "PingFang SC Light", "PingFang TC Light", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif, "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols", "Apple Color Emoji";
+    --b3-font-family: "PingFang SC Light", "PingFang TC Light", "PingFang SC", "PingFang TC", "OPPOSans", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif, "Segoe UI Emoji", "Noto Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols", "Apple Color Emoji";
+    --b3-font-family-text: "Charis SIL", "Gentium Book Plus", "Gentium Plus", "FZYouSongJ GBK 506L", "方正悠宋 GBK 506L", "方正悠宋+ GBK 506L", "FZYouSongJ GBK", "方正悠宋+ GBK", "方正悠宋 GBK", "方正悠宋", "PingFang SC Light", "PingFang TC Light",  "PingFang SC", "PingFang TC", "OPPOSans", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif, "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols", "Apple Color Emoji";
+    --b3-font-family-title: "Charis SIL", "Gentium Book Plus", "Gentium Plus", "FZYaSong-M-GBK", "方正准雅宋_GBK", "方正准雅宋 GBK", "方正准雅宋", "方正雅宋简体 Medium", "方正雅宋简体", "PingFang SC Light", "PingFang TC Light",  "PingFang SC", "PingFang TC", "OPPOSans", "Hiragino Sans GB", "Microsoft Yahei", "Segoe UI", serif, "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols", "Apple Color Emoji";
     --b3-font-family-code: "Roboto", "Noto Sans", "Microsoft YaHei Mono", "JetBrainsMono-Regular", mononoki, Consolas, "Liberation Mono", Menlo, Courier, monospace, "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols", "Apple Color Emoji", sans-serif;
     --b3-font-family-graph: mononoki;
     --b3-font-family-emoji: "Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI", "Twemoji Mozilla", "Noto Color Emoji", "Android Emoji", "Apple Color Emoji";
@@ -59,9 +59,9 @@
     --b3-card-success-background: #edf7ed;
 
     /* 自定义文字 */
-    --b3-font-color1: #d44039;
-    --b3-font-color2: #d26d24;
-    --b3-font-color3: #ac8f0d;
+    --b3-font-color1: #e11b10;
+    --b3-font-color2: #f16908;
+    --b3-font-color3: #c4a208;
     --b3-font-color4: #428c05;
     --b3-font-color5: #1590e1;
     --b3-font-color6: #6b90e7;
@@ -85,6 +85,19 @@
     --b3-font-background11: #ddf5f7;
     --b3-font-background12: #f0e4d9;
     --b3-font-background13: #dcdcdc;
+    --b3-block-color1: #d44039;
+    --b3-block-color2: #d26d24;
+    --b3-block-color3: #ac8f0d;
+    --b3-block-color4: #428c05;
+    --b3-block-color5: #1590e1;
+    --b3-block-color6: #6b90e7;
+    --b3-block-color7: #a94bb7;
+    --b3-block-color8: #d173b7;
+    --b3-block-color9: #de700f;
+    --b3-block-color10: #7e8b0b;
+    --b3-block-color11: #2b97ad;
+    --b3-block-color12: #b66508;
+    --b3-block-color13: #6f6f6f;
     --b3-block-background1: #fee0e0;
     --b3-block-background2: #ffe6dd;
     --b3-block-background3: #f4f0cb;
@@ -243,12 +256,12 @@
 /* 文档树tab */
 .block__logo {
     color: #888;
-    font-size: 14px;
+    font-size: 1.0em;
     margin: 0 0 0 24px;
 }
 
 .file-tree .b3-list-item__text{
-    font-size: 14px;
+    font-size: 1.06em;
     opacity: .8;
 }
 
@@ -475,7 +488,7 @@ li[class~="item--focus"] {
 li[data-type="toggle"] .b3-list-item__arrow,
 li[data-type="toggle"] .b3-list-item__text {
     color: #888 !important;
-    font-size: 14px;
+    font-size: 1.0em;
 }
 .b3-list li[data-type="open"]:hover {
     background-color: #eee;
@@ -615,18 +628,18 @@ mark {
 }
 .b3-menu:not(.hint--menu) button .b3-list-item__first,
 .b3-menu:not(.hint--menu) button .b3-list-item__text {
-    font-size: 14px;
+    font-size: 1.06em;
 }
 .b3-menu:not(.hint--menu) button .b3-list-item__meta {
     opacity: 1;
-    font-size: 14px;
+    font-size: 1.06em;
     color: #aaa;
 }
 
 /* 双链弹出菜单mark*/
 .b3-menu:not(.hint--menu) mark {
     color: #666;
-    font-size: 14px;
+    font-size: 1.06em;
     padding: 0;
     margin: 2px 1px 0 0;
 }
@@ -635,7 +648,7 @@ mark {
 }
 .b3-menu:not(.hint--menu) button .b3-list-item__meta,
 .b3-menu:not(.hint--menu) button .b3-list-item__meta mark {
-    font-size: 14px;
+    font-size: 1.06em;
     color: #666;
 }
 .b3-menu:not(.hint--menu) button .b3-list-item__first+.b3-list-item__meta{
@@ -822,12 +835,15 @@ code {
     opacity: 0 !important;
 }
 .block__popover [data-subtype="t"] [data-type="NodeParagraph"]{
-    font-size: 14px;
+    font-size: 1.06em;
 }
 .block__popover .protyle-action--task::before,
 .block__popover .protyle-task--done .protyle-action--task::after {
-    margin-top: -8px;
+    margin-top: -5px;
     font-size: 16px;
+}
+.block__popover [data-subtype="t"] [spellcheck="false"] {
+    margin-left: 5px;
 }
 
 /* 弹出浮窗块引用 */
@@ -902,21 +918,21 @@ code {
     margin-top: 0;
 }
 
-.protyle-wysiwyg [data-type="NodeHeading"][fold="1"]:not(.li) div[contenteditable="true"]:after,
-.protyle-wysiwyg [data-type="NodeList"][fold="1"]:not(.li) div[contenteditable="true"]:after,
-.protyle-wysiwyg [data-type="NodeListItem"].li[fold="1"]>div:nth-child(2)::after {
+.protyle-wysiwyg [data-type="NodeHeading"][fold="1"]:not(.li) [spellcheck="false"]:after,
+.protyle-wysiwyg [data-type="NodeList"][fold="1"]:not(.li) [spellcheck="false"]:after,
+.protyle-wysiwyg [data-type="NodeListItem"].li[fold="1"]>div:nth-child(2)>[spellcheck="false"]::after {
     content: " ...";
     color: #d62525;
 }
-.protyle-wysiwyg [data-type="NodeList"][fold="1"]:not(.li) div[contenteditable="true"] [spellcheck="false"],
-.protyle-wysiwyg [data-type="NodeListItem"].li[fold="1"]>div:nth-child(2) [spellcheck="false"] {
+.protyle-wysiwyg [data-type="NodeList"][fold="1"]:not(.li) div[spellcheck="false"] [spellcheck="false"],
+.protyle-wysiwyg [data-type="NodeListItem"].li[fold="1"]>div:nth-child(2)>[spellcheck="false"] {
     display: inline;
+    white-space:initial;
 }
 .protyle-gutters button {
     margin-top: 2px;
 }
 .protyle-gutters button[data-type="fold"] svg{
-    margin-top: 2px;
     color: #d62525;
 }
 .protyle-gutters button[data-type="fold"] svg[style*="transform"]{
@@ -963,7 +979,7 @@ code {
 .protyle-wysiwyg .li [data-node-id][fold="1"][data-type="NodeHTMLBlock"] div:first-child:before{
     content: "HTML ...";
     color: #888;
-    font-size: 14px;
+    font-size: 1.06em;
     font-style: italic;
     padding: 2px 0 2px 8px;
     border-radius: 4px;
@@ -973,7 +989,7 @@ code {
 .protyle-wysiwyg .li [data-node-id][fold="1"][data-type="NodeMathBlock"] div:first-child:before{
     content: "Math ...";
     color: #888;
-    font-size: 14px;
+    font-size: 1.06em;
     font-style: italic;
     padding: 2px 0 2px 8px;
     border-radius: 4px;
@@ -983,7 +999,7 @@ code {
 .protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeIFrame"]::before{
     content: "IFrame ...";
     color: #888;
-    font-size: 14px;
+    font-size: 1.06em;
     font-style: italic;
     padding: 0 0 2px 8px;
     border-radius: 4px;
@@ -993,7 +1009,7 @@ code {
 .protyle-wysiwyg .li [data-node-id][fold="1"][data-type="NodeWidget"] div:first-child:before{
     content:"Widget ...";
     color: #888;
-    font-size: 14px;
+    font-size: 1.06em;
     font-style: italic;
     padding: 2px 0 2px 8px;
     border-radius: 4px;
@@ -1003,7 +1019,7 @@ code {
 .protyle-wysiwyg .li [data-node-id][fold="1"][data-type="NodeVideo"] div:first-child:before{
     content: "Video ...";
     color: #888;
-    font-size: 14px;
+    font-size: 1.06em;
     font-style: italic;
     padding: 2px 0 2px 8px;
     border-radius: 4px;
@@ -1013,7 +1029,7 @@ code {
 .protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="plantuml"] div:first-child:before{
     content: "Plantuml ...";
     color: #888;
-    font-size: 14px;
+    font-size: 1.06em;
     font-style: italic;
     padding: 2px 0 2px 8px;
     border-radius: 4px;
@@ -1023,7 +1039,7 @@ code {
 .protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="flowchart"] div:first-child:before{
     content: "Flowchart ...";
     color: #888;
-    font-size: 14px;
+    font-size: 1.06em;
     font-style: italic;
     padding: 2px 0 2px 8px;
     border-radius: 4px;
@@ -1033,7 +1049,7 @@ code {
 .protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="echarts"] div:first-child:before{
     content: "Echarts ...";
     color: #888;
-    font-size: 14px;
+    font-size: 1.06em;
     font-style: italic;
     padding: 2px 0 2px 8px;
     border-radius: 4px;
@@ -1043,7 +1059,7 @@ code {
 .protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="graphviz"] div:first-child:before{
     content: "Graphviz ...";
     color: #888;
-    font-size: 14px;
+    font-size: 1.06em;
     font-style: italic;
     padding: 2px 0 2px 8px;
     border-radius: 4px;
@@ -1053,7 +1069,7 @@ code {
 .protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="abc"] div:first-child:before{
     content: "Staff ";
     color: #888;
-    font-size: 14px;
+    font-size: 1.06em;
     font-style: italic;
     padding: 2px 0 2px 8px;
     border-radius: 4px;
@@ -1063,7 +1079,7 @@ code {
 .protyle-wysiwyg .li [data-node-id][fold="1"][data-type="NodeAudio"] div:first-child:before{
     content: "Audio ...";
     color: #888;
-    font-size: 14px;
+    font-size: 1.06em;
     font-style: italic;
     padding: 0 0 2px 8px;
     border-radius: 4px;
@@ -1073,7 +1089,7 @@ code {
 .protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="mindmap"] div:first-child:before{
     content: "Mindmap ...";
     color: #888;
-    font-size: 14px;
+    font-size: 1.06em;
     font-style: italic;
     padding: 2px 0 2px 8px;
     border-radius: 4px;
@@ -1083,7 +1099,7 @@ code {
 .protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="mermaid"] div:first-child:before{
     content: "Mermaid ...";
     color: #888;
-    font-size: 14px;
+    font-size: 1.06em;
     font-style: italic;
     padding: 2px 0 2px 8px;
     border-radius: 4px;
@@ -1093,7 +1109,7 @@ code {
 .protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="mermaid"][data-content^="gantt"] div:first-child:before {
     content: "Gannt ...";
     color: #888;
-    font-size: 14px;
+    font-size: 1.06em;
     font-style: italic;
     padding: 2px 0 2px 8px;
     border-radius: 4px;
@@ -1102,7 +1118,7 @@ code {
 .protyle-wysiwyg [data-node-id][fold="1"].p .img::before{
     content: "Image ...";
     color: #888;
-    font-size: 14px;
+    font-size: 1.06em;
     font-style: italic;
     padding: 2px 0 2px 8px;
     border-radius: 4px;
@@ -1111,7 +1127,7 @@ code {
 .protyle-wysiwyg [data-node-id][fold="1"].p::before {
     content: "Paragraph ";
     color: #888;
-    font-size: 14px;
+    font-size: 1.06em;
     font-style: italic;
     padding: 0 0 2px 8px;
     border-radius: 4px;
@@ -1125,7 +1141,7 @@ code {
 .protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeBlockQueryEmbed"]::before {
     content: "SQL Block ...";
     color: #888;
-    font-size: 14px;
+    font-size: 1.06em;
     font-style: italic;
     padding: 0;
 }
@@ -1147,7 +1163,7 @@ code {
 .protyle-wysiwyg [data-node-id][fold="1"].bq:before {
     content: "Quote ...";
     color: #888;
-    font-size: 14px;
+    font-size: 1.06em;
     font-style: italic;
     background-color: #dbe4f2 !important;
     padding: 0 18px 0.06em 0;
@@ -1197,7 +1213,7 @@ code {
 .protyle-wysiwyg [data-node-id][fold="1"]:not(.li).code-block::before{
     content: 'Code ...';
     color: #888;
-    font-size: 14px;
+    font-size: 1.06em;
     font-style: italic;
     position: absolute;
     top: 5px;
@@ -1241,6 +1257,7 @@ code {
 .block__popover .protyle-action>svg {
     top:-6px;
 }
+
 /* 二级无序列表左边样式 */
 .protyle-wysiwyg .list[data-subtype="u"]>.li[data-subtype="u"]>.list[data-subtype="u"]>.li[data-subtype="u"]>.protyle-action>svg{
     -webkit-mask: url(pics/circle.svg) no-repeat;
@@ -1357,7 +1374,7 @@ code {
 .block__popover .protyle-wysiwyg .list[data-subtype="o"]>.li[data-subtype="o"]>.list[data-subtype="o"]>.li[data-subtype="o"]>.list[data-subtype="o"]>.li[data-subtype="o"]>.list[data-subtype="o"]>.li[data-subtype="o"]>.list[data-subtype="o"]>.li[data-subtype="o"]:before,
 .block__popover .protyle-wysiwyg .list[data-subtype="o"]>.li[data-subtype="o"]>.list[data-subtype="o"]>.li[data-subtype="o"]>.list[data-subtype="o"]>.li[data-subtype="o"]>.list[data-subtype="o"]>.li[data-subtype="o"]>.list[data-subtype="o"]>.li[data-subtype="o"]>.list[data-subtype="o"]>.li[data-subtype="o"]:before,
 .block__popover .protyle-wysiwyg .list[data-subtype="o"]>.li[data-subtype="o"]>.list[data-subtype="o"]>.li[data-subtype="o"]>.list[data-subtype="o"]>.li[data-subtype="o"]>.list[data-subtype="o"]>.li[data-subtype="o"]>.list[data-subtype="o"]>.li[data-subtype="o"]>.list[data-subtype="o"]>.li[data-subtype="o"]>.list[data-subtype="o"]>.li[data-subtype="o"]:before {
-    font-size: 14px;
+    font-size: 1em;
 }
 
 /* 有序列表数字背景 */
@@ -1535,6 +1552,10 @@ code {
 [data-type="NodeBlockQueryEmbed"] [data-subtype="t"] .protyle-task--done .protyle-action--task::before {
     top: 0px;
 }
+[data-type="NodeBlockQueryEmbed"] .code-block .protyle-action {
+    left: 670px !important;
+    top: 3px !important;
+}
 
 /* 锚文字/正向链接/块引用 */
 span[data-type="block-ref"],
@@ -1579,7 +1600,7 @@ span[data-type="a"]:hover{
     transition: none;
 }
 .block__popover .protyle-wysiwyg [data-node-id] span[data-type="tag"]{
-    font-size: 14px !important;
+    font-size: 0.95em !important;
 }
 
 /*引述块文字*/
@@ -1602,6 +1623,19 @@ span[data-type="a"]:hover{
     color: #aaa !important;
     font-weight: 400;
     padding: 10px 4px;
+}
+.b3-typography .code-block .protyle-action .protyle-action__language,
+.protyle-wysiwyg .code-block .protyle-action .protyle-action__language {
+    margin-left: 0 !important;
+}
+.b3-typography .code-block .protyle-action,
+.protyle-wysiwyg .code-block .protyle-action {
+    width: 150px;
+    left: 715px;
+}
+.block__popover .protyle-wysiwyg .code-block .protyle-action {
+    left: 580px !important;
+    top: 5px !important
 }
 .protyle-wysiwyg--hl .protyle-linenumber__rows,
 .protyle-wysiwyg--select .protyle-linenumber__rows,
@@ -1812,7 +1846,7 @@ button[data-type="style2"]:before {
     font-family: "Charis SIL", "Gentium Book Plus", "Gentium Plus", FZNewKai-Z03, "方正新楷体 GBK", Kai, "楷体", SimKai, STKaiti, serif;
     -webkit-text-fill-color: #000 !important;
     font-weight: normal;
-    font-size: 1.1em;
+    font-size: 1.2em;
     margin: 0;
     padding: 0;
 }
@@ -1822,8 +1856,8 @@ button[data-type="style4"]:before {
     content: "仿宋";
     font-family: "Charis SIL", "Gentium Book Plus", "Gentium Plus", FZFangSong-Z02, "方正仿宋 GBK", Fangsong, "仿宋", serif;
     text-shadow: none !important;
-    font-size: 1.1em;
-    margin: 0 0 0 -20px;
+    font-size: 1.2em;
+    margin: 0 0 0 -16px;
     padding: 0;
     -webkit-text-fill-color: #000 !important;
 }
@@ -1983,7 +2017,8 @@ button[data-type="style2"]+button[data-type="style4"]{
     min-height: 63px !important;
 }
 .block__popover .block__content .protyle [data-node-id] [spellcheck="false"] {
-    min-height: unset!important;
+    min-height: unset !important;
+
 }
 /* 钉住图标 */
 .block__icon:hover:not([disabled]):not(.ft__primary), .block__icon--active {
@@ -2097,42 +2132,55 @@ strong[style*="background"]:empty{
 }
 /* 外观菜单背景设置 */
 div[style*="font-color"][style*="background1)"]{
+    color:  var(--b3-block-color1) !important;
     background-color: var(--b3-block-background1) !important;
 }
 div[style*="font-color"][style*="background2)"]{
+    color:  var(--b3-block-color2) !important;
     background-color: var(--b3-block-background2) !important;
 }
 div[style*="font-color"][style*="background3)"]{
+    color:  var(--b3-block-color3) !important;
     background-color: var(--b3-block-background3) !important;
 }
 div[style*="font-color"][style*="background4)"]{
+    color:  var(--b3-block-color4) !important;
     background-color: var(--b3-block-background4) !important;
 }
 div[style*="font-color"][style*="background5)"]{
+    color:  var(--b3-block-color5) !important;
     background-color: var(--b3-block-background5) !important;
 }
 div[style*="font-color"][style*="background6)"]{
+    color:  var(--b3-block-color6) !important;
     background-color: var(--b3-block-background6) !important;
 }
 div[style*="font-color"][style*="background7)"]{
+    color:  var(--b3-block-color7) !important;
     background-color: var(--b3-block-background7) !important;
 }
 div[style*="font-color"][style*="background8)"]{
+    color:  var(--b3-block-color8) !important;
     background-color: var(--b3-block-background8) !important;
 }
 div[style*="font-color"][style*="background9)"]{
+    color:  var(--b3-block-color9) !important;
     background-color: var(--b3-block-background9) !important;
 }
 div[style*="font-color"][style*="background10)"]{
+    color:  var(--b3-block-color10) !important;
     background-color: var(--b3-block-background10) !important;
 }
 div[style*="font-color"][style*="background11)"]{
+    color:  var(--b3-block-color11) !important;
     background-color: var(--b3-block-background11) !important;
 }
 div[style*="font-color"][style*="background12)"]{
+    color:  var(--b3-block-color12) !important;
     background-color: var(--b3-block-background12) !important;
 }
 div[style*="font-color"][style*="background13)"]{
+    color:  var(--b3-block-color13) !important;
     background-color: var(--b3-block-background13) !important;
 }
 
@@ -2147,7 +2195,7 @@ div[style*="font-color"][style*="background13)"]{
 .block__popover .protyle-wysiwyg,
 .block__popover .protyle-wysiwyg--attr {
     font-family: var(--b3-font-family);
-    font-size: 14px !important;
+    font-size: 1.06em !important;
     font-weight: normal !important;
     padding: 0 25px 0 25px !important;
 }
@@ -2169,7 +2217,7 @@ div[style*="font-color"][style*="background13)"]{
 .block__popover .protyle-wysiwyg .h5[fold="1"],
 .block__popover .protyle-wysiwyg .h6[fold="1"] {
     font-family: var(--b3-font-family);
-    font-size: 14px !important;
+    font-size: 1.06em !important;
     font-weight: bold;
     margin: 6px 0 0 0 !important;
     color: #222;
@@ -2185,8 +2233,12 @@ div[style*="font-color"][style*="background13)"]{
     flex: 0 !important;
 }
 
+.block__popover .block__edit {
+    border-bottom: 1px solid #ccc;
+}
+
 .block__popover span[data-type="tag"]{
-    font-size: 14px !important;
+    font-size: 1.06em !important;
     color: #eee !important;
 }
 
@@ -2300,11 +2352,13 @@ div[style*="font-color"][style*="background13)"]{
     padding-bottom: 3px !important;
 }
 
-/* iframe 标题右移 */
+/* 浮窗标题右移 */
 .block__popover--move>.block__icons {
     padding: 0 0 0 10px;
+    min-height: 30px;
+    max-height: 30px;
 }
-/* iframe 关闭按钮上移 */
+/* 浮窗关闭按钮上移 */
 .block__popover--move span[data-type="close"] svg {
     margin-bottom:  0;
 }
@@ -2434,14 +2488,15 @@ div[style*="font-color"][style*="background13)"]{
     flex:auto;
     text-align: center !important;
 }
-.layout-tab-bar .item--pin .item__text{
-    color: #2e8ed3 !important;
-    max-width:100%;
-}
 .layout-tab-bar .item__text{
     color: #666;
     padding-left: 32px !important;
     -webkit-font-smoothing: unset;
+}
+.layout-tab-bar .item--pin>.item__text{
+    color: #2e8ed3 !important;
+    padding: 0 !important;
+    max-width:100%;
 }
 .history__text{
     background-color: #f3f3f3;
@@ -2537,7 +2592,7 @@ div[style*="font-color"][style*="background13)"]{
 /* 隐藏列表符号 */
 .list[data-node-id][data-type="NodeList"][custom-f="bg"] [data-subtype="u"] .protyle-action,
 .list[data-node-id][data-type="NodeList"][custom-f="bg"] div[data-node-id]:not([data-subtype="t"]) .protyle-action {
-   display: none !important;
+   opacity: 0;
 }
 /* 自定义属性，列表转化为表格 END */
 
@@ -2653,7 +2708,7 @@ div[data-key] .b3-dialog__container .fn__flex-column #searchPreview {
 }
 /*取消标题层级提示*/
 .protyle-wysiwyg *[custom-f="dt"] .li [data-type="NodeHeading"]>[spellcheck="false"]:after{
-	display:none;
+	display: none;
 }
 /*文字框*/
 .protyle-wysiwyg *[custom-f="dt"] .li div>div[spellcheck="false"]{
@@ -2991,7 +3046,7 @@ div[custom-f="dt"]>[data-type="NodeListItem"]::before{
     margin-top: 2px !important;
 }
 .block__popover [custom-f~=kb] {
-    font-size: 14px !important;
+    font-size: 1.06em !important;
 }
 .block__popover [custom-f~=kb]>.li {
     margin-top: 3px !important;
@@ -3108,7 +3163,7 @@ div[custom-f="dt"]>[data-type="NodeListItem"]::before{
 .b3-color__square[data-type="backgroundColor"][style*="background-color:var(--b3-font-"]:before {
     display: inline-block;
     position: absolute;
-    font-size: 14px;
+    font-size: 1.2em;
     padding: 1px;
     font-weight:600;
     color: #777;
@@ -3201,120 +3256,120 @@ div[custom-f="dt"]>[data-type="NodeListItem"]::before{
 }
 .b3-menu__submenu--row .b3-menu__item:nth-of-type(9) .b3-menu__label:before {
     content: "🄰 红色";
-    color: var(--b3-font-color1);
+    color: var(--b3-block-color1);
 }
 .b3-menu__submenu--row .b3-menu__item:nth-of-type(10) .b3-menu__label:before {
     content: "🄰 橙色";
-    color: var(--b3-font-color2);
+    color: var(--b3-block-color2);
 }
 .b3-menu__submenu--row .b3-menu__item:nth-of-type(11) .b3-menu__label:before {
     content: "🄰 黄色";
-    color: var(--b3-font-color3);
+    color: var(--b3-block-color3);
 }
 .b3-menu__submenu--row .b3-menu__item:nth-of-type(12) .b3-menu__label:before {
     content: "🄰 绿色";
-    color: var(--b3-font-color4);
+    color: var(--b3-block-color4);
 }
 .b3-menu__submenu--row .b3-menu__item:nth-of-type(13) .b3-menu__label:before {
     content: "🄰 青色";
-    color: var(--b3-font-color5);
+    color: var(--b3-block-color5);
 }
 .b3-menu__submenu--row .b3-menu__item:nth-of-type(14) .b3-menu__label:before {
     content: "🄰 蓝色";
-    color: var(--b3-font-color6);
+    color: var(--b3-block-color6);
 }
 .b3-menu__submenu--row .b3-menu__item:nth-of-type(15) .b3-menu__label:before {
     content: "🄰 紫色";
-    color: var(--b3-font-color7);
+    color: var(--b3-block-color7);
 }
 .b3-menu__submenu--row .b3-menu__item:nth-of-type(16) .b3-menu__label:before {
     content: "🄰 粉色";
-    color: var(--b3-font-color8);
+    color: var(--b3-block-color8);
 }
 .b3-menu__submenu--row .b3-menu__item:nth-of-type(17) .b3-menu__label:before {
     content: "🄰 桔色";
-    color: var(--b3-font-color9);
+    color: var(--b3-block-color9);
 }
 .b3-menu__submenu--row .b3-menu__item:nth-of-type(18) .b3-menu__label:before {
     content: "🄰 杏色";
-    color: var(--b3-font-color10);
+    color: var(--b3-block-color10);
 }
 .b3-menu__submenu--row .b3-menu__item:nth-of-type(19) .b3-menu__label:before {
     content: "🄰 碧色";
-    color: var(--b3-font-color11);
+    color: var(--b3-block-color11);
 }
 .b3-menu__submenu--row .b3-menu__item:nth-of-type(20) .b3-menu__label:before {
     content: "🄰 棕色";
-    color: var(--b3-font-color12);
+    color: var(--b3-block-color12);
 }
 .b3-menu__submenu--row .b3-menu__item:nth-of-type(21) .b3-menu__label:before {
     content: "🄰 灰色";
-    color: var(--b3-font-color13);
+    color: var(--b3-block-color13);
 }
 .b3-menu__submenu--row .b3-menu__item:nth-of-type(23) .b3-menu__label:before {
     content: "🄰 红色";
-    color: var(--b3-font-color1);
-    background-color: var(--b3-font-background1);
+    color: var(--b3-block-color1);
+    background-color: var(--b3-block-background1);
 }
 .b3-menu__submenu--row .b3-menu__item:nth-of-type(24) .b3-menu__label:before {
     content: "🄰 橙色";
-    color: var(--b3-font-color2);
-    background-color: var(--b3-font-background2);
+    color: var(--b3-block-color2);
+    background-color: var(--b3-block-background2);
 }
 .b3-menu__submenu--row .b3-menu__item:nth-of-type(25) .b3-menu__label:before {
     content: "🄰 黄色";
-    color: var(--b3-font-color3);
-    background-color: var(--b3-font-background3);
+    color: var(--b3-block-color3);
+    background-color: var(--b3-block-background3);
 }
 .b3-menu__submenu--row .b3-menu__item:nth-of-type(26) .b3-menu__label:before {
     content: "🄰 绿色";
-    color: var(--b3-font-color4);
-    background-color: var(--b3-font-background4);
+    color: var(--b3-block-color4);
+    background-color: var(--b3-block-background4);
 }
 .b3-menu__submenu--row .b3-menu__item:nth-of-type(27) .b3-menu__label:before {
     content: "🄰 青色";
-    color: var(--b3-font-color5);
-    background-color: var(--b3-font-background5);
+    color: var(--b3-block-color5);
+    background-color: var(--b3-block-background5);
 }
 .b3-menu__submenu--row .b3-menu__item:nth-of-type(28) .b3-menu__label:before {
     content: "🄰 蓝色";
-    color: var(--b3-font-color6);
-    background-color: var(--b3-font-background6);
+    color: var(--b3-block-color6);
+    background-color: var(--b3-block-background6);
 }
 .b3-menu__submenu--row .b3-menu__item:nth-of-type(29) .b3-menu__label:before {
     content: "🄰 紫色";
-    color: var(--b3-font-color7);
-    background-color: var(--b3-font-background7);
+    color: var(--b3-block-color7);
+    background-color: var(--b3-block-background7);
 }
 .b3-menu__submenu--row .b3-menu__item:nth-of-type(30) .b3-menu__label:before {
     content: "🄰 粉色";
-    color: var(--b3-font-color8);
-    background-color: var(--b3-font-background8);
+    color: var(--b3-block-color8);
+    background-color: var(--b3-block-background8);
 }
 .b3-menu__submenu--row .b3-menu__item:nth-of-type(31) .b3-menu__label:before {
     content: "🄰 桔色";
-    color: var(--b3-font-color9);
-    background-color: var(--b3-font-background9);
+    color: var(--b3-block-color9);
+    background-color: var(--b3-block-background9);
 }
 .b3-menu__submenu--row .b3-menu__item:nth-of-type(32) .b3-menu__label:before {
     content: "🄰 杏色";
-    color: var(--b3-font-color10);
-    background-color: var(--b3-font-background10);
+    color: var(--b3-block-color10);
+    background-color: var(--b3-block-background10);
 }
 .b3-menu__submenu--row .b3-menu__item:nth-of-type(33) .b3-menu__label:before {
     content: "🄰 碧色";
-    color: var(--b3-font-color11);
-    background-color: var(--b3-font-background11);
+    color: var(--b3-block-color11);
+    background-color: var(--b3-block-background11);
 }
 .b3-menu__submenu--row .b3-menu__item:nth-of-type(34) .b3-menu__label:before {
     content: "🄰 棕色";
-    color: var(--b3-font-color12);
-    background-color: var(--b3-font-background12);
+    color: var(--b3-block-color12);
+    background-color: var(--b3-block-background12);
 }
 .b3-menu__submenu--row .b3-menu__item:nth-of-type(35) .b3-menu__label:before {
     content: "🄰 灰色";
-    color: var(--b3-font-color13);
-    background-color: var(--b3-font-background13);
+    color: var(--b3-block-color13);
+    background-color: var(--b3-block-background13);
 }
 .b3-menu__submenu--row .b3-menu__item:nth-of-type(37) .b3-menu__label:before {
     content: "🄰 清除样式";
@@ -3327,7 +3382,7 @@ div[custom-f="dt"]>[data-type="NodeListItem"]::before{
 .b3-dialog__container[style="width:50vw"] .b3-dialog__header{
     border-bottom: none;
     padding-bottom: 0cm;
-    font-size: 14px;
+    font-size: 1.06em;
 }
 .b3-dialog__container[style="width:50vw"] .b3-dialog__content.custom-attr{
     padding: 10px 24px 0 0;
