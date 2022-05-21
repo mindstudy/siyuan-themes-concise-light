@@ -2007,7 +2007,6 @@ button[data-type="style2"]+button[data-type="style4"]{
     overflow-y: overlay !important;
 }
 .block__popover {
-    max-height: 600px !important;
     min-height: fit-content !important;
     height: fit-content !important;
     z-index: 303;
@@ -2234,7 +2233,7 @@ div[style*="font-color"][style*="background13)"]{
 }
 
 .block__popover .block__edit:not(:last-child) {
-    border-bottom: 1px solid #666;
+    border-bottom: 1px solid #ddd;
 }
 
 .block__popover span[data-type="tag"]{
