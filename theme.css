@@ -728,6 +728,9 @@ background-color: #fae6e6 !important;
     border: 0.05em solid #fff;
     padding: 2px 4px 0 4px;
 }
+.hint--menu .b3-list-item--focus .ft__error {
+    color: #999 !important;
+}
 .hint--menu .b3-list-item__first .b3-list-item__graphic {
     height: 12px;
     color: #999;
@@ -2668,6 +2671,7 @@ div[data-key] .b3-dialog__container .fn__flex-column #searchPreview {
     right: 10px;
     z-index: 2;
     width: 10px;
+    opacity: 0.5;
 }
 .search__header .b3-form__icon-icon {
     top: 20px;
