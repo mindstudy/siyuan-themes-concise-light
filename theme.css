@@ -575,6 +575,11 @@ div[data-type="NodeHeading"]:first-of-type {
     color: #aaa;
 }
 
+.protyle-wysiwyg iframe {
+    border: none;
+    width: 900px;
+}
+
 mark {
     font-family: serif, var(--b3-font-family-text);
     font-weight: 400;
@@ -1628,6 +1633,14 @@ span[data-type="a"]:hover {
     background-color: #f9f9f9;
     padding: 10px 4px;
 }
+.b3-typography .hljs,
+.protyle-wysiwyg .hljs{
+    overflow: hidden;
+}
+.b3-typography .hljs:hover,
+.protyle-wysiwyg .hljs:hover{
+    overflow-x: overlay;
+}
 [data-type="NodeCodeBlock"] .protyle-linenumber__rows {
     font-family: var(--b3-font-family-code);
     color: #aaa !important;
@@ -1751,7 +1764,7 @@ span[data-type="a"]:hover {
 .protyle-wysiwyg table thead th {
     font-weight: 400;
     border-top: 0.1em solid #888 !important;
-    border-bottom: 0.05em solid #000 !important;
+    border-bottom: 0.050em solid #000 !important;
 }
 .protyle-wysiwyg table tr {
     background-color: transparent !important;
@@ -1760,10 +1773,10 @@ span[data-type="a"]:hover {
     background-color: transparent !important; /*#f3f3f3 #f8f9fa*/
 }
 .protyle-wysiwyg table tbody {
-    border: 0.05em solid #888 !important;
+    border: 0.050em solid #888 !important;
 }
 .protyle-wysiwyg table {
-    border: 0.05em solid #888 !important;
+    border: 0.050em solid #888 !important;
     display: table;
 }
 .protyle-wysiwyg table th,
@@ -1771,7 +1784,7 @@ span[data-type="a"]:hover {
 .protyle-wysiwyg table thead tr,
 .protyle-wysiwyg table tbody tr,
 .protyle-wysiwyg table tbody td {
-    border: 0.05em solid #888 !important;
+    border: 0.050em solid #888 !important;
 }
 /* 边线透明 */
 .protyle-wysiwyg table th:first-child,
@@ -1794,7 +1807,7 @@ span[data-type="a"]:hover {
 .protyle-wysiwyg table th[rowspan="1"]:first-of-type+th:not(.fn__none),
 .protyle-wysiwyg table th.fn__none+th:not(.fn__none),
 .protyle-wysiwyg table td.fn__none+td:not(.fn__none) {
-    border-left: 0.052em solid #888 !important;
+    border-left: 0.057em solid #888 !important;
 }
 .protyle-wysiwyg table tbody tr:last-child {
     border-bottom: 0.1em solid #888 !important;
@@ -2090,18 +2103,15 @@ button[data-type="style2"]+button[data-type="style4"] {
     transition: none;
 }
 
-.b3-color__square[data-type="color"]:hover {
-    border: 1px solid #fff;
-}
-
 .b3-color__square[data-type="backgroundColor"] {
     box-shadow: none;
     border: 1px solid #ccc;
     transition: none;
 }
 
+.b3-color__square[data-type="color"]:hover,
 .b3-color__square:hover[data-type="backgroundColor"]:hover {
-    border: 1px solid #888;
+    filter: brightness(1.2);
 }
 
 strong[style*="color1"],
@@ -2555,13 +2565,21 @@ div[style*="font-color"][style*="background13)"] {
 .ft__secondary {
     font-family: var(--b3-font-family-code);
 }
-/* 设置左边栏 */
+/* 设置面板左边栏 */
 .b3-dialog__container[style="width:80vw"] .b3-list-item--big {
         padding: 10px 24px !important;
 }
-/* 设置分割线 */
+/* 设置面板分割线 */
 .b3-dialog__container[style="width:80vw"] .b3-label {
         border-bottom: none;
+}
+/* 设置面板按钮 */
+.b3-switch:checked {
+    background-color: #bddff6;
+}
+.b3-switch:checked:after {
+    background-color: #8ebad7;
+    border-color: #8ebad7;
 }
 
 /* 自定义属性溢出滚动 */
