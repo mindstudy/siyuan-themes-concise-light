@@ -74,16 +74,16 @@
     --b3-font-color13: #6f6f6f;
     --b3-font-background1: #ffdbdb;
     --b3-font-background2: #ffe6dd;
-    --b3-font-background3: #f5f0c6;
-    --b3-font-background4: #e4f3e1;
-    --b3-font-background5: #dfedf7;
-    --b3-font-background6: #e7edf8;
+    --b3-font-background3: #f7f6b0cf;
+    --b3-font-background4: #d6f3db;
+    --b3-font-background5: #d3edff;
+    --b3-font-background6: #d1e0fe;
     --b3-font-background7: #efdafa;
-    --b3-font-background8: #f8e7f6;
-    --b3-font-background9: #f4e9db;
-    --b3-font-background10: #edeaca;
-    --b3-font-background11: #ddf5f7;
-    --b3-font-background12: #f0e4d9;
+    --b3-font-background8: #fae6f8;
+    --b3-font-background9: #fee4c3;
+    --b3-font-background10: #f3ea88c2;
+    --b3-font-background11: #d2f5f5;
+    --b3-font-background12: #f2dac4;
     --b3-font-background13: #dcdcdc;
     --b3-block-color1: #d44039;
     --b3-block-color2: #d26d24;
@@ -257,13 +257,20 @@
 .block__logo {
     color: #888;
     font-size: 1.0em;
-    margin: 0 0 0 24px;
+    margin: 0 0 0 20px;
 }
 
 .file-tree .b3-list-item__text {
     font-size: 1.06em;
-    opacity: .8;
+    color: #555;
 }
+.file-tree .b3-list-item {
+    padding-left: 18px;
+}
+/*
+.file-tree .b3-list-item--focus .b3-list-item__text {
+    color: #d36575;
+}*/
 
 /* 文档树及右边图标下移 */
 .block__icons {
@@ -397,8 +404,8 @@ li[class~="item--focus"] {
 .layout-tab-bar .item {
     box-shadow: none;
 }
-.layout-tab-bar .item:hover {
-    background-color: #fdf2f2 !important;
+.layout-tab-bar .item:hover:not(.item--focus) {
+    background-color: #f3f3f3 !important;
 }
 .layout-tab-bar .item.item--focus {
     background-color: #f7f7f7 !important;
@@ -1558,17 +1565,10 @@ code {
 [data-type="NodeBlockQueryEmbed"] .protyle-wysiwyg__embed .li .list:before {
     padding-top: 10px !important;
 }
-[data-type="NodeBlockQueryEmbed"] .protyle-wysiwyg__embed .li .protyle-action {
-    top: 8px;
-}
-[data-type="NodeBlockQueryEmbed"] [data-subtype="t"] .protyle-action--task::before {
-    top: 9px;
-}
-[data-type="NodeBlockQueryEmbed"] [data-subtype="t"] .protyle-task--done .protyle-action--task::before {
-    top: 0px;
+[data-type="NodeBlockQueryEmbed"] .protyle-wysiwyg__embed>.list>.li>.list>.li>.protyle-action--task::before {
+    top: 14px !important;
 }
 [data-type="NodeBlockQueryEmbed"] .code-block .protyle-action {
-    left: 670px !important;
     top: 3px !important;
 }
 
@@ -1654,11 +1654,11 @@ span[data-type="a"]:hover {
 .b3-typography .code-block .protyle-action,
 .protyle-wysiwyg .code-block .protyle-action {
     width: 150px;
-    left: 715px;
+    top: unset;
+    left: unset;
 }
 .block__popover .protyle-wysiwyg .code-block .protyle-action {
-    left: 580px !important;
-    top: 5px !important
+    margin-top: 3px;
 }
 .protyle-wysiwyg--hl .protyle-linenumber__rows,
 .protyle-wysiwyg--select .protyle-linenumber__rows,
@@ -1758,6 +1758,12 @@ span[data-type="a"]:hover {
 }
 
 /*表格边线、背景*/
+.protyle-wysiwyg .table>div:first-child {
+    overflow: hidden;
+}
+.protyle-wysiwyg .table>div:first-child:hover {
+    overflow-x: overlay;
+}
 .protyle-wysiwyg table thead tr {
     background-color: transparent !important; /*#ebf2ff*/
 }
@@ -2146,6 +2152,18 @@ strong[style*="background9"] {
     font-family: var(--b3-font-family-text), serif;
     border-radius: 1px;
 }
+.block__popover strong[style*="background1"],
+.block__popover strong[style*="background2"],
+.block__popover strong[style*="background3"],
+.block__popover strong[style*="background4"],
+.block__popover strong[style*="background5"],
+.block__popover strong[style*="background6"],
+.block__popover strong[style*="background7"],
+.block__popover strong[style*="background8"],
+.block__popover strong[style*="background9"] {
+    font-family: var(--b3-font-family), serif;
+    font-weight: 400 !important;
+}
 strong[style*="background"]:empty {
     display: none;
 }
@@ -2244,7 +2262,7 @@ div[style*="font-color"][style*="background13)"] {
 
 .block__popover .protyle-wysiwyg [data-node-id] {
     padding: 0;
-    margin: 0;
+    margin: 6px 0 0 0;
     color: #222;
 }
 
@@ -2450,7 +2468,7 @@ div[style*="font-color"][style*="background13)"] {
     background-color: #e0e8f8 !important;
 }
 .block__icons.block__icons--active .block__logo {
-    color: #333;
+    color: #555;
 }
 
 /* 面板折叠箭头 */
@@ -2521,7 +2539,7 @@ div[style*="font-color"][style*="background13)"] {
 }
 /* 集市下载项宽度 */
 .b3-card {
-    width: 19.5vw;
+    width: 15vw;
 }
 .b3-dialog__container[style="width:80vw"] .search__header {
     border-bottom: transparent;
@@ -2531,7 +2549,7 @@ div[style*="font-color"][style*="background13)"] {
 .b3-dialog__container[style="width:80vw"] .search__header input {
     background-color: #f3f3f3 !important;
 }
-.b3-dialog__container[style="width:80vw"] .search__header+.fn__flex-1>.b3-tab-bar{
+.b3-dialog__container[style="width:80vw"] .search__header+.fn__flex-1>.b3-tab-bar {
     background-color: #e4e4e4;
 }
 .b3-dialog__container[style="width:80vw"] .search__header+.fn__flex-1>.b3-tab-container {
@@ -2542,6 +2560,7 @@ div[style*="font-color"][style*="background13)"] {
 }
 .b3-dialog__container[style="width:80vw"] .search__header+.fn__flex-1 .b3-list-item--focus {
     background-color: #dbdbdb !important;
+    color: #222 !important;
 }
 .b3-dialog__container[style="width:80vw"] .search__header+.fn__flex-1 .b3-list-item--big .b3-list-item__graphic {
     height: 13px !important;
@@ -2567,7 +2586,7 @@ div[style*="font-color"][style*="background13)"] {
 }
 /* 设置面板左边栏 */
 .b3-dialog__container[style="width:80vw"] .b3-list-item--big {
-        padding: 10px 24px !important;
+        padding: 12px 24px !important;
 }
 /* 设置面板分割线 */
 .b3-dialog__container[style="width:80vw"] .b3-label {
@@ -2580,6 +2599,14 @@ div[style*="font-color"][style*="background13)"] {
 .b3-switch:checked:after {
     background-color: #8ebad7;
     border-color: #8ebad7;
+}
+/* 设置面板下拉菜单 */
+.bazaarPanel .b3-select  {
+    background-color: #efefef;
+    transition: none;
+}
+.bazaarPanel .b3-select:focus {
+    box-shadow: none;
 }
 
 /* 自定义属性溢出滚动 */
@@ -2681,6 +2708,9 @@ div[data-key] .b3-dialog__container .fn__flex-column #searchList {
 div[data-key] .b3-dialog__container .fn__flex-column #searchPreview {
 	height:calc(100% - 85px) !important;
 }
+div[data-key] .b3-dialog__container .fn__flex-column #searchPreview {
+	height:calc(100% - 85px) !important;
+}
 .spread-search__preview {
     border-top: none;
 }
@@ -2710,7 +2740,7 @@ div[data-key] .b3-dialog__container .fn__flex-column #searchPreview {
 }
 #searchPreview .protyle-wysiwyg,
 #searchPreview .protyle-wysiwyg [data-node-id]:first-of-type {
-    padding-top: 0 !important;
+    padding: 0 50px 16px 50px !important;
 }
 #searchList {
     overflow: hidden !important;
@@ -3000,7 +3030,7 @@ div[custom-f="dt"]>[data-type="NodeListItem"]::before {
 .protyle-wysiwyg [custom-f~=kb] .li[data-subtype="o"]>.protyle-action--order {
 	display: inline;
     position: absolute;
-    top: -0.1em;
+    top: 0.01em;
     left: 14px;
     opacity: 1;
 }
@@ -3058,6 +3088,7 @@ div[custom-f="dt"]>[data-type="NodeListItem"]::before {
 .protyle-wysiwyg [custom-f~=kb]>[data-subtype="t"]>[data-subtype="u"]>[data-subtype="u"] .protyle-action {
     margin-left: 3px !important;
     margin-top: -3px !important;
+    top: 1.3em !important;
 }
 .protyle-wysiwyg [custom-f~=kb]>[data-subtype="t"]>[data-subtype="o"]>[data-subtype="o"] .protyle-action {
     margin-top: 20px !important;
@@ -3096,7 +3127,7 @@ div[custom-f="dt"]>[data-type="NodeListItem"]::before {
     margin-top: 2px !important;
 }
 .block__popover [custom-f~=kb] {
-    font-size: 1.06em !important;
+    font-size: 1.00em !important;
 }
 .block__popover [custom-f~=kb]>.li {
     margin-top: 3px !important;
@@ -3107,7 +3138,7 @@ div[custom-f="dt"]>[data-type="NodeListItem"]::before {
 }
 .block__popover [custom-f~=kb]>.li[data-subtype="t"] .protyle-action {
     left: 0em;
-    top: 1em;
+    top: 0.85em !important;
 }
 .block__popover [custom-f~=kb]>.li[data-subtype="o"]>.protyle-action {
     left: 1em;
@@ -3118,14 +3149,14 @@ div[custom-f="dt"]>[data-type="NodeListItem"]::before {
 }
 .block__popover [custom-f~=kb]>.li>.list>.li[data-subtype] .protyle-action {
     left: 0em;
-    top: 1.9em;
+    top: 2.1em !important;
 }
 .block__popover [custom-f~=kb]>.li>.list>.li[data-subtype="o"] .protyle-action {
     left: 1em;
-    top: -0.1em;
+    top: 0.28em !important;
 }
 .block__popover [custom-f~=kb]>.li>.list>.li[data-subtype="t"] [data-node-id] {
-    top: 0.15em;
+    top: 0.15em !important;
 }
 .block__popover [custom-f~=kb]>.li>.protyle-action+div>[spellcheck="false"] {
     padding-top: 0.3em !important;
