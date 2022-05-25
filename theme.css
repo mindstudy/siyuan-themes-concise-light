@@ -2630,7 +2630,7 @@ div[style*="font-color"][style*="background13)"] {
     background-color: #efefef;
     transition: none;
 }
-.bazaarPanel .b3-select:focus {
+.b3-select:focus {
     box-shadow: none;
 }
 
@@ -2758,13 +2758,13 @@ div[data-key] .b3-dialog__container .fn__flex-column #searchPreview {
 }
 #searchPreview .protyle-breadcrumb {
     opacity: 0;
+    max-height: 30px;
 }
 #searchPreview .protyle-breadcrumb:hover {
     opacity: .8;
     transition: none;
 }
-#searchPreview .protyle-wysiwyg,
-#searchPreview .protyle-wysiwyg [data-node-id]:first-of-type {
+#searchPreview .protyle-wysiwyg {
     padding: 0 50px 16px 50px !important;
 }
 #searchList {
