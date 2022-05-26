@@ -605,7 +605,7 @@ mark {
 .protyle-wysiwyg [data-node-id] span[data-type="search-mark"] {
     font-family: var(--b3-font-family);
     display: inline !important;
-    background-color: #4189b3 !important;
+    background-color: #6cb3dd !important;
     color: #fff !important;
     line-height: 16px !important;
 }
@@ -638,16 +638,16 @@ mark {
 .b3-menu:not(.hint--menu) button.b3-list-item:hover,
 .b3-menu:not(.hint--menu) button.b3-list-item--focus,
 .b3-menu:not(.hint--menu) button.b3-list-item--focus:hover {
-    background-color: #feefee !important;
+    background-color: #e3f5ff !important;
 }
 .b3-menu:not(.hint--menu) button.b3-list-item {
-    padding: 7px;
+    padding: 2px 7px;
     border-bottom: 1px dashed #ccc;
 }
 .b3-menu:not(.hint--menu) button.b3-list-item,
 .b3-menu:not(.hint--menu) button.b3-list-item .fn__flex,
 .b3-menu:not(.hint--menu) button .b3-list-item__first {
-    line-height: 20px;
+    max-height: fit-content !important;
 }
 .b3-menu:not(.hint--menu) button .b3-list-item__first,
 .b3-menu:not(.hint--menu) button .b3-list-item__text {
@@ -662,7 +662,6 @@ mark {
 /* 双链弹出菜单mark*/
 .b3-menu:not(.hint--menu) mark {
     color: #666;
-    font-size: 1.06em;
     padding: 0;
     margin: 2px 1px 0 0;
 }
@@ -671,7 +670,6 @@ mark {
 }
 .b3-menu:not(.hint--menu) button .b3-list-item__meta,
 .b3-menu:not(.hint--menu) button .b3-list-item__meta mark {
-    font-size: 1.06em;
     color: #666;
 }
 .b3-menu:not(.hint--menu) button .b3-list-item__first+.b3-list-item__meta {
@@ -698,7 +696,7 @@ mark {
 .b3-menu:not(.hint--menu) .b3-list-item--two .b3-list-item__first {
     display: inline !important;
 }
-.b3-menu:not(.hint--menu) button .b3-list-item__text,
+.b3-menu:not(.hint--menu) button  .b3-list-item__meta+.b3-list-item__first>.b3-list-item__text,
 .b3-menu:not(.hint--menu) button .b3-list-item__graphic.popover__block {
     float: left;
 }
@@ -711,7 +709,7 @@ mark {
     width: 11px;
     position: absolute;
     left: 5px;
-    top: 11px;
+    top: 10px;
 }
 .b3-menu:not(.hint--menu) button .svg--small {
     margin-left: 3px !important;
@@ -720,7 +718,7 @@ mark {
     margin-left: 10px;
 }
 .b3-menu:not(.hint--menu) button.b3-list-item mark {
-    background-color: #4189b3 !important;
+    background-color: #6cb3dd !important;
     color: #fff !important;
 }
 .b3-menu:not(.hint--menu) {
@@ -735,7 +733,7 @@ mark {
 /* 标题背景 */
 .hint--menu .b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom),
 .hint--menu .b3-list-item:hover:not(.b3-list-item--focus) {
-background-color: #fae6e6 !important;
+background-color: #e3f5ff !important;
 }
 .hint--menu {
     column-count: 3;
@@ -2087,7 +2085,7 @@ button[data-type="style2"]+button[data-type="style4"] {
 .protyle-breadcrumb__item:hover,
 .protyle-breadcrumb__item--active:hover {
     color: #333;
-    background-color: #fdefef;
+    background-color: #e3f5ff;
 }
 
 /*浮窗文档面包屑路径*/
