@@ -1831,6 +1831,7 @@ span[data-type="a"]:hover {
 .protyle-toolbar {
     column-count: 7;
     margin-top: -30px;
+    margin-left: -123px !important;
     padding: 0 10px;
     display: block;
     background-color: #f7f6f3;
