@@ -359,7 +359,7 @@ span[aria-label*="最小化"] {
     width: 10px !important;
 }
 [data-type="tab-header"] svg+.item__text{
-    margin-left: -10px;
+    margin-left: -20px;
 }
 
 /* 垂直分割线 */
@@ -423,7 +423,7 @@ li[class~="item--focus"] {
 .layout-tab-bar .item:hover:not(.item--focus) {
     background-color: #f3f3f3 !important;
 }
-.layout-tab-bar .item.item--focus {
+.layout-tab-bar .item[aria-label].item--focus {
     background-color: #f7f7f7 !important;
 }
 /*隐藏页签悬浮路径*/ 
@@ -2208,7 +2208,7 @@ strong[style*="background9"] {
 strong[style*="background"]:empty {
     display: none;
 }
-/* 外观菜单背景设置 */
+/* 外观菜单字体背景设置 */
 div[style*="font-color"][style*="background1)"] {
     color:  var(--b3-block-color1) !important;
     background-color: var(--b3-block-background1) !important;
@@ -2259,6 +2259,88 @@ div[style*="font-color"][style*="background12)"] {
 }
 div[style*="font-color"][style*="background13)"] {
     color:  var(--b3-block-color13) !important;
+    background-color: var(--b3-block-background13) !important;
+}
+
+/* 外观菜单字体设置 */
+div[style*="font-color1)"] {
+    color:  var(--b3-block-color1) !important;
+}
+div[style*="font-color2)"] {
+    color:  var(--b3-block-color2) !important;
+}
+div[style*="font-color3)"] {
+    color:  var(--b3-block-color3) !important;
+}
+div[style*="font-color4)"] {
+    color:  var(--b3-block-color4) !important;
+}
+div[style*="font-color5)"] {
+    color:  var(--b3-block-color5) !important;
+}
+div[style*="font-color6)"] {
+    color:  var(--b3-block-color6) !important;
+}
+div[style*="font-color7)"] {
+    color:  var(--b3-block-color7) !important;
+}
+div[style*="font-color8)"] {
+    color:  var(--b3-block-color8) !important;
+}
+div[style*="font-color9)"] {
+    color:  var(--b3-block-color9) !important;
+}
+div[style*="font-color10)"] {
+    color:  var(--b3-block-color10) !important;
+}
+div[style*="font-color11)"] {
+    color:  var(--b3-block-color11) !important;
+}
+div[style*="font-color12)"] {
+    color:  var(--b3-block-color12) !important;
+}
+div[style*="font-color13)"] {
+    color:  var(--b3-block-color13) !important;
+}
+
+/* 外观菜单背景设置 */
+div[style*="background1)"] {
+    background-color: var(--b3-block-background1) !important;
+}
+div[style*="background2)"] {
+    background-color: var(--b3-block-background2) !important;
+}
+div[style*="background3)"] {
+    background-color: var(--b3-block-background3) !important;
+}
+div[style*="background4)"] {
+    background-color: var(--b3-block-background4) !important;
+}
+div[style*="background5)"] {
+    background-color: var(--b3-block-background5) !important;
+}
+div[style*="background6)"] {
+    background-color: var(--b3-block-background6) !important;
+}
+div[style*="background7)"] {
+    background-color: var(--b3-block-background7) !important;
+}
+div[style*="background8)"] {
+    background-color: var(--b3-block-background8) !important;
+}
+div[style*="background9)"] {
+    background-color: var(--b3-block-background9) !important;
+}
+div[style*="background10)"] {
+    background-color: var(--b3-block-background10) !important;
+}
+div[style*="background11)"] {
+    background-color: var(--b3-block-background11) !important;
+}
+div[style*="background12)"] {
+    background-color: var(--b3-block-background12) !important;
+}
+div[style*="background13)"] {
     background-color: var(--b3-block-background13) !important;
 }
 
@@ -2580,7 +2662,7 @@ div[style*="font-color"][style*="background13)"] {
 }
 /* 集市下载项宽度 */
 .b3-card {
-    width: 15vw;
+    width: 14.5vw;
 }
 .b3-dialog__container[style="width:80vw"] .search__header {
     border-bottom: transparent;
@@ -2624,6 +2706,7 @@ div[style*="font-color"][style*="background13)"] {
 /* 不符合条件的内容块 */
 .ft__secondary {
     font-family: var(--b3-font-family-code);
+    color: #cf2910;
 }
 /* 设置面板左边栏 */
 .b3-dialog__container[style="width:80vw"] .b3-list-item--big {
@@ -2723,6 +2806,27 @@ div[style*="font-color"][style*="background13)"] {
 /* 修改自社区老铁 abbj 的搜索窗口左右排列*/
 /*放大搜索窗口尺寸*/
 /*不添加[data-key]属性选择器将会同时影响alt+p窗口*/
+div[data-key] .b3-dialog__container .fn__flex-column[style*="overflow"] {
+    overflow: unset !important;
+}
+div[data-key] .b3-dialog__container .search__header {
+    padding-top: 5px;
+}
+div[data-key] .b3-dialog__container .search__header .b3-text-field--text {
+    padding-left: 15px !important;
+}
+#replaceInput,
+#searchInput {
+    height: 26px;
+    margin-left: 120px;
+    background-color: #eaeaea !important;
+}
+#searchInput {
+    margin-right: 150px;
+}
+#replaceInput {
+    margin-right: 18px;
+}
 div[data-key] .b3-dialog__container {
     width: 100vw !important;
 }
