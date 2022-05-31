@@ -1846,10 +1846,11 @@ span[data-type="a"]:hover {
 .protyle-toolbar {
     column-count: 7;
     margin-top: -25px;
-    margin-left: -150px !important;
+    margin-left: 52px !important;
     padding: 0 10px;
     display: block;
     background-color: #f7f6f3;
+    z-index: 304;
 }
 .protyle-toolbar__item {
     color: #777;
@@ -2826,6 +2827,15 @@ div[data-key] .b3-dialog__container .search__header .b3-text-field--text {
 }
 #replaceInput {
     margin-right: 18px;
+}
+.spread-search__filter {
+    margin-left: -160px;
+    margin-top: 12px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    box-shadow: var(--b3-point-shadow);
+    height: fit-content;
+    z-index: 9;
 }
 div[data-key] .b3-dialog__container {
     width: 100vw !important;
