@@ -1332,7 +1332,7 @@ code {
 
 /* 有序列表样式预置 */
 .protyle-wysiwyg .list[data-subtype="o"] {
-	counter-reset: o1 0 o2 0 o3 0 o4 0 o5 0 o6 0 o7 0;
+	counter-reset: o1 o2 o3 o4 o5 o6 o7;
 }
 .protyle-wysiwyg .li[data-subtype="o"]>.protyle-action--order {
 	opacity: 0;
@@ -2802,6 +2802,9 @@ div[style*="background13)"] {
 .list[data-node-id][data-type="NodeList"][custom-f="bg"] div[data-node-id]:not([data-subtype="t"]) .protyle-action {
    opacity: 0;
 }
+.block__popover .protyle-wysiwyg [custom-f="bg"] [data-node-id] {
+    margin-top: 0;
+}
 /* 自定义属性，列表转化为表格 END */
 
 /* 修改自社区老铁 abbj 的搜索窗口左右排列*/
@@ -3299,7 +3302,7 @@ div[custom-f="dt"]>[data-type="NodeListItem"]::before {
 }
 .block__popover [custom-f~=kb]>.li[data-subtype]>.protyle-action {
     left: 0.1em;
-    top: 0.6em;
+    top: 0.45em;
 }
 .block__popover [custom-f~=kb]>.li[data-subtype="t"] .protyle-action {
     left: 0em;
@@ -3311,13 +3314,17 @@ div[custom-f="dt"]>[data-type="NodeListItem"]::before {
 .block__popover [custom-f~=kb]>.li[data-subtype]>[data-node-id] {
     margin-top: 3px !important;
 }
-.block__popover [custom-f~=kb]>.li>.list>.li[data-subtype] .protyle-action {
+.block__popover [custom-f~=kb]>.li>.list>.li[data-subtype="t"] .protyle-action {
     left: 0em;
-    top: 2.1em !important;
+    top: 1.9em !important;
+}
+.block__popover [custom-f~=kb]>.li>.list>.li[data-subtype="u"] .protyle-action {
+    left: 0em;
+    top: 1.95em !important;
 }
 .block__popover [custom-f~=kb]>.li>.list>.li[data-subtype="o"] .protyle-action {
     left: 1em;
-    top: 0.28em !important;
+    top: 0.15em !important;
 }
 .block__popover [custom-f~=kb]>.li>.list>.li[data-subtype="t"] [data-node-id] {
     top: 0.15em !important;
