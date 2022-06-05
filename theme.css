@@ -1793,10 +1793,6 @@ span[data-type="a"]:hover {
 .protyle-wysiwyg table tbody {
     border: 0.050em solid #888 !important;
 }
-.protyle-wysiwyg table {
-    border: 0.050em solid #888 !important;
-    display: table;
-}
 .protyle-wysiwyg table th,
 .protyle-wysiwyg table tr,
 .protyle-wysiwyg table thead tr,
@@ -3565,4 +3561,36 @@ div[custom-f="dt"]>[data-type="NodeListItem"]::before {
 }
 .b3-dialog__container[style="width:50vw"] .b3-dialog__action {
     border-top: none;
+}
+
+
+
+/* 为长代码块、长嵌入块与长表格添加块内滚动条 from shuoying 萌新的化身*/
+/* 为嵌入块与代码块添加纵向滚动条 */
+.protyle-wysiwyg [data-node-id][data-type="NodeBlockQueryEmbed"],
+.protyle-wysiwyg div.code-block[data-node-id] {
+    overflow: hidden;
+    max-height: 50vh;
+}
+.protyle-wysiwyg [data-node-id][data-type="NodeBlockQueryEmbed"] {
+    max-height: 55vh;
+}
+.protyle-wysiwyg [data-node-id][data-type="NodeBlockQueryEmbed"]:hover,
+.protyle-wysiwyg div.code-block[data-node-id]:hover {
+    overflow-y: overlay;
+}
+/* 为表格块添加纵向滚动条 */
+.protyle-wysiwyg [data-node-id][data-type="NodeTable"] table {
+    position: relative;
+    overflow:hidden;
+    max-height: 60.5vh;
+}
+.protyle-wysiwyg [data-node-id][data-type="NodeTable"] table:hover {
+    overflow-y: overlay;
+}
+.protyle-wysiwyg [data-node-id][data-type="NodeTable"] table>thead {
+    position: sticky;
+    background-color: var(--b3-theme-background-light);
+    top: -1px;
+    z-index: 1;
 }
