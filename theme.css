@@ -3561,19 +3561,18 @@ div[custom-f="dt"]>[data-type="NodeListItem"]::before {
 }
 .b3-dialog__container[style="width:50vw"] .b3-dialog__action {
     border-top: none;
-}
+}/* END - 属性窗口 */
 
 
-
-/* 为长代码块、长嵌入块与长表格添加块内滚动条 from shuoying 萌新的化身*/
+/* START - 为长代码块、长嵌入块与长表格添加块内滚动条 from shuoying 萌新的化身*/
 /* 为嵌入块与代码块添加纵向滚动条 */
 .protyle-wysiwyg [data-node-id][data-type="NodeBlockQueryEmbed"],
 .protyle-wysiwyg div.code-block[data-node-id] {
     overflow: hidden;
-    max-height: 50vh;
+    max-height: 70vh;
 }
 .protyle-wysiwyg [data-node-id][data-type="NodeBlockQueryEmbed"] {
-    max-height: 55vh;
+    max-height: 75vh;
 }
 .protyle-wysiwyg [data-node-id][data-type="NodeBlockQueryEmbed"]:hover,
 .protyle-wysiwyg div.code-block[data-node-id]:hover {
@@ -3583,7 +3582,7 @@ div[custom-f="dt"]>[data-type="NodeListItem"]::before {
 .protyle-wysiwyg [data-node-id][data-type="NodeTable"] table {
     position: relative;
     overflow:hidden;
-    max-height: 60.5vh;
+    max-height: 72vh;
 }
 .protyle-wysiwyg [data-node-id][data-type="NodeTable"] table:hover {
     overflow-y: overlay;
@@ -3593,4 +3592,4 @@ div[custom-f="dt"]>[data-type="NodeListItem"]::before {
     background-color: var(--b3-theme-background-light);
     top: -1px;
     z-index: 1;
-}
+} /* END - 为长代码块、长嵌入块与长表格添加块内滚动条 */
