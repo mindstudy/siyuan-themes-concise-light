@@ -539,7 +539,7 @@ li[data-type="toggle"] .b3-list-item__text {
 }
 .protyle-content .protyle-title__input {
     font-family: var(--b3-font-family-title);
-    font-size: 30px;
+    font-size: 1.7em;
     font-weight: 500;
     margin: 0 0 0 -4px;
     letter-spacing: 0.05em !important;
@@ -905,15 +905,15 @@ code {
 /* 层级标题折叠字号保持一致 */
 .protyle-content .protyle-wysiwyg .h1,
 .protyle-content .protyle-wysiwyg .h1[fold="1"] {
-    font-size: 1.5em !important;
+    font-size: 1.6em !important;
 }
 .protyle-content .protyle-wysiwyg .h2,
 .protyle-content .protyle-wysiwyg .h2[fold="1"] {
-    font-size: 1.4em !important;
+    font-size: 1.5em !important;
 }
 .protyle-content .protyle-wysiwyg .h3,
 .protyle-content .protyle-wysiwyg .h3[fold="1"] {
-    font-size: 1.3em !important;
+    font-size: 1.35em !important;
 }
 .protyle-content .protyle-wysiwyg .h4,
 .protyle-content .protyle-wysiwyg .h4[fold="1"] {
