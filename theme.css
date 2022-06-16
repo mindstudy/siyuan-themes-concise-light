@@ -752,8 +752,8 @@ mark {
 background-color: #e3f5ff !important;
 }
 .hint--menu {
-    column-count: 3;
-    min-width: 40vw !important;
+    column-count: 4;
+    min-width: 45vw !important;
     max-height: 550px !important;
     border: 0.05em solid #fff;
     padding: 2px 4px 0 4px;
@@ -784,6 +784,18 @@ background-color: #e3f5ff !important;
 }
 .hint--menu .b3-list-item__first .b3-list-item__meta {
     color: var(--b3-theme-on-surface) !important;
+}
+.hint--menu [data-value="bold"],
+.hint--menu [data-value="italic"],
+.hint--menu [data-value="underline"],
+.hint--menu [data-value="strike"],
+.hint--menu [data-value="mark"],
+.hint--menu [data-value="sup"],
+.hint--menu [data-value="sub"],
+.hint--menu [data-value="tag"],
+.hint--menu [data-value="inline-code"],
+.hint--menu [data-value="inline-math"]{
+    display: none;
 }
 
 /* 修改删除线为挖空效果*/
