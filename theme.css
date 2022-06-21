@@ -223,7 +223,8 @@
 #barSync,
 #barBack,
 #barDock,
-#barForward {
+#barForward,
+.ft__error {
     display: none !important;
 }
 
@@ -793,9 +794,16 @@ background-color: #e3f5ff !important;
 .hint--menu [data-value="sup"],
 .hint--menu [data-value="sub"],
 .hint--menu [data-value="tag"],
-.hint--menu [data-value="inline-code"],
-.hint--menu [data-value="inline-math"]{
+.hint--menu [data-value="inline-code"]
+.hint--menu [data-value="inline-math"],
+.hint--menu [data-value="%60%60%60"] .b3-menu__accelerator{
     display: none;
+}
+.hint--menu [data-value="%60%60%60"] .b3-list-item__text:after {
+    content: "```Enter";
+    color: var(--b3-theme-on-surface) !important;
+    font-size: 12px;
+    margin-left: 12px;
 }
 
 /* 修改删除线为挖空效果*/
@@ -1851,7 +1859,7 @@ span[data-type="a"]:hover {
     padding: 0 10px;
     display: block;
     background-color: #f7f6f3;
-    z-index: 304;
+    z-index: 209;
 }
 .protyle-toolbar__item {
     color: #777;
@@ -2081,7 +2089,7 @@ button[data-type="style2"]+button[data-type="style4"] {
 .block__popover {
     min-height: fit-content !important;
     height: fit-content !important;
-    z-index: 303;
+    z-index: 208;
 }
 .block__popover .block__content .protyle {
     max-height: unset !important;
