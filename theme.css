@@ -219,11 +219,22 @@
 }
 
 /* 日记、同步、主题、多页面前后切换图标隐藏 */
-#barDailyNote,
-#barSync,
-#barBack,
-#barDock,
-#barForward,
+#toolbar {
+    opacity: 0;
+}
+#toolbar:hover {
+    opacity: 1;
+}
+#status {
+    opacity: 0;
+    max-height: 1px;
+}
+#status:hover {
+    opacity: 1;
+}
+#status:hover svg{
+    margin-bottom: 30px;
+}
 .ft__error {
     display: none !important;
 }
@@ -1312,6 +1323,18 @@ code {
     top:-6px;
 }
 
+/* 有序下级无序列表左边样式 */
+.protyle-wysiwyg .li[data-subtype="o"]>.list[data-subtype="u"]>.li[data-subtype="u"]>.protyle-action>svg,
+.protyle-wysiwyg .li[data-subtype="t"]>.list[data-subtype="u"]>.li[data-subtype="u"]>.protyle-action>svg {
+    width: 12px !important;
+    height: 12px !important;
+}
+
+/* 一级无序列表左边样式 */
+.protyle-wysiwyg .list[data-subtype="u"]>.li[data-subtype="u"]>.list[data-subtype="u"]svg {
+    width: 12px !important;
+    height: 12px !important;
+}
 /* 二级无序列表左边样式 */
 .protyle-wysiwyg .list[data-subtype="u"]>.li[data-subtype="u"]>.list[data-subtype="u"]>.li[data-subtype="u"]>.protyle-action>svg {
     -webkit-mask: url(pics/circle.svg) no-repeat;
@@ -2089,7 +2112,7 @@ button[data-type="style2"]+button[data-type="style4"] {
 .block__popover {
     min-height: fit-content !important;
     height: fit-content !important;
-    z-index: 208;
+    z-index: 210;
 }
 .block__popover .block__content .protyle {
     max-height: unset !important;
